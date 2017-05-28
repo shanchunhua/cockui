@@ -1,0 +1,36 @@
+/* index.wxss */
+.mem_head{height: 340rpx;}
+.mem_li >.in35{padding-bottom: 55rpx;}
+.mem_li >.in35 .li{background: #fff;}
+.mem_li >.in35 .li .icon{width: 60rpx; height: 60rpx;}
+.mem_li >.in35 .li .icon.lef{float: left; margin-left: 15rpx;}
+.mem_li >.in35 .li .icon.rig{float: right;}
+.mem_li >.in35 .li text{line-height: 60rpx; padding-left: 30rpx;}
+.mem_li >.in35 .li .li_b{border-bottom: 1rpx solid #e6e6e6;padding: 15rpx 0;}
+.mem_li >.in35 .h55{padding-top: 55rpx; background: #fff;}
+.mem_li >.in35 .bg_img{height: 13rpx;}
+.mem_li >.in35 .bg_img image{width: 100%; height: 13rpx;display: block;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

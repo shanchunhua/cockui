@@ -1,0 +1,21 @@
+/* pages/mine/index.wxss */
+.sel_li{background: #fff; border-radius: 10rpx; margin-top: 15px; overflow: hidden;}
+.sel_li .hea{padding: 15rpx;}
+.sel_li .lef{display: block; width: 65rpx; height: 65rpx; float: left;}
+.sel_li .tex{float: left; margin-left: 15rpx; width: 600rpx; position: relative;}
+.sel_li .tex .tit{float: left; color: #333; font-weight: bold;}
+.sel_li .tex .at{position: absolute; right: 0; height: 65rpx; top: 50%; margin-top: -12rpx}
+.sel_li .tex .at .bu{color: #3292ff;}
+.sel_li .tex .fo{padding-top: 15rpx;}
+.sel_li .vid image{width: 100%; height: 470rpx; display: block;}
+
+
+.li_btn{height: 98rpx; width: 100%; background: #3292ff; text-align: center;}
+.li_btn .btn_con{display: inline-block; padding-top: 27rpx;}
+.li_btn .btn_con .icon{float: left; width: 42rpx; height: 42rpx;}
+.li_btn .btn_con text{color: #fff; float: left;margin-top: 27rxp; line-height: 42rpx; padding-left: 10rpx; font-size: 36rpx;}
+.li_btn_tw  .li_btn{width: 50%; float: left; background: #fff;}
+.li_btn_tw .li_btn .btn_con text{color: #3292ff;}
+.li_btn_tw .li_btn:nth-child(2){box-sizing: border-box; border-left: 1px solid #e5e5e5;}
+
+

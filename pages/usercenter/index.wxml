@@ -1,0 +1,115 @@
+<!--index.wxml-->
+<view class="mem_head w" style="background:url('/img/s19.jpg'); background-size: cover;">
+	<view class="in40">
+		<view class="pro">
+			<view class="lef">
+				<image src="{{userInfo.avatarUrl}}"></image>
+				<view class="clear"></view>
+			</view>
+			<view class="rig">
+				<view class="cent">
+					<text class="t1">张老三牧民</text>
+					<text class="t1">ID:4828190</text>
+				</view>
+			</view>
+			<view class="clear"></view>
+		</view>
+		<view class="prio">
+			<view class="lef">
+				<view class="cent">
+					<text class="pri">{{customerProperty.balance}}<text class="el">元</text>
+					</text>
+					<text class="me">我的钱包</text>
+				</view>
+			</view>
+			<view class="rig">
+				<view class="cent">
+					<text class="pri">{{customerProperty.deposit}}<text class="el">元</text>
+					</text>
+					<text class="me">我的押金</text>
+				</view>
+			</view>
+			<view class="clear"></view>
+		</view>
+	</view>
+</view>
+<view class="mem_li">
+	<view class="in35">
+		<view class="li">
+			<view class="in35">
+				<view class="li_b">
+					<view class="icon lef" style="background:url('/img/s9.png'); background-size: cover;"></view>
+					<text>公鸡订单</text>
+					<view class="icon rig" style="background:url('/img/s8.png'); background-size: cover;"></view>
+					<view class="clear"></view>
+				</view>
+			</view>
+		</view>
+		<view class="li">
+			<view class="in35">
+				<view class="li_b">
+					<view class="icon lef" style="background:url('/img/s10.png'); background-size: cover;"></view>
+					<text>鸡蛋订单</text>
+					<view class="icon rig" style="background:url('/img/s8.png'); background-size: cover;"></view>
+					<view class="clear"></view>
+				</view>
+			</view>
+		</view>
+		<view class="li">
+			<view class="in35">
+				<view class="li_b">
+					<view class="icon lef" style="background:url('/img/s11.png'); background-size: cover;"></view>
+					<text>早市订单</text>
+					<view class="icon rig" style="background:url('/img/s8.png'); background-size: cover;"></view>
+					<view class="clear"></view>
+				</view>
+			</view>
+		</view>
+		<view class="li">
+			<view class="in35">
+				<view class="li_b">
+					<view class="icon lef" style="background:url('/img/s12.png'); background-size: cover;"></view>
+					<text>精选订单</text>
+					<view class="icon rig" style="background:url('/img/s8.png'); background-size: cover;"></view>
+					<view class="clear"></view>
+				</view>
+			</view>
+		</view>
+		<view class="li">
+			<view class="in35">
+				<view class="li_b">
+					<view class="icon lef" style="background:url('/img/s13.png'); background-size: cover;"></view>
+					<text>皮箱订单</text>
+					<view class="icon rig" style="background:url('/img/s8.png'); background-size: cover;"></view>
+					<view class="clear"></view>
+				</view>
+			</view>
+		</view>
+		<view class="li">
+			<view class="in35">
+				<view class="li_b">
+					<view class="icon lef" style="background:url('/img/s14.png'); background-size: cover;"></view>
+					<text>收货地址</text>
+					<view class="icon rig" style="background:url('/img/s8.png'); background-size: cover;"></view>
+					<view class="clear"></view>
+				</view>
+			</view>
+		</view>
+		<view class="h55"></view>
+		<view class="bg_img"><image src="/img/s15.png"></image></view>
+	</view>
+</view>
+<view class="ind_foo">
+	<view class="li">
+		<view class="icon" style="background:url('/img/s16.png'); background-size: cover;"></view>
+		<text>草原红公鸡</text>
+	</view>
+	<view class="li">
+		<view class="icon" style="background:url('/img/s17.png'); background-size: cover;"></view>
+		<text>牧家货架</text>
+	</view>
+	<view class="li on">
+		<view class="icon" style="background:url('/img/s18o.png'); background-size: cover;"></view>
+		<text>个人中心</text>
+	</view>
+</view>

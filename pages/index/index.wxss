@@ -1,0 +1,35 @@
+/* index.wxss */
+.ind_me{background: #fff; border-bottom: 1rpx solid #e6e6e6;}
+.ind_me .lef{float: left; width: 50%; height: 257rpx; position: relative;}
+.ind_me .lef .img{display: block; width: 169rpx; height: 169rpx; position: absolute;right: 40rpx; top: 50rpx;}
+.ind_me .rig{float: left; width: 50%; box-sizing: border-box; border-left: 1px solid #e6e6e6;}
+.ind_me .rig .rig_ch{height: 128rpx; position: relative;}
+.ind_me .rig .rig_ch .img{display: block; width: 126rpx; height: 126rpx; position: absolute; right: 40rpx; top: 0rpx;}
+.ind_me .t1{padding-left: 40rpx; padding-top: 25rpx; display: block;}
+.ind_me .t2{position: absolute; left: 40rpx; bottom: 15rpx;}
+.ind_me .t2 .usm{font-size: 50rpx; color: #3292ff;}
+.ind_me .lef .t2{bottom: 48rpx;}
+.ind_me .lef .t2 .usm{font-size: 88rpx;}
+.ind_me .rig .foo{border-top: 1rpx solid #e6e6e6;}
+
+.ind_ta{position: relative;}
+.ind_ta .ta{position: absolute; left: 40rpx; top: 40rpx; width: 390rpx; line-height: 36rpx;}
+.ind_ta .ta .a{color: #3292ff;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

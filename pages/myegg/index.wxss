@@ -1,0 +1,55 @@
+/* pages/eggs/index.wxss */
+.egg_dl {background: #fff;padding: 30rpx 0;}
+.egg_dl .img1{float: left; width: 130rpx; height: 110rpx;}
+.egg_dl .btn {width: 196rpx; height: 54rpx; line-height: 54rpx; text-align: center; color: #fff; float: right; border-radius: 27rpx; background: #3292ff; margin-top: 30rpx;}
+.egg_dl .at{float: left; width: 135rpx; text-align: center; line-height: 110rpx; color: #3292ff; font-size: 70rpx;}
+.egg_dl .tes{float: left; padding: 20rpx 0;}
+.egg_dl .tes text{display: block; line-height: 30rpx;}
+.egg_dl .tes text:nth-child(1){color: #4c4c4c; padding-bottom: 10rpx;}
+.egg_dl .dd{margin-top: 20rpx;}
+.egg_dl .dd:nth-child(1){margin-top: 0;}
+
+.egg_ad {background: #fff; padding: 15rpx 0;}
+.egg_ad .lef{float: left; margin-top: 15rpx;}
+.egg_ad .lef .tex {line-height: 50rpx;color: #4c4c4c; display: block; height: 54rpx;}
+.egg_ad .lef .tex .b{ font-size: 54rpx; padding: 0 8rpx; line-height: 50rpx; }
+.egg_ad .rig{float: right; width: 200rpx; height: 130rpx;}
+
+.egg_for{padding: 30rpx 0; background: #fff;}
+.egg_for .orddl .indl .d1{width: 130rpx;}
+.egg_for .orddl .indl .d2{float: right; width: 540rpx;}
+.egg_for .orddl .indl .d2 .te{text-align: right; display: block;}
+.egg_for .orddl .indl .d2 .te_lef{float: left;}
+.egg_for .orddl .indl .d2 .vfo{float: right;}
+.egg_for .orddl .indl .d2 .vfo .vinp{width: 100rpx;}
+
+.eggs_ol{padding: 30rpx 0; background: #fff;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
