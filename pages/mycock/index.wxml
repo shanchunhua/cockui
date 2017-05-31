@@ -1,83 +1,17 @@
 <!--pages/mine/index.wxml-->
 <image src="/img/s49.jpg" style="width: 100%; height: 323rpx;"></image>
 <view class="in12">
-	<view class="sel_li">
+	<view class="sel_li" wx:for="{{henneries}}">
 		<view class="hea">
 			<image src="/img/s37.png" class="lef"></image>
 			<view class="tex">
 				<view class="he">
-					<text class="tit">张老四  看门狗XX</text>
-					<text class="at">当前领养<text class="bu">3</text>只</text>
+					<text class="tit">{{item.hennery.ownerName}}  {{item.hennery.dogName}} </text>
+					<text class="at">当前领养<text class="bu">{{item.totalQuantity}}</text>只</text>
 					<text class="clear"></text>
 				</view>
 				<view class="fo">
-					<text class="add">距离您16km  南京市溧水市XX街道</text>
-				</view>
-			</view>
-			<view class="clear"></view>
-		</view>
-		<view class="vid">
-			<image src="/img/s33.jpg"></image>
-		</view>
-		<view class="li_btn_tw">
-			<view class="li_btn">
-		        <view class="btn_con">
-		            <view class="icon" style="background: url('/img/s50.png'); background-size: cover;"></view>
-		            <text>继续领养</text>
-		        </view>
-		    </view>
-		    <view class="li_btn">
-		        <view class="btn_con">
-		            <view class="icon" style="background: url('/img/s51.png'); background-size: cover;"></view>
-		            <text>育养情况</text>
-		        </view>
-			</view>
-		</view>
-	</view>
-	<view class="sel_li">
-		<view class="hea">
-			<image src="/img/s37.png" class="lef"></image>
-			<view class="tex">
-				<view class="he">
-					<text class="tit">张老四  看门狗XX</text>
-					<text class="at">当前领养<text class="bu">3</text>只</text>
-					<text class="clear"></text>
-				</view>
-				<view class="fo">
-					<text class="add">距离您16km  南京市溧水市XX街道</text>
-				</view>
-			</view>
-			<view class="clear"></view>
-		</view>
-		<view class="vid">
-			<image src="/img/s33.jpg"></image>
-		</view>
-		<view class="li_btn_tw">
-			<view class="li_btn">
-		        <view class="btn_con">
-		            <view class="icon" style="background: url('/img/s50.png'); background-size: cover;"></view>
-		            <text>继续领养</text>
-		        </view>
-		    </view>
-		    <view class="li_btn">
-		        <view class="btn_con">
-		            <view class="icon" style="background: url('/img/s51.png'); background-size: cover;"></view>
-		            <text>育养情况</text>
-		        </view>
-			</view>
-		</view>
-	</view>
-	<view class="sel_li">
-		<view class="hea">
-			<image src="/img/s37.png" class="lef"></image>
-			<view class="tex">
-				<view class="he">
-					<text class="tit">张老四  看门狗XX</text>
-					<text class="at">当前领养<text class="bu">3</text>只</text>
-					<text class="clear"></text>
-				</view>
-				<view class="fo">
-					<text class="add">距离您16km  南京市溧水市XX街道</text>
+					<text class="add">距离您16km  {{item.hennery.address}} </text>
 				</view>
 			</view>
 			<view class="clear"></view>

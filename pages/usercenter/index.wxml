@@ -37,12 +37,14 @@
 	<view class="in35">
 		<view class="li">
 			<view class="in35">
+				<navigator url="/pages/uc_mycock/index">
 				<view class="li_b">
 					<view class="icon lef" style="background:url('/img/s9.png'); background-size: cover;"></view>
 					<text>公鸡订单</text>
 					<view class="icon rig" style="background:url('/img/s8.png'); background-size: cover;"></view>
 					<view class="clear"></view>
 				</view>
+				</navigator>
 			</view>
 		</view>
 		<view class="li">
@@ -87,7 +89,7 @@
 		</view>
 		<view class="li">
 			<view class="in35">
-				<view class="li_b">
+				<view class="li_b" bindtap="addressManagement">
 					<view class="icon lef" style="background:url('/img/s14.png'); background-size: cover;"></view>
 					<text>收货地址</text>
 					<view class="icon rig" style="background:url('/img/s8.png'); background-size: cover;"></view>

@@ -67,14 +67,15 @@ page{background-color: #f2f2f2; flex: 1; height: 100%; font-family: -apple-syste
 
 .indl .h2 text{font-size: 32rpx; color: #333;}
 .indl .dd{line-height: 56rpx;}
-.indl .d1{float: left; width: 180rpx; display: block; height: 56rpx;}
+.indl .d1{float: left; width: 182rpx; display: block; height: 56rpx;}
 .indl .d1 .te{text-align: right; display: block;}
-.indl .d2{float: left; width: 490rpx;}
+.indl .d2{float: left; width: 488rpx;}
 .indl .d2 .te{ color: #333333;}
 .indl .d2 .te .b{font-weight: bold;}
 .indl .d2 .vfo .vbtn{float: left;}
 .indl .d2 .vfo .vfo3{}
-.indl .d2 .vfo3 .vinp{float: left; width: 145rpx;}
+.indl .d2 .vfo3 .vinp{float: left; width: 143rpx;}
+.indl .d2 .vfo3 .vinp:nth-child(3){float: right;}
 .indl .d2 .vfo3 .vinp input{}
 .indl .d2 .vfo .v_lef{}
 .indl .d2 .vfo .inp{float: left;}
@@ -100,7 +101,7 @@ page{background-color: #f2f2f2; flex: 1; height: 100%; font-family: -apple-syste
 .ind_tab2 .li.on text{color: #3292ff;}
 .ind_tab2 .li.on .sp{display: block; height: 4rpx; width: 100%; background: #3292ff; left: 0; bottom: -1rpx; position: absolute;}
 
-
+.ind_tab3 .li{width: 33.33%;}
 
 
 

@@ -1,0 +1,9 @@
+/* pages/adopt/index.wxss */
+.ado_li{background: #fff;padding: 30rpx 0; border-bottom: 1rpx solid #e5e5e5;}
+.ado_li .li{line-height: 50rpx;}
+.ado_li .li2 .li{width: 50%; float: left;}
+.ado_li .li .b{font-weight: bold; color: #4c4c4c;}
+.ado_li .li2 .li .b.bu{color: #3292ff; font-weight: normal;}
+
+
+

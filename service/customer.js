@@ -4,5 +4,10 @@ module.exports = {
         return wxe.requestP({
             url: 'customerProperty/'+id, method: 'GET'
         });
+    },
+    loadCockAdoptionOrderSummary:function(){
+        return wxe.requestP({
+            url:'cockAdoptionOrder/index'
+        });
     }
 }

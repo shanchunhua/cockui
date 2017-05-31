@@ -15,11 +15,13 @@ Page({
   },
   onLoad: function () {
     console.log('onLoad')
+
     var self = this;
     customerService.loadCustomerProperty(2).then(function (res) {
       console.log(res);
       self.setData({ customerProperty: res.data });
     })
+
     /*
     var that = this
     //调用应用实例的方法获取全局数据

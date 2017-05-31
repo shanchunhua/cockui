@@ -1,8 +1,9 @@
 {
   "pages":[
     "pages/index/index",
+     "pages/usercenter/index",
     "pages/choosehennery/index",
-    "pages/usercenter/index",
+    "pages/uc_mycock/index",
     "pages/mycock/index",
     "pages/myegg/index",
     "pages/mybox/index"
