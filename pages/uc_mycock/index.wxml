@@ -1,130 +1,32 @@
 <view class="ind_tab2 ind_tab3">
-	<view class="li on">
+	<view class="li {{currentTab==0?'on':''}}" bindtap="changeTab" data-tabid="0">
 		<text>领养</text>
 		<view class="sp"></view>
 	</view>
-	<view class="li">
+	<view class="li {{currentTab==1?'on':''}}" bindtap="changeTab" data-tabid="1">
 		<text>转让</text>
 		<view class="sp"></view>
 	</view>
-	<view class="li">
+	<view class="li {{currentTab==2?'on':''}}" bindtap="changeTab" data-tabid="2">
 		<text>收回</text>
 		<view class="sp"></view>
 	</view>
 	<view class="clear"></view>
 </view>
+<block wx:for="{{orders}}">
 <view class="h15"></view>
-<view class="ado_li">
-	<view class="in40">
-		<view class="li">
-			<text class="at">订单编号：<text class="b">20179827282543</text></text>
-		</view>
-		<view class="li2">
-			<view class="li">
-				<text class="at">订单状态：<text class="b">已支付</text></text>
-			</view>
-			<view class="li">
-				<text class="at">支付时间：<text class="b">2017-05-07</text></text>
-			</view>
-			<view class="clear"></view>
-		</view>
-		<view class="li2">
-			<view class="li">
-				<text class="at">公鸡数量：<text class="b">1只</text></text>
-			</view>
-			<view class="li">
-				<text class="at">支付金额：<text class="b">234元</text></text>
-			</view>
-			<view class="clear"></view>
-		</view>
-		<view class="li2">
-			<view class="li">
-				<text class="at">饲养牧家：<text class="b">张老四</text></text>
-			</view>
-			<view class="li">
-				<text class="at">饲养状态：<text class="b bu">饲养中</text></text>
-			</view>
-			<view class="clear"></view>
-		</view>
-		<view class="li">
-			<text class="at">饲养地址：<text class="b">内蒙古乌拉特前旗23号</text></text>
-		</view>
-	</view>
-</view>
-<view class="h15"></view>
-<view class="ado_li">
-	<view class="in40">
-		<view class="li">
-			<text class="at">订单编号：<text class="b">20179827282543</text></text>
-		</view>
-		<view class="li2">
-			<view class="li">
-				<text class="at">订单状态：<text class="b">已支付</text></text>
-			</view>
-			<view class="li">
-				<text class="at">支付时间：<text class="b">2017-05-07</text></text>
-			</view>
-			<view class="clear"></view>
-		</view>
-		<view class="li2">
-			<view class="li">
-				<text class="at">公鸡数量：<text class="b">1只</text></text>
-			</view>
-			<view class="li">
-				<text class="at">支付金额：<text class="b">234元</text></text>
-			</view>
-			<view class="clear"></view>
-		</view>
-		<view class="li2">
-			<view class="li">
-				<text class="at">饲养牧家：<text class="b">张老四</text></text>
-			</view>
-			<view class="li">
-				<text class="at">饲养状态：<text class="b ">饲养中</text></text>
-			</view>
-			<view class="clear"></view>
-		</view>
-		<view class="li">
-			<text class="at">饲养地址：<text class="b">内蒙古乌拉特前旗23号</text></text>
-		</view>
-	</view>
-</view>
-<view class="h15"></view>
-<view class="ado_li">
-	<view class="in40">
-		<view class="li">
-			<text class="at">订单编号：<text class="b">20179827282543</text></text>
-		</view>
-		<view class="li2">
-			<view class="li">
-				<text class="at">订单状态：<text class="b">已支付</text></text>
-			</view>
-			<view class="li">
-				<text class="at">支付时间：<text class="b">2017-05-07</text></text>
-			</view>
-			<view class="clear"></view>
-		</view>
-		<view class="li2">
-			<view class="li">
-				<text class="at">公鸡数量：<text class="b">1只</text></text>
-			</view>
-			<view class="li">
-				<text class="at">支付金额：<text class="b">234元</text></text>
-			</view>
-			<view class="clear"></view>
-		</view>
-		<view class="li2">
-			<view class="li">
-				<text class="at">饲养牧家：<text class="b">张老四</text></text>
-			</view>
-			<view class="li">
-				<text class="at">饲养状态：<text class="b ">饲养中</text></text>
-			</view>
-			<view class="clear"></view>
-		</view>
-		<view class="li">
-			<text class="at">饲养地址：<text class="b">内蒙古乌拉特前旗23号</text></text>
-		</view>
-	</view>
-</view>
+<block wx:if="{{currentTab==0}}">
+<import src="_adoptionOrder.wxml"/>
+<template is="adoptionOrder" data="{{item}}" />
+</block>
+<block wx:if="{{currentTab==1}}">
+<import src="_transferOrder.wxml"/>
+<template is="transferOrder" data="{{item}}" />
+</block>
+<block wx:if="{{currentTab==2}}">
+<import src="_shippingOrder.wxml"/>
+<template is="shippingOrder" data="{{item}}" />
+</block>
+</block>
+
 

@@ -36,6 +36,9 @@ App({
                      console.log(res);
                     }
                   })
+                },
+                fail:function(err){
+                  console.error(err);
                 }
               })
             }

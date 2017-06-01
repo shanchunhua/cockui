@@ -1,0 +1,39 @@
+<template name="adoptionOrder">
+<view class="ado_li">
+	<view class="in40">
+		<view class="li">
+			<text class="at">订单编号：<text class="b">{{item.orderNo}}</text></text>
+		</view>
+		<view class="li2">
+			<view class="li">
+				<text class="at">订单状态：<text class="b">{{item.paid?'已':'未'}}支付</text></text>
+			</view>
+			<view class="li">
+				<text class="at">支付时间：<text class="b">2017-05-07</text></text>
+			</view>
+			<view class="clear"></view>
+		</view>
+		<view class="li2">
+			<view class="li">
+				<text class="at">公鸡数量：<text class="b">{{item.quantity}}只</text></text>
+			</view>
+			<view class="li">
+				<text class="at">支付金额：<text class="b">{{item.total}}元</text></text>
+			</view>
+			<view class="clear"></view>
+		</view>
+		<view class="li2">
+			<view class="li">
+				<text class="at">饲养牧家：<text class="b">{{item.hennery.ownerName}}</text></text>
+			</view>
+			<view class="li">
+				<text class="at">饲养状态：<text class="b bu">饲养中</text></text>
+			</view>
+			<view class="clear"></view>
+		</view>
+		<view class="li">
+			<text class="at">饲养地址：<text class="b">{{item.hennery.address}}</text></text>
+		</view>
+	</view>
+</view>
+</template>

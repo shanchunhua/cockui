@@ -1,0 +1,64 @@
+<template name="shippingOrder">
+	<view class="ado_li">
+		<view class="in40">
+			<view class="li">
+				<text class="at">收回编号：</text>
+				<text class="b">{{item.orderNo}}</text>
+			</view>
+			<view class="li2">
+				<view class="li">
+					<text class="at">订单状态：</text>
+					<text class="b">{{item.paid?'已':'未'}}支付
+					</text>
+				</view>
+				<view class="li">
+					<text class="at">提交时间：</text>
+					<text class="b">2017-05-07</text>
+
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="li2">
+				<view class="li">
+					<text class="at">快递公司：</text>
+					<text class="b">{{item.paid?'已':'未'}}支付</text>
+				</view>
+				<view class="li">
+					<text class="at">快递单号：</text>
+					<text class="b">2017-05-07</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="li2">
+				<view class="li">
+					<text class="at">公鸡数量：</text>
+					<text class="b">{{item.quantity}}只</text>
+				</view>
+				<view class="li">
+					<text class="at">支付金额：</text>
+					<text class="b">{{item.total}}元</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="li2">
+				<view class="li">
+					<text class="at">联系人：</text>
+					<text class="b">{{item.hennery.ownerName}}</text>
+				</view>
+				<view class="li">
+					<text class="at">联系电话：</text>
+					<text class="b bu">饲养中</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="li">
+				<text class="at">快递地址：</text>
+				<text class="b">{{item.hennery.address}}</text>
+			</view>
+			<view class="li">
+				<text class="at">所属领养订单：</text>
+				<text class="b">{{item.hennery.address}}</text>
+			</view>
+		</view>
+	</view>
+</template>
