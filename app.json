@@ -2,8 +2,13 @@
   "pages":[
     "pages/index/index",
      "pages/usercenter/index",
-    "pages/choosehennery/index",
+    "pages/choosehennery/index", 
+    "pages/market/index",
+    "pages/henrental/index",
     "pages/uc_mycock/index",
+    "pages/uc_mybox/index",
+    "pages/uc_mydeposit/index",
+    "pages/uc_mywallet/index",
     "pages/mycock/index",
     "pages/myegg/index",
     "pages/mybox/index"

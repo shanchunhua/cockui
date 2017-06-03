@@ -1,64 +1,20 @@
 <image src="/img/s63.jpg" style="width: 100%; height: 404rpx;"></image>
 <view class="leat_list">
-	<view class="li">
+	<view class="li" wx:for="{{list}}">
 		<view class="in40">
 			<image src="/img/s64.jpg" class="lef_img"></image>
 			<view class="tex">
-				<text class="titl">一把沙葱</text>
-				<text class="cent">沙葱属百合科多年生草本植物,茎叶针状,开白色小花,是沙漠草甸植物的伴生植物。</text>
+				<text class="titl">{{item.goods.name}}</text>
+				<text class="cent">{{item.goods.description}}</text>
 				<view class="att">
 					<view class="he">
-						<text class="le">最低0.5元</text>
-						<text class="ri">已偷到23份</text>
+						<text class="le">最低{{item.lowestPrice}}元</text>
+						<text class="ri">已偷到{{item.quantity}}份</text>
 						<view class="clear"></view>
 					</view>
 					<view class="fo">
 						<text class="le">最近偷到的时间</text>
-						<text class="ri">2017-05-06 15:23</text>
-						<view class="clear"></view>
-					</view>
-				</view>
-			</view>
-			<view class="clear"></view>
-		</view>
-	</view>
-	<view class="li">
-		<view class="in40">
-			<image src="/img/s64.jpg" class="lef_img"></image>
-			<view class="tex">
-				<text class="titl">一把沙葱</text>
-				<text class="cent">沙葱属百合科多年生草本植物,茎叶针状,开白色小花,是沙漠草甸植物的伴生植物。</text>
-				<view class="att">
-					<view class="he">
-						<text class="le">最低0.5元</text>
-						<text class="ri">已偷到23份</text>
-						<view class="clear"></view>
-					</view>
-					<view class="fo">
-						<text class="le">最近偷到的时间</text>
-						<text class="ri">2017-05-06 15:23</text>
-						<view class="clear"></view>
-					</view>
-				</view>
-			</view>
-			<view class="clear"></view>
-		</view>
-	</view>
-	<view class="li">
-		<view class="in40">
-			<image src="/img/s64.jpg" class="lef_img"></image>
-			<view class="tex">
-				<text class="titl">一把沙葱</text>
-				<text class="cent">沙葱属百合科多年生草本植物,茎叶针状,开白色小花,是沙漠草甸植物的伴生植物。</text>
-				<view class="att">
-					<view class="he">
-						<text class="le">最低0.5元</text>
-						<text class="ri">已偷到23份</text>
-						<view class="clear"></view>
-					</view>
-					<view class="fo">
-						<text class="le">最近偷到的时间</text>
-						<text class="ri">2017-05-06 15:23</text>
+						<text class="ri">{{item.lastStealTime}}</text>
 						<view class="clear"></view>
 					</view>
 				</view>

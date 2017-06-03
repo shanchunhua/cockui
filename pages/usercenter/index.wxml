@@ -16,18 +16,22 @@
 		</view>
 		<view class="prio">
 			<view class="lef">
+				<navigator url="/pages/uc_mywallet/index">
 				<view class="cent">
 					<text class="pri">{{customerProperty.balance}}<text class="el">元</text>
 					</text>
 					<text class="me">我的钱包</text>
 				</view>
+				</navigator>
 			</view>
 			<view class="rig">
+				<navigator url="/pages/uc_mydeposit/index">
 				<view class="cent">
 					<text class="pri">{{customerProperty.deposit}}<text class="el">元</text>
 					</text>
 					<text class="me">我的押金</text>
 				</view>
+				</navigator>
 			</view>
 			<view class="clear"></view>
 		</view>
@@ -79,12 +83,14 @@
 		</view>
 		<view class="li">
 			<view class="in35">
+				<navigator url="/pages/uc_mybox/index">
 				<view class="li_b">
 					<view class="icon lef" style="background:url('/img/s13.png'); background-size: cover;"></view>
 					<text>皮箱订单</text>
 					<view class="icon rig" style="background:url('/img/s8.png'); background-size: cover;"></view>
 					<view class="clear"></view>
 				</view>
+				</navigator>
 			</view>
 		</view>
 		<view class="li">

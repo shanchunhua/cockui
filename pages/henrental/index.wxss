@@ -1,0 +1,45 @@
+/* pages/rawegg/index.wxss */
+.raw_dl{background: #fff; padding: 30rpx 0; border-bottom: 1rpx solid #e5e5e5;}
+.raw_dl .dd{float: left; width: 33.33%; text-align: center;}
+.raw_dl .dd .at{display: block;padding-top: 12rpx;}
+.raw_dl .dd .num {color: #4c4c4c;}
+.raw_dl .dd .num .bu{color: #3292ff;font-size: 55rpx; padding-right: 10rpx;}
+
+.lis1 {background: #fff; border-bottom: 1rpx solid #e5e5e5;padding: 15rpx 0;}
+.lis1 .li {padding: 15rpx 0;}
+.lis1 .li .img{width: 80rpx; height: 80rpx; float: left;}
+.lis1 .li .tex{float: left; width: 300rpx; margin-left: 30rpx;} 
+.lis1 .li .tex .num{padding-top: 10rpx; display: block; color: #4c4c4c;}
+.lis1 .li .tex .num .b{font-weight: bold; padding-right: 3rpx;}
+.lis1 .li .tex .p{display: block; padding-top: 8rpx;}
+.lis1 .li .com{float: right; line-height: 80rpx; color: #4c4c4c;}
+
+.raw_form{background: #fff; padding: 20rpx 0;}
+.raw_form .lef{float: left; line-height: 60rpx;}
+.raw_form .lef .b{color: #4c4c4c;}
+.raw_form .rig{float: right;}
+.raw_form .rig .vbtn{float: left;}
+.raw_form .rig .inp{float: left; width:80rpx; }
+
+.cont{background: #fff; padding:30rpx 0;border-bottom: 1rpx solid #e5e5e5; }
+.cont .h2{color: #4c4c4c;font-size: 32rpx;}
+.cont .cen{padding-top: 20rpx;}
+.cont .p{display: block; line-height:40rpx;}
+
+.list{background: #fff; padding-bottom: 30rpx;border-bottom: 1rpx solid #e5e5e5;}
+.list .li{padding-top: 30rpx;}
+.list .tit{font-weight: bold; color: #4c4c4c;}
+.list .p{padding-top: 10rpx;display: block;}
+.list .img{display: block; width: 100%; height: 356rpx;margin-top: 10rpx;}
+
+
+
+
+
+
+
+
+
+
+
+

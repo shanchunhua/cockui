@@ -1,0 +1,120 @@
+<view class="pb100">
+	<view class="goo_he">
+		<navigator url="/pages/henrental/index">
+		<view class="in40">
+			<image src="/img/s68.jpg" class="img"></image>
+			<view class="tex">
+				<text class="tit">借鸡生蛋</text>
+				<text class="p">借一只母鸡为你生蛋 好玩更好吃</text>
+			</view>
+			<view class="clear"></view>
+		</view>
+		</navigator>
+	</view>
+	<view class="h15"></view>
+	<view class="goo_h2">
+		<view class="in40">
+			<text class="h2">牧家早市</text>
+			<text class="p">统一转让价为258元/只，每只6斤以上</text>
+			<view class="clear"></view>
+		</view>
+	</view>
+	<view class="goo_lis1">
+		<view class="in40">
+			<view class="li">
+				<image src="/img/s69.jpg" class="img"></image>
+				<view class="tex">
+					<text class="nam">张三</text>
+					<text class="p">1只  2017-05-06 转让</text>
+				</view>
+				<view class="btn">抢购</view>
+				<view class="clear"></view>
+			</view>
+			<view class="li">
+				<image src="/img/s69.jpg" class="img"></image>
+				<view class="tex">
+					<text class="nam">张三</text>
+					<text class="p">1只  2017-05-06 转让</text>
+				</view>
+				<view class="btn">抢购</view>
+				<view class="clear"></view>
+			</view>
+			<view class="li">
+				<image src="/img/s69.jpg" class="img"></image>
+				<view class="tex">
+					<text class="nam">张三</text>
+					<text class="p">1只  2017-05-06 转让</text>
+				</view>
+				<view class="btn">抢购</view>
+				<view class="clear"></view>
+			</view>
+		</view>
+	</view>
+	<view class="h15"></view>
+	<view class="goo_h2">
+		<view class="in40">
+			<text class="h2">牧家早市</text>
+			<text class="p">统一转让价为258元/只，每只6斤以上</text>
+			<view class="clear"></view>
+		</view>
+	</view>
+	<view class="goo_lis1 goo_lis2">
+		<view class="in40">
+			<view class="li">
+				<image src="/img/s70.jpg" class="img"></image>
+				<view class="tex">
+					<text class="nam">产品的标题</text>
+					<text class="p">1只7斤公鸡+30枚鸡蛋</text>
+					<text class="pic"><text class="num">145</text>元<text class="del">原价245元</text></text>
+				</view>
+				<view class="btn">抢购</view>
+				<view class="clear"></view>
+			</view>
+			<view class="li">
+				<image src="/img/s70.jpg" class="img"></image>
+				<view class="tex">
+					<text class="nam">产品的标题</text>
+					<text class="p">1只7斤公鸡+30枚鸡蛋</text>
+					<text class="pic"><text class="num">145</text>元<text class="del">原价245元</text></text>
+				</view>
+				<view class="btn">抢购</view>
+				<view class="clear"></view>
+			</view>
+			<view class="li">
+				<image src="/img/s70.jpg" class="img"></image>
+				<view class="tex">
+					<text class="nam">产品的标题</text>
+					<text class="p">1只7斤公鸡+30枚鸡蛋</text>
+					<text class="pic"><text class="num">145</text>元<text class="del">原价245元</text></text>
+				</view>
+				<view class="btn">抢购</view>
+				<view class="clear"></view>
+			</view>
+			<view class="li">
+				<image src="/img/s70.jpg" class="img"></image>
+				<view class="tex">
+					<text class="nam">产品的标题</text>
+					<text class="p">1只7斤公鸡+30枚鸡蛋</text>
+					<text class="pic"><text class="num">145</text>元<text class="del">原价245元</text></text>
+				</view>
+				<view class="btn">抢购</view>
+				<view class="clear"></view>
+			</view>
+		</view>
+	</view>
+	<view class="h15"></view>
+</view>
+<view class="ind_foo">
+	<view class="li ">
+		<view class="icon" style="background:url('/img/s16.png'); background-size: cover;"></view>
+		<text>草原红公鸡</text>
+	</view>
+	<view class="li on">
+		<view class="icon" style="background:url('/img/s17o.png'); background-size: cover;"></view>
+		<text>牧家货架</text>
+	</view>
+	<view class="li ">
+		<view class="icon" style="background:url('/img/s18.png'); background-size: cover;"></view>
+		<text>个人中心</text>
+	</view>
+</view>

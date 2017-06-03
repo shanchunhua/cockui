@@ -1,0 +1,16 @@
+/* pages/leather2/index.wxss */
+.leat_list .li{background: #fff; margin-top: 15rpx; border-bottom:1rpx solid #e6e6e6;}
+.leat_list .li .lib{padding: 30rpx 0;}
+.leat_list .lef_img{float: left; width: 150rpx; height: 150rpx; border:1rpx solid #e6e6e6; box-sizing: border-box;}
+.leat_list .tex {float: left;margin-left: 25rpx; width: 490rpx;}
+.leat_list .tex .titl{display: block; font-weight: bold; color: #4c4c4c;}
+.leat_list .tex .cent{padding-top: 12rpx; display: block;}
+.leat_list .tex .att{padding-top: 20rpx;}
+.leat_list .tex .att .le{float: left;}
+.leat_list .tex .att .ri{float: right; color: #4c4c4c;}
+.leat_list .tex .att .fo{padding-top: 10rpx;}
+.leat_list .li .hea{border-bottom: 1rpx solid #e5e5e5; line-height: 78rpx;}
+.leat_list .li .hea .lef{float: left;}
+.leat_list .li .hea .rig{float: right;}
+.leat_list .li .hea .rig .nam{color: #3292ff;}
+

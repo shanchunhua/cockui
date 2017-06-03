@@ -1,0 +1,16 @@
+/* pages/pledge/index.wxss */
+.body{width: 100%; height: 100%; background: #fff;}
+.walha{width: 100%; height: 379rpx;}
+.walha .img{width: 170rpx; height: 170rpx; margin: 0 auto 0; display: block; padding-top: 38rpx;}
+.walha .num{text-align: center;display: block;color: #4c4c4c; padding-top: 20rpx;}
+.walha .num .b{font-size: 50rpx;padding-left: 10rpx;}
+.walha .at{display: block; text-align: center;padding-top: 20rpx;}
+
+.wal_list{background: #fff;}
+.wal_list .li{padding: 20rpx 0; border-bottom: 1rpx solid #e5e5e5;}
+.wal_list .lef{float: left;}
+.wal_list .rig{float: right;}
+.wal_list .rig .pic{ color: #4c4c4c;}
+.wal_list .lef .tit{color: #4c4c4c;display: block;}
+.wal_list .data{ font-size: 22rpx;display: block;padding-top: 10rpx;}
+.wal_list .rig .data{text-align: right;}

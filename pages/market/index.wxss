@@ -1,0 +1,37 @@
+/* pages/goods/index.wxss */
+.goo_he{background: #fff; padding: 40rpx 0; border-bottom: 1rpx solid #e5e5e5;}
+.goo_he .img{float: left; width: 132rpx; height: 132rpx; display: block; box-sizing: border-box; border:1rpx solid #e5e5e5;}
+.goo_he .tex{float: left; width: 500rpx; margin-left: 30rpx;}
+.goo_he .tex .tit{display: block;padding-top: 8rpx; color: #4c4c4c;font-size: 32rpx;}
+.goo_he .tex .p{display: block; padding-top: 15rpx;}
+
+.goo_h2 {background: #fff; border-bottom: 1rpx solid #e5e5e5; line-height: 88rpx;}
+.goo_h2 .h2{float: left; color: #4c4c4c;font-size: 32rpx;}
+.goo_h2 .p{float: right;}
+
+
+.goo_lis1{background: #fff;padding: 20rpx 0;border-bottom: 1rpx solid #e5e5e5;}
+.goo_lis1 .li{padding: 15rpx 0;}
+.goo_lis1 .li .img{width: 78rpx; height: 78rpx;box-sizing: border-box; border:1rpx solid #e5e5e5; display: block; float: left;}
+.goo_lis1 .li .tex{float: left; width: 400rpx;margin-left: 30rpx;}
+.goo_lis1 .li .tex .nam{display: block;padding-top: 3rpx; color: #4c4c4c; font-size: 26rpx;}
+.goo_lis1 .li .tex .p{display: block;padding-top: 12rpx;}
+.goo_lis1 .li .btn{float: right; width: 136rpx; height: 54rpx; line-height: 54rpx; text-align: center; color: #fff;background: #3292ff;border-radius: 27rpx;font-size: 26rpx;margin-top: 12rpx;}
+.goo_lis2 .li .img{width: 112rpx; height: 112rpx;}
+.goo_lis2 .li .tex .nam{font-weight: bold;}
+.goo_lis2 .li .tex{width: 375rpx;}
+.goo_lis2 .li .tex .pic{padding-top: 10rpx; display: block;}
+.goo_lis2 .li .tex .pic .num{color: #3292ff;}
+.goo_lis2 .li .tex .pic .del{padding-left: 15rpx; text-decoration: line-through;}
+.goo_lis2 .li .btn{margin-top: 24rpx;}
+
+
+
+
+
+
+
+
+
+
+

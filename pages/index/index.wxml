@@ -9,11 +9,11 @@
 		<view class="clear"></view>
 	</view>
 	<view class="h15"></view>
-    <navigator url="/pages/choosehennery/index">
-	<view class="index">
-		<image src="/img/s22.jpg" class="bann_img h257"></image>
-	</view>
-    </navigator>
+	<navigator url="/pages/choosehennery/index">
+		<view class="index">
+			<image src="/img/s22.jpg" class="bann_img h257"></image>
+		</view>
+	</navigator>
 	<view class="ind_nav">
 		<view class="li">
 			<image src="/img/s23.png"></image>
@@ -39,39 +39,45 @@
 	</view>
 	<view class="h15"></view>
 	<view class="ind_me">
-	
+
 		<view class="lef">
-    	 <navigator url="/pages/mycock/index">
-			<text class="t1">我的红公鸡</text>
-			<text class="t2"><text class="usm">{{customerProperty.adoptedCockCount}}</text>只</text>
-			<image src="/img/s28.jpg" class="img"></image>
-      </navigator>
+			<navigator url="/pages/mycock/index">
+				<text class="t1">我的红公鸡</text>
+				<text class="t2">
+					<text class="usm">{{customerProperty.adoptedCockCount}}</text>只</text>
+				<image src="/img/s28.jpg" class="img"></image>
+			</navigator>
 		</view>
-		 
+
 		<view class="rig">
-			 <navigator url="/pages/myegg/index">
-			<view class="hea rig_ch">
-				
-				<text class="t1">我的鸡蛋</text>
-				<text class="t2"><text class="usm">{{customerProperty.leftEggCount}}</text>只</text>
-				<image src="/img/s29.jpg" class="img"></image>
-			
-			</view>
-      	 </navigator>
-         	 <navigator url="/pages/mybox/index">
-			<view class="foo rig_ch">
-				<text class="t1">我的皮箱</text>
-				<text class="t2"><text class="usm">{{customerProperty.goodsCountInBag}}</text>份</text>
-				<image src="/img/s30.jpg" class="img"></image>
-			</view>
-      </navigator>
+			<navigator url="/pages/myegg/index">
+				<view class="hea rig_ch">
+
+					<text class="t1">我的鸡蛋</text>
+					<text class="t2">
+						<text class="usm">{{customerProperty.leftEggCount}}</text>只</text>
+					<image src="/img/s29.jpg" class="img"></image>
+
+				</view>
+			</navigator>
+			<navigator url="/pages/mybox/index">
+				<view class="foo rig_ch">
+					<text class="t1">我的皮箱</text>
+					<text class="t2">
+						<text class="usm">{{customerProperty.goodsCountInBag}}</text>份</text>
+					<image src="/img/s30.jpg" class="img"></image>
+				</view>
+			</navigator>
 		</view>
 		<view class="clear"></view>
 	</view>
 	<view class="h15"></view>
 	<view class="index ind_ta">
-		<text class="ta"  wx:if="{{customerProperty.eligibleForSteal}}">你有 <text class="a">1</text> 次偷 <text class="a">塔尔勒图家</text> 牧民家的 <text class="a">草鸡蛋</text> 机会</text>
-    <text class="ta"  wx:else>领养红公鸡后，每天才有偷盗牧家美味的机会哦！</text>
+		<text class="ta" wx:if="{{customerProperty.eligibleForSteal}}">你有
+			<text class="a">1</text> 次偷
+			<text class="a">塔尔勒图家</text> 牧民家的
+			<text class="a">草鸡蛋</text> 机会</text>
+		<text class="ta" wx:else>领养红公鸡后，每天才有偷盗牧家美味的机会哦！</text>
 		<image src="/img/s31.jpg" class="bann_img h257"></image>
 	</view>
 	<view class="ind_ad">
@@ -85,26 +91,21 @@
 </view>
 <view class="ind_foo">
 	<view class="li on">
+		<navigator url="/pages/index/index">
 		<view class="icon" style="background:url('/img/s16o.png'); background-size: cover;"></view>
 		<text>草原红公鸡</text>
+		</navigator>
 	</view>
 	<view class="li">
-		<view class="icon" style="background:url('/img/s17.png'); background-size: cover;"></view>
-		<text>牧家货架</text>
+		<navigator url="/pages/market/index">
+			<view class="icon" style="background:url('/img/s17.png'); background-size: cover;"></view>
+			<text>牧家货架</text>
+		</navigator>
 	</view>
 	<view class="li ">
-     <navigator url="/pages/usercenter/index">
-		<view class="icon" style="background:url('/img/s18.png'); background-size: cover;"></view>
-		<text>个人中心</text>
-     </navigator>
+		<navigator url="/pages/usercenter/index">
+			<view class="icon" style="background:url('/img/s18.png'); background-size: cover;"></view>
+			<text>个人中心</text>
+		</navigator>
 	</view>
 </view>
-
-
-
-
-
-
-
-
-
