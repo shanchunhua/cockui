@@ -1,0 +1,120 @@
+<view class="body">
+	<view class="ind_tab2">
+		<view class="li on">
+			<text>我得到的</text>
+			<view class="sp"></view>
+		</view>
+		<view class="li">
+			<text>下单记录</text>
+			<view class="sp"></view>
+		</view>
+		<view class="clear"></view>
+	</view>
+	<view class="wal_list">
+		<view class="in40">
+			<view class="li">
+				<view class="lef">
+					<text class="tit">提现</text>
+						<text class="tit">提现</text>
+				</view>
+				<view class="rig">
+					<text class="pic">50.00</text>
+					<text class="pic">50.00</text>
+				</view>
+				<view class="clear"></view>
+				
+			</view>
+			<view class="li">
+				<view class="lef">
+					<text class="tit">提现</text>
+					<text class="data">借鸡生蛋</text>
+				</view>
+				<view class="rig">
+					<text class="tit">1枚</text>
+					<text class="data">2017-05-07 10:35</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="li">
+				<view class="lef">
+					<text class="tit">提现</text>
+					<text class="data">2017-05-07 10:35</text>
+				</view>
+				<view class="rig">
+					<text class="pic">50.00</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="li">
+				<view class="lef">
+					<text class="tit">提现</text>
+					<text class="data">2017-05-07 10:35</text>
+				</view>
+				<view class="rig">
+					<text class="pic">50.00</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="li">
+				<view class="lef">
+					<text class="tit">提现</text>
+					<text class="data">2017-05-07 10:35</text>
+				</view>
+				<view class="rig">
+					<text class="pic">50.00</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="li">
+				<view class="lef">
+					<text class="tit">提现</text>
+					<text class="data">2017-05-07 10:35</text>
+				</view>
+				<view class="rig">
+					<text class="pic">50.00</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="li">
+				<view class="lef">
+					<text class="tit">提现</text>
+					<text class="data">2017-05-07 10:35</text>
+				</view>
+				<view class="rig">
+					<text class="pic">50.00</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="li">
+				<view class="lef">
+					<text class="tit">提现</text>
+					<text class="data">2017-05-07 10:35</text>
+				</view>
+				<view class="rig">
+					<text class="pic">50.00</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="li">
+				<view class="lef">
+					<text class="tit">提现</text>
+					<text class="data">2017-05-07 10:35</text>
+				</view>
+				<view class="rig">
+					<text class="pic">50.00</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="li">
+				<view class="lef">
+					<text class="tit">提现</text>
+					<text class="data">2017-05-07 10:35</text>
+				</view>
+				<view class="rig">
+					<text class="pic">50.00</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+		</view>
+	</view>
+</view>

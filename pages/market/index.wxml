@@ -104,17 +104,5 @@
 	</view>
 	<view class="h15"></view>
 </view>
-<view class="ind_foo">
-	<view class="li ">
-		<view class="icon" style="background:url('/img/s16.png'); background-size: cover;"></view>
-		<text>草原红公鸡</text>
-	</view>
-	<view class="li on">
-		<view class="icon" style="background:url('/img/s17o.png'); background-size: cover;"></view>
-		<text>牧家货架</text>
-	</view>
-	<view class="li ">
-		<view class="icon" style="background:url('/img/s18.png'); background-size: cover;"></view>
-		<text>个人中心</text>
-	</view>
-</view>
+<import src="../template/nav.wxml"/>
+<template is="nav" data="{{tabid:1}}" />

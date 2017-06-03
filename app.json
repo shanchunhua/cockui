@@ -9,6 +9,9 @@
     "pages/uc_mybox/index",
     "pages/uc_mydeposit/index",
     "pages/uc_mywallet/index",
+    "pages/uc_myegg/index",
+    "pages/uc_mymarket/index",
+    "pages/uc_myselection/index",
     "pages/mycock/index",
     "pages/myegg/index",
     "pages/mybox/index"

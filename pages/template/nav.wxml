@@ -1,0 +1,22 @@
+<template name="nav">
+    <view class="ind_foo">
+        <view class="li {{tabid==0?'on':''}}">
+            <navigator url="/pages/index/index">
+                <view class="icon" style="background:url('/img/s16o.png'); background-size: cover;"></view>
+                <text>草原红公鸡</text>
+            </navigator>
+        </view>
+        <view class="li {{tabid==1?'on':''}}">
+            <navigator url="/pages/market/index">
+                <view class="icon" style="background:url('/img/s17.png'); background-size: cover;"></view>
+                <text>牧家货架</text>
+            </navigator>
+        </view>
+        <view class="li {{tabid==2?'on':''}}">
+            <navigator url="/pages/usercenter/index">
+                <view class="icon" style="background:url('/img/s18.png'); background-size: cover;"></view>
+                <text>个人中心</text>
+            </navigator>
+        </view>
+    </view>
+</template>

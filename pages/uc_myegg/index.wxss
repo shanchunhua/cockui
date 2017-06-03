@@ -1,0 +1,25 @@
+/* pages/wallet/index.wxss */
+
+.body{width: 100%; height: 100%; background: #fff;}
+.walha{width: 100%; height: 456rpx;}
+.walha .img{width: 170rpx; height: 170rpx; margin: 0 auto 0; display: block; padding-top: 38rpx;}
+.walha .num{text-align: center;display: block;color: #4c4c4c; padding-top: 20rpx;}
+.walha .num .b{font-size: 50rpx;padding-left: 10rpx;}
+.walha .btn{display: block; margin: 20rpx auto 0; width: 324rpx; height: 60rpx; line-height: 60rpx; text-align: center; color: #fff; background: #3292ff;border-radius: 30rpx; font-size: 26rpx;}
+.walha .at{display: block; text-align: center;padding-top: 20rpx;}
+
+.wal_list{background: #fff;}
+.wal_list .li{padding: 20rpx 0; border-bottom: 1rpx solid #e5e5e5;}
+.wal_list .lef{float: left;}
+.wal_list .rig{float: right;text-align: right;}
+.wal_list .rig .pic{line-height: 60rpx; font-size: 32rpx; color: #4c4c4c;}
+.wal_list .lef .tit{color: #4c4c4c;display: block;}
+.data{display: block;padding-top: 5rpx;}
+
+
+
+
+
+
+
+
