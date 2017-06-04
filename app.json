@@ -5,6 +5,7 @@
     "pages/choosehennery/index", 
     "pages/market/index",
     "pages/henrental/index",
+    "pages/henrental/success",
     "pages/uc_mycock/index",
     "pages/uc_mybox/index",
     "pages/uc_mydeposit/index",
