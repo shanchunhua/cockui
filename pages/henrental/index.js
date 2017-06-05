@@ -1,4 +1,6 @@
 // pages/rawegg/index.js
+var henRentOrderService = require('../../service/henRentOrder.js');
+var app = getApp()
 Page({
 
   /**
@@ -6,7 +8,10 @@ Page({
    */
   data: {
     order: {
-      quantity: 1
+      quantity: 1,
+      price: 39,
+      total: 39,
+      customer: app.globalData.userInfo
     }
   },
 
@@ -14,10 +19,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log( app.globalData.userInfo);
+    this.data.order.customer=app.globalData.userInfo;
   },
   plus: function () {
     this.data.order.quantity = this.data.order.quantity + 1;
+    this.data.order.total = this.data.order.quantity * this.data.order.price;
     this.setData({
       order: this.data.order
     })
@@ -25,17 +32,22 @@ Page({
   minus: function () {
     if (this.data.order.quantity > 1) {
       this.data.order.quantity = this.data.order.quantity - 1;
+      this.data.order.total = this.data.order.quantity * this.data.order.price;
       this.setData({
         order: this.data.order
-      })
+      });
     }
 
   },
 
   pay: function () {
-    wx.navigateTo({
-      url: '/pages/henrental/success'
+    var order=this.data.order;
+    henRentOrderService.save(order).then(function (res) {
+      wx.navigateTo({
+        url: '/pages/henrental/success'
+      });
     });
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

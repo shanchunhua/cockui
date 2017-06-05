@@ -1,4 +1,6 @@
 // pages/goods/index.js
+var app = getApp()
+var cockTransferService = require('../../service/cockTransfer.js');
 Page({
 
   /**
@@ -12,7 +14,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    cockTransferService.loadOngoingTransferOrders().then(function(res){
+      console.log(res);
+    })
   },
 
   /**
