@@ -1,0 +1,213 @@
+<!--index.wxml-->
+<view class="sel_li">
+	<view class="hea">
+		<image src="/img/s37.png" class="lef"></image>
+		<view class="tex">
+			<view class="he">
+				<text class="tit">张老四  看门狗XX</text>
+				<text class="clear"></text>
+			</view>
+			<view class="fo">
+				<text class="add">距离您16km  南京市溧水市XX街道</text>
+			</view>
+		</view>
+		<view class="clear"></view>
+	</view>
+	<view class="vid">
+		<image src="/img/s33.jpg"></image>
+	</view>
+	<view class="min_vid">
+		
+		<view class="img">
+			<image src="/img/s34.jpg"></image>
+			<text>生活照</text>
+		</view>
+		<view class="img">
+			<image src="/img/s35.jpg"></image>
+			<text>大牧场</text>
+		</view>
+		<view class="img">
+			<image src="/img/s36.jpg"></image>
+			<text>家禽记</text>
+		</view>
+		<view class="clear"></view>
+		
+	</view>
+</view>
+<view class="h15"></view>
+<view class="map">
+	<image src="/img/s52.jpg"></image>
+</view>
+<view class="h15"></view>
+<view class="section section_gap swiper">
+    <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
+            autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block >
+            <swiper-item class="swip_pa">
+                <view class="swiper-item">
+                	<view class="he">
+                		<text class="num"><text class="mu">8</text>天</text>
+						<text class="sp">回收剩余天数</text>
+						<view class="clear"></view>
+                	</view>
+                	<view class="btn">育养完成</view>
+                	<view class="ul">
+                		<text class="li">领养时间：<text class="b"><text class="sr">2017-04-30 17:00</text></text></text>
+                		<text class="li">领养数量：<text class="b"><text class="sr">4</text> 只</text></text>
+                		<text class="li">领养价格：<text class="b"><text class="sr">345</text>元</text></text>
+                	</view>
+                </view>
+            </swiper-item>
+        </block>
+        <block >
+            <swiper-item class="swip_pa">
+                <view class="swiper-item">
+                	<view class="he">
+                		<text class="num"><text class="mu">8</text>天</text>
+						<text class="sp">回收剩余天数</text>
+						<view class="clear"></view>
+                	</view>
+                	<view class="btn">育养完成</view>
+                	<view class="ul">
+                		<text class="li">领养时间：<text class="b"><text class="sr">2017-04-30 17:00</text></text></text>
+                		<text class="li">领养数量：<text class="b"><text class="sr">4</text> 只</text></text>
+                		<text class="li">领养价格：<text class="b"><text class="sr">345</text>元</text></text>
+                	</view>
+                </view>
+            </swiper-item>
+        </block>
+        <block >
+            <swiper-item class="swip_pa">
+                <view class="swiper-item">
+                	<view class="he">
+                		<text class="num"><text class="mu">8</text>天</text>
+						<text class="sp">回收剩余天数</text>
+						<view class="clear"></view>
+                	</view>
+                	<view class="btn">育养完成</view>
+                	<view class="ul">
+                		<text class="li">领养时间：<text class="b"><text class="sr">2017-04-30 17:00</text></text></text>
+                		<text class="li">领养数量：<text class="b"><text class="sr">4</text> 只</text></text>
+                		<text class="li">领养价格：<text class="b"><text class="sr">345</text>元</text></text>
+                	</view>
+                </view>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+<view class="li_btn_tw">
+	<view class="li_btn">
+        <view class="btn_con">
+            <view class="icon" style="background: url('/img/s53.png'); background-size: cover;"></view>
+            <text>打赏</text>
+        </view>
+    </view>
+    <view class="li_btn">
+        <view class="btn_con">
+            <view class="icon" style="background: url('/img/s54.png'); background-size: cover;"></view>
+            <text>转让</text>
+        </view>
+	</view>
+	<view class="li_btn">
+        <view class="btn_con">
+            <view class="icon" style="background: url('/img/s55.png'); background-size: cover;"></view>
+            <text>收回</text>
+        </view>
+	</view>
+	<view class="clear"></view>
+</view>
+<view class="h15"></view>
+<view class="ind_tab2">
+	<view class="li on">
+		<text>育养记录</text>
+		<view class="sp"></view>
+	</view>
+	<view class="li">
+		<text>育雏记录</text>
+		<view class="sp"></view>
+	</view>
+	<view class="clear"></view>
+</view>
+<view class="rec_list">
+	<view class="in40">
+		<view class="li">
+			<view class="cir">
+				<view class="ci"></view>
+			</view>
+			<view class="rig">
+				<text class="tit">2017-05-01</text>
+				<text class="centent">晴天北风4级，气温24度正常，灯泡换成40W，23小时光明，1小时黑暗</text>
+				<view class="img">
+					<view class="imgbod">
+						<image src="/img/s56.jpg"></image>
+						<image src="/img/s56.jpg"></image>
+						<image src="/img/s56.jpg"></image>
+						<view class="clear"></view>
+						<text class="imgt">50>></text>
+					</view>
+					
+				</view>
+			</view>
+		</view>
+		<view class="li">
+			<view class="cir">
+				<view class="ci"></view>
+			</view>
+			<view class="rig">
+				<text class="tit">2017-05-01</text>
+				
+				<view class="img">
+					<view class="imgbod">
+						<image src="/img/s56.jpg"></image>
+						<image src="/img/s56.jpg"></image>
+						<image src="/img/s56.jpg"></image>
+						<view class="clear"></view>
+						
+					</view>
+					
+				</view>
+			</view>
+		</view>
+		<view class="li">
+			<view class="cir">
+				<view class="ci"></view>
+			</view>
+			<view class="rig">
+				<text class="tit">2017-05-01</text>
+				
+				<view class="img">
+					<view class="imgbod">
+						<image src="/img/s56.jpg"></image>
+						<image src="/img/s56.jpg"></image>
+						<image src="/img/s56.jpg"></image>
+						<view class="clear"></view>
+						
+					</view>
+					
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
