@@ -97,22 +97,28 @@
 </view>
 <view class="li_btn_tw">
 	<view class="li_btn">
+		<navigator url="/pages/mycock/reward">
         <view class="btn_con">
             <view class="icon" style="background: url('/img/s53.png'); background-size: cover;"></view>
             <text>打赏</text>
         </view>
+		</navigator>
     </view>
     <view class="li_btn">
+		<navigator url="/pages/mycock/transfer">
         <view class="btn_con">
             <view class="icon" style="background: url('/img/s54.png'); background-size: cover;"></view>
             <text>转让</text>
         </view>
+		</navigator>
 	</view>
 	<view class="li_btn">
+		<navigator url="/pages/mycock/withdraw">
         <view class="btn_con">
             <view class="icon" style="background: url('/img/s55.png'); background-size: cover;"></view>
             <text>收回</text>
         </view>
+		</navigator>
 	</view>
 	<view class="clear"></view>
 </view>

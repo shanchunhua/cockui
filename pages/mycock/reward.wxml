@@ -1,0 +1,53 @@
+<!--index.wxml-->
+<image class="userinfo-avatar" src="/img/s1.jpg" background-size="cover"></image>
+<view class="lis">
+    <view class="li">
+        <view class="bo">
+            <text class="te1"><text class="money">0.1</text> <text>元</text></text>
+            <text class="t1">初来乍到</text>
+            <text class="t1">一点心意</text>
+        </view>
+    </view>
+    
+     <view class="li">
+        <view class="bo">
+            <text class="te1"><text class="money">0.1</text> <text>元</text></text>
+            <text class="t1">初来乍到</text>
+            <text class="t1">一点心意</text>
+        </view>
+    </view>
+
+     <view class="li">
+        <view class="bo">
+            <text class="te1"><text class="money">0.1</text> <text>元</text></text>
+            <text class="t1">初来乍到</text>
+            <text class="t1">一点心意</text>
+        </view>
+    </view>
+
+     <view class="li">
+        <view class="bo">
+            <text class="te1"><text class="money">0.1</text> <text>元</text></text>
+            <text class="t1">初来乍到</text>
+            <text class="t1">一点心意</text>
+        </view>
+    </view>
+
+     <view class="li">
+        <view class="bo">
+            <text class="te1"><text class="money">0.1</text> <text>元</text></text>
+            <text class="t1">初来乍到</text>
+            <text class="t1">一点心意</text>
+        </view>
+    </view>
+
+     <view class="li">
+        <view class="bo">
+            <text class="te1"><text class="money">0.1</text> <text>元</text></text>
+            <text class="t1">初来乍到</text>
+            <text class="t1">一点心意</text>
+        </view>
+    </view>
+</view>
+
+

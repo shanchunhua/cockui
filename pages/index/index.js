@@ -1,7 +1,8 @@
 //index.js
 //获取应用实例
 var customerService = require('../../service/customer.js');
-var app = getApp()
+var stealOrderService = require('../../service/stealOrder.js');
+var app = getApp();
 Page({
   data: {
     customerProperty: {},
@@ -20,7 +21,17 @@ Page({
     customerService.loadCustomerProperty(2).then(function (res) {
       console.log(res);
       self.setData({ customerProperty: res.data });
-    })
+      return res.data;
+    }).then(function(property){
+      if(property.eligibleForSteal){
+       return stealOrderService.pickHenneryToSteal()
+      }
+    }).then(function(res){
+      self.setData({
+        stealHennery:res.data
+      });
+      console.log(self.data);
+    });
 
     /*
     var that = this

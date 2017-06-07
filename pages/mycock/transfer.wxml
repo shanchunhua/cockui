@@ -1,0 +1,50 @@
+<view class="h15"></view>
+<view class="make_dl">
+	<view class="orddl">
+		<view class="in40">
+			<view class="indl">
+				<view class="dd d1">
+					<text class="te">红公鸡净重量：</text>
+				</view>
+				<view class="dd d2">
+					<text class="te">每只<text class="b">6</text>斤以上</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="indl">
+				<view class="dd d1">
+					<text class="te">早市转让价格：</text>
+				</view>
+				<view class="dd d2">
+					<text class="te"><text class="b">209</text>元/只</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="indl">
+				<view class="dd d1">
+					<text class="te">共可挂单转让：</text>
+				</view>
+				<view class="dd d2">
+					<text class="te"><text class="b">4</text>只</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="indl">
+				<view class="dd d1">
+					<text class="te">您本次要转让：</text>
+				</view>
+				<view class="dd d2">
+					<text class="te"><text class="b">1</text>只</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="mak_p">
+	<text>1、点击【立即挂单】，您所转让的产品将会在【牧家早市】中出售</text>
+	<text>2、为了尽快成单，每次只能挂单1只，请分享给您更多的朋友！</text>
+</view>
+<view class="foo_btn2">
+	<view class="btn" bindtap="pay"><text>立即支付</text></view>
+</view>

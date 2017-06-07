@@ -1,0 +1,41 @@
+/**index.wxss**/
+
+.userinfo-avatar {
+  width: 100%;
+}
+.lis .li{
+  margin-top: 60rpx;
+  width: 33.33%;
+  float: left;
+  border-radius: 5px;
+}
+.lis .li .bo{
+  width: 167rpx;
+  border: 2px solid #9fc7f6;
+  border-radius: 10rpx;
+  color: #4c4c4c;
+  margin: 0 auto;
+  padding:20rpx 0;
+  font-family: "微软雅黑";
+}
+.lis .li .bo .te1{
+  display: block;
+  text-align: center;
+  color: #3292ff;
+  font-size: 26rpx;
+  padding-bottom: 5rpx;
+}
+.lis .li .bo .te1 .money{
+  font-size:46rpx;
+  font-weight: bold;
+ 
+}
+
+
+
+.lis .li .bo .t1{
+  display: block;
+  text-align: center;
+  font-size: 26rpx;
+  font-family: "微软雅黑";
+}

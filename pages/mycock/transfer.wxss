@@ -1,0 +1,25 @@
+/* pages/make/index.wxss */
+
+.make_dl{background: #fff; padding: 30rpx 0;}
+
+.mak_p{padding: 30rpx 55rpx 0;}
+.mak_p text{display: block; padding-top: 15rpx; line-height: 50rpx;}
+.foo_btn2 .btn{
+    width:100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
