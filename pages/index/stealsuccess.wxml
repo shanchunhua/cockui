@@ -1,0 +1,62 @@
+<view class="pb100">
+	<view class="suc_img">
+		<image src="/img/s65.png" style=""></image>
+		<text>您成功偷取一个XXX（所偷的产品名称）</text>
+	</view>
+	<view class="h15"></view>
+	<view class="time">
+		<view class="in40">
+			<text class="tim"><text class="b">30:00</text>分钟</text>
+			<text class="at">当前剩余支付时间，过期则送回！</text>
+		</view>
+	</view>
+	<view class="h15"></view>
+	<view class="suc_for">
+		<view class="orddl">
+			<view class="in40">
+
+				<view class="indl">
+					<view class="dd d1">
+						<text class="te">产品数量：</text>
+					</view>
+					<view class="dd d2">
+						<text class="te"><text class="b">1只</text></text>
+					</view>
+					<view class="clear"></view>
+				</view>
+				<view class="indl">
+					<view class="dd d1">
+						<text class="te">产品价格：</text>
+					</view>
+					<view class="dd d2">
+						<text class="te"><text class="b">0.5元</text></text>
+					</view>
+					<view class="clear"></view>
+				</view>
+				<view class="indl">
+					<view class="dd d1">
+						<text class="te">被偷牧家：</text>
+					</view>
+					<view class="dd d2">
+						<text class="te"><text class="b">张老四</text></text>
+					</view>
+					<view class="clear"></view>
+				</view>
+				<view class="indl">
+					<view class="dd d1">
+						<text class="te">饲养地址：</text>
+					</view>
+					<view class="dd d2">
+						<text class="te"><text class="b">内蒙古乌拉特前旗23号</text></text>
+					</view>
+					<view class="clear"></view>
+				</view>
+				
+			</view>
+		</view>
+	</view>
+</view>
+<view class="foo_btn2">
+	<view><text class="tax">合计：<text class="or">0.5</text>元</text></view>
+	<view class="btn"><text>立即支付</text></view>
+</view>

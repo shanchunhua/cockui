@@ -7,7 +7,7 @@ module.exports = {
     },
     steal: function () {
         return wxe.requestP({
-            url: 'stealOrder/get'
+            url: 'stealOrder/steal'
         });
     }
 }

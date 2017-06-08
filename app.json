@@ -1,7 +1,9 @@
 {
   "pages":[
     "pages/index/index",
-     "pages/usercenter/index",
+    "pages/index/stealsuccess",
+    "pages/index/stealfailed",
+    "pages/usercenter/index",
     "pages/choosehennery/index", 
     "pages/market/index",
     "pages/henrental/index",
