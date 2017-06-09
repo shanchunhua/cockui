@@ -7,8 +7,15 @@ module.exports = {
             method: 'POST',
             data: {
                 customer: customer,
-                orderNo:null
+                orderNo: null
             }
+        });
+    },
+    create: function (order) {
+        return wxe.requestP({
+            url: 'cockAdoptionOrder',
+            method: 'POST',
+            data: order
         });
     }
 }

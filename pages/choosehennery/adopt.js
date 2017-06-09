@@ -1,6 +1,7 @@
 // pages/payment/index.js
 var app = getApp()
 var henneryService = require('../../service/hennery.js');
+var cockAdoptionOrderService = require('../../service/cockAdoptionOrder.js');
 Page({
 
   /**
@@ -44,6 +45,11 @@ Page({
       });
     }
 
+  },
+  create:function(){
+    cockAdoptionOrderService.create(this.data.order).then(function(res){
+      
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
