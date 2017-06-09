@@ -7,7 +7,7 @@ module.exports = {
     },
     getById: function (id) {
         return wxe.requestP({
-            url: 'hennery/'+id, method: 'GET'
+            url: 'hennery/' + id, method: 'GET'
         });
     }
 }
