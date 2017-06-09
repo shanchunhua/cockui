@@ -1,0 +1,89 @@
+<view class="pb100">
+	<view class="orddl">
+		<view class="in40">
+			<view class="indl">
+				<view class="dd d1">
+					<text class="te">饲养牧家：</text>
+				</view>
+				<view class="dd d2">
+					<text class="te">张三</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="indl">
+				<view class="dd d1">
+					<text class="te">饲养地址：</text>
+				</view>
+				<view class="dd d2">
+					<text class="te">2017-05-06</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+		</view>
+	</view>
+	<view class="h15"></view>
+	<view class="orddl">
+		<view class="in40">
+			<view class="h15"></view>
+			<view class="indl">
+				<view class="dd d1">
+					<text class="te">红公鸡数量：</text>
+				</view>
+				<view class="dd d2">
+					<view class="vfo">
+						<view class="v_lef vbtn">-</view>
+						<view class="inp vinp"><input  value="2" /></view>
+						<view class="v_rig vbtn">+</view>
+						<view class="clear"></view>
+					</view>
+					<view class="clear"></view>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="h15"></view>
+			<view class="indl">
+				<view class="dd d1">
+					<text class="te">领养价格：</text>
+				</view>
+				<view class="dd d2">
+					<text class="te">286元</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+						<view class="indl">
+				<view class="dd d1">
+					<text class="te">支付合计：</text>
+				</view>
+				<view class="dd d2">
+					<text class="te">李老四</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="indl">
+				<view class="dd d1">
+					<text class="te">领养周期：</text>
+				</view>
+				<view class="dd d2">
+					<text class="te">105天</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="foo_btn2">
+	<view><text class="tax">合计：<text class="or">128 </text>元</text></view>
+	<view class="btn"><text>立即支付</text></view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+

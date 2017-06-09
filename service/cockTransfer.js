@@ -21,7 +21,7 @@ module.exports = {
             data: {
                 example: {
                     status: 'PROCESSING',
-                    orderNo:null
+                    transferNo:null
                 },
                 pageRequest: {
                     page: 0,

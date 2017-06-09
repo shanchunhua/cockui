@@ -52,11 +52,11 @@ Page({
         stealOrderService.steal().then(function (res) {
           if (res.success) {
             wx.navigateTo({
-              url: '/pages/index/stealsuccess'
+              url: '/pages/index/stealsuccess?id='+res.data.id
             });
           } else {
             wx.navigateTo({
-              url: '/pages/index/stealfailed'
+              url: '/pages/index/stealfailed?id=1'
             });
           }
         });

@@ -40,10 +40,12 @@
 			</view>
 		</view>
 		<view class="li_btn">
+			<navigator url="/pages/choosehennery/adopt?id={{item.id}}">
 	        <view class="btn_con">
 	            <view class="icon" style="background: url('/img/s48.png'); background-size: cover;"></view>
 	            <text>选择该牧民饲养</text>
 	        </view>
+			</navigator>
 		</view>
 	</view>
 </view>

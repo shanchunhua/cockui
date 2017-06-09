@@ -1,7 +1,4 @@
-// pages/goods/index.js
-var app = getApp()
-var cockTransferService = require('../../service/cockTransfer.js');
-var collectionGoodsService = require('../../service/collectionGoods.js');
+// pages/payment/index.js
 Page({
 
   /**
@@ -15,17 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var self=this;
-    cockTransferService.loadOngoingTransferOrders().then(function(res){
-      self.setData({
-        transferCocks:res.data
-      });
-    });
-    collectionGoodsService.loadCollectionGoods().then(function(res){
-      self.setData({
-        collectionGoods:res.data
-      });
-    });
+  
   },
 
   /**
