@@ -6,7 +6,7 @@
 					<text class="te">饲养牧家：</text>
 				</view>
 				<view class="dd d2">
-					<text class="te">张三</text>
+					<text class="te">{{hennery.ownerName}}</text>
 				</view>
 				<view class="clear"></view>
 			</view>
@@ -15,7 +15,7 @@
 					<text class="te">饲养地址：</text>
 				</view>
 				<view class="dd d2">
-					<text class="te">2017-05-06</text>
+					<text class="te">{{hennery.address}}</text>
 				</view>
 				<view class="clear"></view>
 			</view>
@@ -31,9 +31,9 @@
 				</view>
 				<view class="dd d2">
 					<view class="vfo">
-						<view class="v_lef vbtn">-</view>
-						<view class="inp vinp"><input  value="2" /></view>
-						<view class="v_rig vbtn">+</view>
+						<view class="v_lef vbtn" bindtap="minus">-</view>
+						<view class="inp vinp"><input  value="{{order.quantity}}" /></view>
+						<view class="v_rig vbtn" bindtap="plus">+</view>
 						<view class="clear"></view>
 					</view>
 					<view class="clear"></view>
@@ -46,7 +46,7 @@
 					<text class="te">领养价格：</text>
 				</view>
 				<view class="dd d2">
-					<text class="te">286元</text>
+					<text class="te">{{order.price}}元</text>
 				</view>
 				<view class="clear"></view>
 			</view>
@@ -55,7 +55,7 @@
 					<text class="te">支付合计：</text>
 				</view>
 				<view class="dd d2">
-					<text class="te">李老四</text>
+					<text class="te">{{order.total}}元</text>
 				</view>
 				<view class="clear"></view>
 			</view>
@@ -72,7 +72,7 @@
 	</view>
 </view>
 <view class="foo_btn2">
-	<view><text class="tax">合计：<text class="or">128 </text>元</text></view>
+	<view><text class="tax">合计：<text class="or">{{order.total}} </text>元</text></view>
 	<view class="btn"><text>立即支付</text></view>
 </view>
 
