@@ -42,7 +42,7 @@
 <view class="section section_gap swiper">
     <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
             autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block >
+        <block wx:for="{{orders}}">
             <swiper-item class="swip_pa">
                 <view class="swiper-item">
                 	<view class="he">
@@ -53,8 +53,8 @@
                 	<view class="btn">育养完成</view>
                 	<view class="ul">
                 		<text class="li">领养时间：<text class="b"><text class="sr">2017-04-30 17:00</text></text></text>
-                		<text class="li">领养数量：<text class="b"><text class="sr">4</text> 只</text></text>
-                		<text class="li">领养价格：<text class="b"><text class="sr">345</text>元</text></text>
+                		<text class="li">领养数量：<text class="b"><text class="sr">{{item.quantity}}</text> 只</text></text>
+                		<text class="li">领养价格：<text class="b"><text class="sr">{{item.price}}</text>元</text></text>
                 	</view>
                 </view>
             </swiper-item>
@@ -104,7 +104,7 @@
         </view>
 		</navigator>
     </view>
-    <view class="li_btn">
+    <view class="li_btn" wx:if="{{item.status=='COMPLETED'}}">
 		<navigator url="/pages/mycock/transfer">
         <view class="btn_con">
             <view class="icon" style="background: url('/img/s54.png'); background-size: cover;"></view>
@@ -112,7 +112,7 @@
         </view>
 		</navigator>
 	</view>
-	<view class="li_btn">
+	<view class="li_btn" wx:if="{{item.status=='COMPLETED'}}">
 		<navigator url="/pages/mycock/withdraw">
         <view class="btn_con">
             <view class="icon" style="background: url('/img/s55.png'); background-size: cover;"></view>

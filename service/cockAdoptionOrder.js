@@ -22,5 +22,10 @@ module.exports = {
         return wxe.requestP({
             url: 'cockAdoptionOrder/' + id, method: 'GET'
         });
+    },
+    getMyRaisingOrdersByHennery: function (id) {
+        return wxe.requestP({
+            url: 'cockAdoptionOrder/hennery/' + id, method: 'GET'
+        });
     }
 };

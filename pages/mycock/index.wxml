@@ -29,7 +29,7 @@
 		    </view>
 				</navigator>
 		    <view class="li_btn">
-				<navigator url="/pages/mycock/detail">
+				<navigator url="/pages/mycock/detail?id={{item.hennery.id}}">
 		        <view class="btn_con">
 		            <view class="icon" style="background: url('/img/s51.png'); background-size: cover;"></view>
 		            <text>育养情况</text>
