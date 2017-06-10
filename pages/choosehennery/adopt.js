@@ -8,10 +8,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    order:{
-      quantity:1,
-      price:29,
-      total:29
+    order: {
+      quantity: 1,
+      price: 29,
+      total: 29
     }
   },
 
@@ -19,14 +19,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.data.order.customer=app.globalData.userInfo;
+    this.data.order.customer = app.globalData.userInfo;
     var id = options.id;
     var self = this;
     henneryService.getById(id).then(function (res) {
       self.setData({
         hennery: res.data
       });
-      self.data.order.hennery=res.data;
+      self.data.order.hennery = res.data;
     });
   },
   plus: function () {
@@ -46,9 +46,11 @@ Page({
     }
 
   },
-  create:function(){
-    cockAdoptionOrderService.create(this.data.order).then(function(res){
-      
+  create: function () {
+    cockAdoptionOrderService.create(this.data.order).then(function (res) {
+      wx.navigateTo({
+        url: '/pages/choosehennery/success?id='+res.data.id
+      });
     });
   },
   /**

@@ -20,12 +20,14 @@
 			<image src="/img/s33.jpg"></image>
 		</view>
 		<view class="li_btn_tw">
+				<navigator url="/pages/choosehennery/adopt?id={{item.hennery.id}}">
 			<view class="li_btn">
 		        <view class="btn_con">
 		            <view class="icon" style="background: url('/img/s50.png'); background-size: cover;"></view>
 		            <text>继续领养</text>
 		        </view>
 		    </view>
+				</navigator>
 		    <view class="li_btn">
 				<navigator url="/pages/mycock/detail">
 		        <view class="btn_con">

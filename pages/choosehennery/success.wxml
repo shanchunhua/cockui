@@ -1,0 +1,6 @@
+<view class="h15"></view>
+<view class="succ">
+	<image src="/img/s57.png"></image>
+	<text class="su_s1">恭喜您，支付成功</text>
+	<text class="su_p">您已经领养{{order.hennery.ownerName}}的{{order.quantity}}只红公鸡，饲养周期为105天，在该期间内每天有一次偷蛋机会！</text>
+</view>

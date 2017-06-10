@@ -10,4 +10,4 @@ module.exports = {
             url: 'hennery/' + id, method: 'GET'
         });
     }
-}
+};
