@@ -59,44 +59,10 @@
                 </view>
             </swiper-item>
         </block>
-        <block >
-            <swiper-item class="swip_pa">
-                <view class="swiper-item">
-                	<view class="he">
-                		<text class="num"><text class="mu">8</text>天</text>
-						<text class="sp">回收剩余天数</text>
-						<view class="clear"></view>
-                	</view>
-                	<view class="btn">育养完成</view>
-                	<view class="ul">
-                		<text class="li">领养时间：<text class="b"><text class="sr">2017-04-30 17:00</text></text></text>
-                		<text class="li">领养数量：<text class="b"><text class="sr">4</text> 只</text></text>
-                		<text class="li">领养价格：<text class="b"><text class="sr">345</text>元</text></text>
-                	</view>
-                </view>
-            </swiper-item>
-        </block>
-        <block >
-            <swiper-item class="swip_pa">
-                <view class="swiper-item">
-                	<view class="he">
-                		<text class="num"><text class="mu">8</text>天</text>
-						<text class="sp">回收剩余天数</text>
-						<view class="clear"></view>
-                	</view>
-                	<view class="btn">育养完成</view>
-                	<view class="ul">
-                		<text class="li">领养时间：<text class="b"><text class="sr">2017-04-30 17:00</text></text></text>
-                		<text class="li">领养数量：<text class="b"><text class="sr">4</text> 只</text></text>
-                		<text class="li">领养价格：<text class="b"><text class="sr">345</text>元</text></text>
-                	</view>
-                </view>
-            </swiper-item>
-        </block>
     </swiper>
 </view>
 <view class="li_btn_tw">
-	<view class="li_btn">
+	<view class="li_btn{{item.status=='COMPLETED'?'_l':''}}">
 		<navigator url="/pages/mycock/reward">
         <view class="btn_con">
             <view class="icon" style="background: url('/img/s53.png'); background-size: cover;"></view>
