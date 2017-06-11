@@ -23,7 +23,9 @@
     "pages/mycock/reward",
     "pages/mycock/withdraw",
     "pages/myegg/index",
-    "pages/mybox/index"
+    "pages/mybox/index",
+    "pages/myegg/rewarddog",
+    "pages/myegg/rewardhen"
     
   ],
   "window":{

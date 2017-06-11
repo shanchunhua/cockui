@@ -11,7 +11,9 @@
 					<text>母鸡下的蛋</text>
 					<text>2.5元/枚</text>
 				</view>
+				<navigator url="/pages/myegg/rewardhen">
 				<view class="btn">给母鸡打赏</view>
+				</navigator>
 				<view class="clear"></view>
 			</view>
 		</view>
@@ -23,7 +25,9 @@
 					<text>我偷的鸡蛋</text>
 					<text>已支付</text>
 				</view>
+				<navigator url="/pages/myegg/rewarddog">
 				<view class="btn">给狗狗打赏</view>
+				</navigator>
 				<view class="clear"></view>
 			</view>
 		</view>
@@ -106,34 +110,15 @@
 				<view class="h2">
 					<text>皮箱存货</text>
 				</view>
+				<block wx:for="{{goods}}">
 				<view class="h15"></view>
 				<view class="che">
 					<checkbox class="le" value="value" checked="false" />
-					<text class="at">一把沙葱</text>
-					<text class="rt">1份</text>
+					<text class="at">{{item.goods.name}}</text>
+					<text class="rt">{{item.quantity}}份</text>
 					<view class="clear"></view>
 				</view>
-				<view class="h15"></view>
-				<view class="che">
-					<checkbox class="le" value="value" checked="false" />
-					<text class="at">一把沙葱</text>
-					<text class="rt">1份</text>
-					<view class="clear"></view>
-				</view>
-				<view class="h15"></view>
-				<view class="che">
-					<checkbox class="le" value="value"  />
-					<text class="at">一把沙葱</text>
-					<text class="rt">1份</text>
-					<view class="clear"></view>
-				</view>
-				<view class="h15"></view>
-				<view class="che">
-					<checkbox class="le" value="value"  />
-					<text class="at">一把沙葱</text>
-					<text class="rt">1份</text>
-					<view class="clear"></view>
-				</view>
+				</block>
 			</view>
 		</view>
 	</view>

@@ -1,6 +1,7 @@
 // pages/eggs/index.js
 var app = getApp()
 var customerService = require('../../service/customer.js');
+var customerBoxService = require('../../service/customerBox.js');
 Page({
 
   /**
@@ -26,7 +27,11 @@ Page({
       self.setData({ customerProperty: res.data });
       console.log(self.data);
       self.calculate();
-    })
+    });
+    customerBoxService.loadCustomerBoxItems().then(function (res) {
+      var list = res.data;
+      self.setData({ goods: list.filter(function (item) { return item.quantity > 0; }) });
+    });
   },
 
   /**
