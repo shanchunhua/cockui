@@ -2,6 +2,7 @@
 var app = getApp()
 var henneryService = require('../../service/hennery.js');
 var cockAdoptionOrderService = require('../../service/cockAdoptionOrder.js');
+var paymentService = require('../../service/payment.js');
 Page({
 
   /**
@@ -47,11 +48,36 @@ Page({
 
   },
   create: function () {
-    cockAdoptionOrderService.create(this.data.order).then(function (res) {
-      wx.navigateTo({
-        url: '/pages/choosehennery/success?id='+res.data.id
+    var self = this;
+    //订单已创建，直接支付
+    if (!this.data.order.id) {
+      cockAdoptionOrderService.create(this.data.order).then(function (res) {
+        var order = res.data;
+        self.setData({ order: order });
+        paymentService.payOrder({
+          order: order,
+          type: 1,
+          success: function (res) {
+            console.log('success');
+            wx.navigateTo({
+              url: '/pages/choosehennery/success?id=' + self.data.order.id
+            });
+          }
+        });
       });
-    });
+    } else {
+      paymentService.payOrder({
+        order: this.data.order,
+        type: 1,
+        success: function (res) {
+          console.log('success');
+          wx.navigateTo({
+            url: '/pages/choosehennery/success?id=' + self.data.order.id
+          });
+        }
+      });
+    }
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
