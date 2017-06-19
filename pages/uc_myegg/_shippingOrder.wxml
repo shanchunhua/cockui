@@ -1,4 +1,4 @@
-<block wx:for="{{orders}}">
+<template name="shippingOrder">
 <view class="h15"></view>
 <view class="ado_li">
 	<view class="in40">
@@ -7,7 +7,7 @@
 		</view>
 		<view class="li2">
 			<view class="li">
-			<text class="at">产品名称：<text class="b">{{item.collectionGoods.name}}</text></text>	
+			<text class="at">订单时间：<text class="b">{{item.collectionGoods.name}}</text></text>	
 			</view>
 			<view class="li">
 				<text class="at">订单状态：<text class="b">{{item.paid?'已':'未'}}支付</text></text>
@@ -25,7 +25,7 @@
 		</view>
 		<view class="li2">
 			<view class="li">
-				<text class="at">产品单价：<text class="b">张老四</text></text>
+				<text class="at">转让单价：<text class="b">张老四</text></text>
 			</view>
 			<view class="li">
 				<text class="at">购买数量：<text class="b">饲养中</text></text>
@@ -34,10 +34,10 @@
 		</view>
 				<view class="li2">
 			<view class="li">
-				<text class="at">订单金额：<text class="b">张老四</text></text>
+				<text class="at">定单总额：<text class="b">张老四</text></text>
 			</view>
 			<view class="li">
-				<text class="at">订单时间：<text class="b">饲养中</text></text>
+				<text class="at">转让人：<text class="b">饲养中</text></text>
 			</view>
 			<view class="clear"></view>
 		</view>
@@ -55,4 +55,4 @@
 		</view>
 	</view>
 </view>
-</block>
+</template>

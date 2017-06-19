@@ -1,9 +1,9 @@
 <view class="leat_list">
-	<view class="li">
+	<view class="li" wx:for="{{orders}}">
 		<view class="hea">
 			<view class="in40">
 				<text class="let">2017-05-06 15:23配送</text>
-				<text class="rig">所属单位：<text class="nam">jc73637818</text></text>
+				<text class="rig">所属订单：<text class="nam">{{item.order.orderNo}}</text></text>
 				<view class="clear"></view>
 			</view>
 		</view>
@@ -11,12 +11,12 @@
 			<view class="in40 ">
 				<image src="/img/s64.jpg" class="lef_img"></image>
 				<view class="tex">
-					<text class="titl">一把沙葱</text>
-					<text class="cent">沙葱属百合科多年生草本植物,茎叶针状,开白色小花,是沙漠草甸植物的伴生植物。</text>
+					<text class="titl">{{item.goods.name}}</text>
+					<text class="cent">{{item.goods.description}}</text>
 					<view class="att">
 						<view class="he">
 							<text class="le">0.5元</text>
-							<text class="ri">配送份数 12</text>
+							<text class="ri">配送份数 {{item.quantity}}</text>
 							<view class="clear"></view>
 						</view>
 					</view>
@@ -24,84 +24,5 @@
 				<view class="clear"></view>
 			</view>
 		</view>
-	</view>
-	<view class="li">
-		<view class="hea">
-			<view class="in40">
-				<text class="let">2017-05-06 15:23配送</text>
-				<text class="rig">所属单位：<text class="nam">jc73637818</text></text>
-				<view class="clear"></view>
-			</view>
-		</view>
-		<view class="lib">
-			<view class="in40 ">
-				<image src="/img/s64.jpg" class="lef_img"></image>
-				<view class="tex">
-					<text class="titl">一把沙葱</text>
-					<text class="cent">沙葱属百合科多年生草本植物,茎叶针状,开白色小花,是沙漠草甸植物的伴生植物。</text>
-					<view class="att">
-						<view class="he">
-							<text class="le">0.5元</text>
-							<text class="ri">配送份数 12</text>
-							<view class="clear"></view>
-						</view>
-					</view>
-				</view>
-				<view class="clear"></view>
-			</view>
-		</view>
-	</view>
-	<view class="li">
-		<view class="hea">
-			<view class="in40">
-				<text class="let">2017-05-06 15:23配送</text>
-				<text class="rig">所属单位：<text class="nam">jc73637818</text></text>
-				<view class="clear"></view>
-			</view>
-		</view>
-		<view class="lib">
-			<view class="in40 ">
-				<image src="/img/s64.jpg" class="lef_img"></image>
-				<view class="tex">
-					<text class="titl">一把沙葱</text>
-					<text class="cent">沙葱属百合科多年生草本植物,茎叶针状,开白色小花,是沙漠草甸植物的伴生植物。</text>
-					<view class="att">
-						<view class="he">
-							<text class="le">0.5元</text>
-							<text class="ri">配送份数 12</text>
-							<view class="clear"></view>
-						</view>
-					</view>
-				</view>
-				<view class="clear"></view>
-			</view>
-		</view>
-	</view>
-	<view class="li">
-		<view class="hea">
-			<view class="in40">
-				<text class="let">2017-05-06 15:23配送</text>
-				<text class="rig">所属单位：<text class="nam">jc73637818</text></text>
-				<view class="clear"></view>
-			</view>
-		</view>
-		<view class="lib">
-			<view class="in40 ">
-				<image src="/img/s64.jpg" class="lef_img"></image>
-				<view class="tex">
-					<text class="titl">一把沙葱</text>
-					<text class="cent">沙葱属百合科多年生草本植物,茎叶针状,开白色小花,是沙漠草甸植物的伴生植物。</text>
-					<view class="att">
-						<view class="he">
-							<text class="le">0.5元</text>
-							<text class="ri">配送份数 12</text>
-							<view class="clear"></view>
-						</view>
-					</view>
-				</view>
-				<view class="clear"></view>
-			</view>
-		</view>
-	</view>
-	
+	</view>	
 </view>

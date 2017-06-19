@@ -1,4 +1,4 @@
-var wxe = require('../utils/wxe.js')
+var wxe = require('../utils/wxe.js');
 module.exports = {
     loadCustomerAdoptionOrders: function (customer) {
         console.log(customer);

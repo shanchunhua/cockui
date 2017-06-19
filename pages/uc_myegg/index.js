@@ -1,6 +1,7 @@
 // pages/wallet/index.js
 var app = getApp();
 var eggGainRecordService = require('../../service/eggGainRecord.js');
+var shippingOrderService = require('../../service/shippingOrder.js');
 Page({
 
   /**
@@ -41,6 +42,11 @@ Page({
       });
       self.setData({
         eggGainRecords: data
+      });
+    });
+    shippingOrderService.loadEggOrder(app.globalData.userInfo).then(function (res) {
+      self.setData({
+        orders: res.data
       });
     });
   },
