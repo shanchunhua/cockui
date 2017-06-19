@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+   currentTab: 0
   },
 
   /**
@@ -14,7 +14,19 @@ Page({
   onLoad: function (options) {
   
   },
+  changeTab: function (event) {
+    var tabid = event.currentTarget.dataset.tabid;
+    this.setData({ currentTab: tabid });
+    switch (tabid) {
+      case "0":
+        this.loadEggGainRecords();
+        break;
+      case "1":
+        this.loadEggGainRecords();
+        break;
+    }
 
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -6,11 +6,11 @@
 		<text class="at">最低提现金额为49元，24小时内到账</text>
 	</view>
 	<view class="ind_tab2">
-		<view class="li on">
+		<view class="li {{currentTab==0?'on':''}}" bindtap="changeTab" data-tabid="0">
 			<text>提现记录</text>
 			<view class="sp"></view>
 		</view>
-		<view class="li">
+		<view class="li {{currentTab==1?'on':''}}" bindtap="changeTab" data-tabid="1">
 			<text>收益记录</text>
 			<view class="sp"></view>
 		</view>
