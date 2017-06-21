@@ -1,6 +1,7 @@
 // pages/rawegg/index.js
 var henRentOrderService = require('../../service/henRentOrder.js');
-var app = getApp()
+var paymentService = require('../../service/payment.js');
+var app = getApp();
 Page({
 
   /**
@@ -19,8 +20,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log( app.globalData.userInfo);
-    this.data.order.customer=app.globalData.userInfo;
+    console.log(app.globalData.userInfo);
+    this.data.order.customer = app.globalData.userInfo;
   },
   plus: function () {
     this.data.order.quantity = this.data.order.quantity + 1;
@@ -41,13 +42,36 @@ Page({
   },
 
   pay: function () {
-    var order=this.data.order;
-    henRentOrderService.save(order).then(function (res) {
-      wx.navigateTo({
-        url: '/pages/henrental/success'
-      });
-    });
 
+    var self = this;
+    //订单已创建，直接支付
+    if (!this.data.order.id) {
+      henRentOrderService.save(this.data.order).then(function (res) {
+        var order = res.data;
+        self.setData({ order: order });
+        paymentService.payOrder({
+          order: order,
+          type: 1,
+          success: function (res) {
+            console.log('success');
+            wx.navigateTo({
+              url: '/pages/choosehennery/success?id=' + self.data.order.id
+            });
+          }
+        });
+      });
+    } else {
+      paymentService.payOrder({
+        order: this.data.order,
+        type: 1,
+        success: function (res) {
+          console.log('success');
+          wx.navigateTo({
+            url: '/pages/henrental/success?id=' + self.data.order.id
+          });
+        }
+      });
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

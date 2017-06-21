@@ -18,7 +18,7 @@ Page({
     var self=this;
     cockTransferService.loadOngoingTransferOrders().then(function(res){
       self.setData({
-        transferCocks:res.data
+        transferCocks:res.data.content
       });
     });
     collectionGoodsService.loadCollectionGoods().then(function(res){
