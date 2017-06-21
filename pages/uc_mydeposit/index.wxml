@@ -6,7 +6,7 @@
 	</view>
 	<view class="wal_list">
 		<view class="in40">
-			<view class="li">
+			<view class="li" wx:for="{{orders}}">
 				<view class="lef">
 					<text class="tit">还剩26天</text>
 					<text class="data">押金50元</text>
@@ -16,74 +16,7 @@
 					<text class="data">2017-05-07 10:35</text>
 				</view>
 				<view class="clear"></view>
-			</view>
-			<view class="li">
-				<view class="lef">
-					<text class="tit">还剩26天</text>
-					<text class="data">押金50元</text>
-				</view>
-				<view class="rig">
-					<text class="data">借鸡生蛋中</text>
-					<text class="data">2017-05-07 10:35</text>
-				</view>
-				<view class="clear"></view>
-			</view>
-			<view class="li">
-				<view class="lef">
-					<text class="tit">还剩26天</text>
-					<text class="data">押金50元</text>
-				</view>
-				<view class="rig">
-					<text class="data">借鸡生蛋中</text>
-					<text class="data">2017-05-07 10:35</text>
-				</view>
-				<view class="clear"></view>
-			</view>
-			<view class="li">
-				<view class="lef">
-					<text class="tit">还剩26天</text>
-					<text class="data">押金50元</text>
-				</view>
-				<view class="rig">
-					<text class="data">借鸡生蛋中</text>
-					<text class="data">2017-05-07 10:35</text>
-				</view>
-				<view class="clear"></view>
-			</view>
-			<view class="li">
-				<view class="lef">
-					<text class="tit">还剩26天</text>
-					<text class="data">押金50元</text>
-				</view>
-				<view class="rig">
-					<text class="data">借鸡生蛋中</text>
-					<text class="data">2017-05-07 10:35</text>
-				</view>
-				<view class="clear"></view>
-			</view>
-			<view class="li">
-				<view class="lef">
-					<text class="tit">还剩26天</text>
-					<text class="data">押金50元</text>
-				</view>
-				<view class="rig">
-					<text class="data">借鸡生蛋中</text>
-					<text class="data">2017-05-07 10:35</text>
-				</view>
-				<view class="clear"></view>
-			</view>
-			<view class="li">
-				<view class="lef">
-					<text class="tit">还剩26天</text>
-					<text class="data">押金50元</text>
-				</view>
-				<view class="rig">
-					<text class="data">借鸡生蛋中</text>
-					<text class="data">2017-05-07 10:35</text>
-				</view>
-				<view class="clear"></view>
-			</view>
-			
+			</view>			
 		</view>
 	</view>
 </view>

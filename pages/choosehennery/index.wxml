@@ -24,15 +24,15 @@
 		</view>
 		<view class="min_vid">
 			<view class="in18">
-				<view class="img">
+				<view class="img" bindtap="preview">
 					<image src="/img/s34.jpg"></image>
 					<text>生活照</text>
 				</view>
-				<view class="img">
+				<view class="img"  bindtap="preview">
 					<image src="/img/s35.jpg"></image>
 					<text>大牧场</text>
 				</view>
-				<view class="img">
+				<view class="img"  bindtap="preview">
 					<image src="/img/s36.jpg"></image>
 					<text>家禽记</text>
 				</view>

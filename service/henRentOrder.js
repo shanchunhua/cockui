@@ -10,5 +10,14 @@ module.exports = {
         return wxe.requestP({
             url: 'henRentOrder/index'
         });
+    },
+    loadMyOrders: function (customer) {
+        return wxe.requestP({
+            url: 'henRentOrder/example',
+            method: 'POST',
+            data: {
+                customer: { id: customer.id }
+            }
+        });
     }
-}
+};

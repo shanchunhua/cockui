@@ -16,108 +16,34 @@
 		</view>
 		<view class="clear"></view>
 	</view>
-	<view class="wal_list">
+	<view class="wal_list" wx:if="{{currentTab==0}}">
 		<view class="in40">
-			<view class="li">
+			<view class="li" wx:for="{{withdrawRecords}}">
 				<view class="lef">
 					<text class="tit">提现</text>
-					<text class="data">2017-05-07 10:35</text>
+					<text class="data">{{item.createdTime}}</text>
 				</view>
 				<view class="rig">
-					<text class="pic">50.00</text>
+					<text class="pic">{{item.amount}}</text>
 				</view>
 				<view class="clear"></view>
 			</view>
-			<view class="li">
+
+		</view>
+	</view>
+		<view class="wal_list" wx:if="{{currentTab==1}}">
+		<view class="in40">
+			<view class="li" wx:for="{{incomes}}">
 				<view class="lef">
-					<text class="tit">提现</text>
-					<text class="data">2017-05-07 10:35</text>
+					<text class="tit">{{item.type}}</text>
+					<text class="data">{{item.createdTime}}</text>
 				</view>
 				<view class="rig">
-					<text class="pic">50.00</text>
+					<text class="pic">{{item.amount}}</text>
 				</view>
 				<view class="clear"></view>
 			</view>
-			<view class="li">
-				<view class="lef">
-					<text class="tit">提现</text>
-					<text class="data">2017-05-07 10:35</text>
-				</view>
-				<view class="rig">
-					<text class="pic">50.00</text>
-				</view>
-				<view class="clear"></view>
-			</view>
-			<view class="li">
-				<view class="lef">
-					<text class="tit">提现</text>
-					<text class="data">2017-05-07 10:35</text>
-				</view>
-				<view class="rig">
-					<text class="pic">50.00</text>
-				</view>
-				<view class="clear"></view>
-			</view>
-			<view class="li">
-				<view class="lef">
-					<text class="tit">提现</text>
-					<text class="data">2017-05-07 10:35</text>
-				</view>
-				<view class="rig">
-					<text class="pic">50.00</text>
-				</view>
-				<view class="clear"></view>
-			</view>
-			<view class="li">
-				<view class="lef">
-					<text class="tit">提现</text>
-					<text class="data">2017-05-07 10:35</text>
-				</view>
-				<view class="rig">
-					<text class="pic">50.00</text>
-				</view>
-				<view class="clear"></view>
-			</view>
-			<view class="li">
-				<view class="lef">
-					<text class="tit">提现</text>
-					<text class="data">2017-05-07 10:35</text>
-				</view>
-				<view class="rig">
-					<text class="pic">50.00</text>
-				</view>
-				<view class="clear"></view>
-			</view>
-			<view class="li">
-				<view class="lef">
-					<text class="tit">提现</text>
-					<text class="data">2017-05-07 10:35</text>
-				</view>
-				<view class="rig">
-					<text class="pic">50.00</text>
-				</view>
-				<view class="clear"></view>
-			</view>
-			<view class="li">
-				<view class="lef">
-					<text class="tit">提现</text>
-					<text class="data">2017-05-07 10:35</text>
-				</view>
-				<view class="rig">
-					<text class="pic">50.00</text>
-				</view>
-				<view class="clear"></view>
-			</view>
-			<view class="li">
-				<view class="lef">
-					<text class="tit">提现</text>
-					<text class="data">2017-05-07 10:35</text>
-				</view>
-				<view class="rig">
-					<text class="pic">50.00</text>
-				</view>
-				<view class="clear"></view>
-			</view>
+
 		</view>
 	</view>
 </view>
