@@ -1,2 +1,9 @@
 /* pages/suborder2/index.wxss */
 .orddl{padding: 25rpx 0; background: #fff; border-bottom: 1px solid #e5e5e5;}
+.orddl .h2 {padding-bottom: 10rpx;}
+.orddl .h2 .btn{float: right;}
+.orddl .h2 .btn .img{width: 40rpx; height: 40rpx; float: left;}
+.orddl .h2 .btn .on{color: #3292ff; padding-left: 8rpx; float: left;display: block; line-height: 40rpx;}
+.orddl .lef{float: left;}
+.orddl .rig{float: right;}
+.orddl .rig .vinp{width: 125rpx;}

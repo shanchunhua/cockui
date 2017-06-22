@@ -41,7 +41,7 @@
 <view class="h15"></view>
 <view class="section section_gap swiper">
     <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
-            autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+            autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="changeOrder">
         <block wx:for="{{orders}}">
             <swiper-item class="swip_pa">
                 <view class="swiper-item">
@@ -62,24 +62,24 @@
     </swiper>
 </view>
 <view class="li_btn_tw">
-	<view class="li_btn{{item.status=='COMPLETED'?'_l':''}}">
-		<navigator url="/pages/mycock/reward">
+	<view class="li_btn{{currentOrder.status!='COMPLETED'?' large':''}}">
+		<navigator url="/pages/mycock/reward?id={{henneryId}}">
         <view class="btn_con">
             <view class="icon" style="background: url('/img/s53.png'); background-size: cover;"></view>
             <text>打赏</text>
         </view>
 		</navigator>
     </view>
-    <view class="li_btn" wx:if="{{item.status=='COMPLETED'}}">
-		<navigator url="/pages/mycock/transfer">
+    <view class="li_btn" wx:if="{{currentOrder.status=='COMPLETED'}}">
+		<navigator url="/pages/mycock/transfer?id={{currentOrder.id}}">
         <view class="btn_con">
             <view class="icon" style="background: url('/img/s54.png'); background-size: cover;"></view>
             <text>转让</text>
         </view>
 		</navigator>
 	</view>
-	<view class="li_btn" wx:if="{{item.status=='COMPLETED'}}">
-		<navigator url="/pages/mycock/withdraw">
+	<view class="li_btn" wx:if="{{currentOrder.status=='COMPLETED'}}">
+		<navigator url="/pages/mycock/withdraw?id={{currentOrder.id}}">
         <view class="btn_con">
             <view class="icon" style="background: url('/img/s55.png'); background-size: cover;"></view>
             <text>收回</text>

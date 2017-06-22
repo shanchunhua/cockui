@@ -25,7 +25,7 @@
 					<text class="te">一共可收回：</text>
 				</view>
 				<view class="dd d2">
-					<text class="te"><text class="b">4</text>只</text>
+					<text class="te"><text class="b">{{order.quantity}}</text>只</text>
 				</view>
 				<view class="clear"></view>
 			</view>
@@ -35,9 +35,9 @@
 				</view>
 				<view class="dd d2">
 					<view class="vfo">
-						<view class="v_lef vbtn">-</view>
-						<view class="inp vinp"><input  value="2" /></view>
-						<view class="v_rig vbtn">+</view>
+						<view class="v_lef vbtn" bindtap="minus">-</view>
+						<view class="inp vinp"><input  value="{{withdrawOrder.quantity}}" /></view>
+						<view class="v_rig vbtn" bindtap="plus">+</view>
 						<view class="clear"></view>
 					</view>
 				</view>
@@ -126,7 +126,7 @@
 	</view>
 </view>
 <view class="foo_btn2">
-	<view><text class="tax">合计：<text class="or">128 </text>元</text></view>
+	<view><text class="tax">合计：<text class="or">{{withdrawOrder.total}} </text>元</text></view>
 	<view class="btn"><text>立即支付</text></view>
 </view>
 
