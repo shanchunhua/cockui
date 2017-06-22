@@ -22,8 +22,10 @@ Page({
     console.log(id);
     var self = this;
     cockAdoptionOrderService.getById(id).then(function (res) {
+      self.data.withdrawOrder.quantity=res.data.availableQuantity;
       self.setData({
-        order: res.data
+        order: res.data,
+        withdrawOrder: self.data.withdrawOrder
       });
     });
   },
