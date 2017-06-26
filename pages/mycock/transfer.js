@@ -1,20 +1,40 @@
 // pages/make/index.js
+var app = getApp();
+var cockAdoptionOrderService = require('../../service/cockAdoptionOrder.js');
+var cockTransferService = require('../../service/cockTransfer.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    cockTransfer:{
+      quantity:1,
+      status:'PROCESSING'
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+  var id = options.id;
+    console.log(id);
+    var self = this;
+   
+    cockAdoptionOrderService.getById(id).then(function (res) {
+      self.data.cockTransfer.cockAdoptionOrder=res.data;
+      self.data.cockTransfer.customer=app.globalData.userInfo;
+      self.setData({
+        cockAdoptionOrder:res.data
+      });
+    });
   },
-
+  createOrder:function(){
+    cockTransferService.create(this.data.cockTransfer).then(function(){
+      console.log(res);
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -63,4 +83,4 @@ Page({
   onShareAppMessage: function () {
   
   }
-})
+});

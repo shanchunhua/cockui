@@ -21,7 +21,7 @@ module.exports = {
             data: {
                 example: {
                     status: 'PROCESSING',
-                    transferNo:null
+                    transferNo: null
                 },
                 pageRequest: {
                     page: 0,
@@ -33,6 +33,14 @@ module.exports = {
                 }
 
             }
+        });
+    },
+    //创建转让订单
+    create: function (order) {
+        return wxe.requestP({
+            url: 'cockTransfer',
+            method: 'POST',
+            data: order
         });
     }
 }

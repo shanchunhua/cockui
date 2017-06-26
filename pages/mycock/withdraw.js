@@ -1,6 +1,7 @@
 // pages/suborder2/index.js
 var app = getApp();
 var cockAdoptionOrderService = require('../../service/cockAdoptionOrder.js');
+var customerBoxService = require('../../service/customerBox.js');
 Page({
 
   /**
@@ -9,8 +10,9 @@ Page({
   data: {
     withdrawOrder: {
       quantity: 1,
-      price:209,
-      total:209
+      price: 209,
+      total: 209,
+      items:[]
     }
   },
 
@@ -21,12 +23,19 @@ Page({
     var id = options.id;
     console.log(id);
     var self = this;
+   
     cockAdoptionOrderService.getById(id).then(function (res) {
-      self.data.withdrawOrder.quantity=res.data.availableQuantity;
+      self.data.withdrawOrder.quantity = res.data.availableQuantity;
+      self.data.withdrawOrder.adoptionOrder=res.data;
+
       self.setData({
         order: res.data,
         withdrawOrder: self.data.withdrawOrder
       });
+    });
+    customerBoxService.loadCustomerBoxItems().then(function (res) {
+      var list = res.data;
+      self.setData({ goods: list.filter(function (item) { return item.quantity > 0; }) });
     });
   },
   plus: function () {
