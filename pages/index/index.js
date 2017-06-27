@@ -21,7 +21,7 @@ Page({
 
     var self = this;
     app.globalData.loadUserPromise.then(function () {
-      customerService.loadCustomerProperty(2).then(function (res) {
+      customerService.loadCustomerProperty(app.globalData.userInfo.id).then(function (res) {
         console.log(res);
         self.setData({ customerProperty: res.data });
         return res.data;

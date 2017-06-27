@@ -10,11 +10,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    withdrawOrder: {
+    order: {
       quantity: 1,
       price: 209,
       total: 209,
-      items:[]
+      items: [],
+      goodsType: 'COCK'
     }
   },
 
@@ -25,10 +26,11 @@ Page({
     var id = options.id;
     console.log(id);
     var self = this;
-   
+    self.data.order.customer = app.globalData.userInfo;
     cockAdoptionOrderService.getById(id).then(function (res) {
       self.data.order.quantity = res.data.availableQuantity;
-      self.data.order.adoptionOrder=res.data;
+      self.data.order.total = self.data.order.quantity * self.data.order.price;
+      self.data.order.adoptionOrder = res.data;
 
       self.setData({
         adoptionOrder: res.data,
@@ -41,7 +43,7 @@ Page({
     });
   },
   plus: function () {
-    if (this.data.order.quantity < this.data.order.quantity) {
+    if (this.data.order.quantity < this.data.adoptionOrder.quantity) {
       this.data.order.quantity = this.data.order.quantity + 1;
       this.data.order.total = this.data.order.quantity * this.data.order.price;
       this.setData({
@@ -55,21 +57,25 @@ Page({
       this.data.order.quantity = this.data.order.quantity - 1;
       this.data.order.total = this.data.order.quantity * this.data.order.price;
       this.setData({
-        withdrawOrder: this.data.order
+        order: this.data.order
       });
     }
 
   },
-   create: function () {
+  create: function () {
     var self = this;
-    this.data.goods.forEach(function(item){
-      if(item.checked){
-        self.data.order.items.push(item);
+    this.data.goods.forEach(function (item) {
+      if (item.checked) {
+        self.data.order.items.push({
+          goods: item.goods,
+          quantity: item.quantity,
+          name: item.goods.name
+        });
       }
     });
     //订单已创建，直接支付
     if (!this.data.order.id) {
-      shippingOrder.create(this.data.order).then(function (res) {
+      shippingOrderService.create(this.data.order).then(function (res) {
         var order = res.data;
         self.setData({ order: order });
         paymentService.payOrder({

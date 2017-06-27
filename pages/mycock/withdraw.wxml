@@ -39,7 +39,7 @@
 				<view class="dd d2">
 					<view class="vfo">
 						<view class="v_lef vbtn" bindtap="minus">-</view>
-						<view class="inp vinp"><input value="{{withdrawOrder.quantity}}" /></view>
+						<view class="inp vinp"><input value="{{order.quantity}}" /></view>
 						<view class="v_rig vbtn" bindtap="plus">+</view>
 						<view class="clear"></view>
 					</view>
@@ -102,10 +102,9 @@
 </view>
 <view class="foo_btn2">
 	<view>
-		<text class="tax">合计：
-			<text class="or">{{withdrawOrder.total}} </text>元</text>
+		<text class="tax">合计：<text class="or">{{order.total}} </text>元</text>
 	</view>
-	<view class="btn">
+	<view class="btn" bindtap="create">
 		<text>立即支付</text>
 	</view>
 </view>
