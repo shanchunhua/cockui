@@ -1,0 +1,18 @@
+	<view class="eggs_ol">
+		<view class="orddl">
+			<view class="in40">
+				<view class="h2">
+					<text>皮箱存货</text>
+				</view>
+				<block wx:for="{{goods}}">
+				<view class="h15"></view>
+				<view class="che">
+					<checkbox class="le" value="{{item.id}}" checked="{{item.checked}}" />
+					<text class="at">{{item.goods.name}}</text>
+					<text class="rt">{{item.quantity}}份</text>
+					<view class="clear"></view>
+				</view>
+				</block>
+			</view>
+		</view>
+	</view>

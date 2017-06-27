@@ -1,14 +1,14 @@
 <view class="pb100">
 	<view class="goo_he">
 		<navigator url="/pages/henrental/index">
-		<view class="in40">
-			<image src="/img/s68.jpg" class="img"></image>
-			<view class="tex">
-				<text class="tit">借鸡生蛋</text>
-				<text class="p">借一只母鸡为你生蛋 好玩更好吃</text>
+			<view class="in40">
+				<image src="/img/s68.jpg" class="img"></image>
+				<view class="tex">
+					<text class="tit">借鸡生蛋</text>
+					<text class="p">借一只母鸡为你生蛋 好玩更好吃</text>
+				</view>
+				<view class="clear"></view>
 			</view>
-			<view class="clear"></view>
-		</view>
 		</navigator>
 	</view>
 	<view class="h15"></view>
@@ -25,9 +25,11 @@
 				<image src="/img/s69.jpg" class="img"></image>
 				<view class="tex">
 					<text class="nam">{{item.customer.nickname}}</text>
-					<text class="p">1只  2017-05-06 转让</text>
+					<text class="p">1只 {{item.dateStr}} 转让</text>
 				</view>
-				<view class="btn">抢购</view>
+				<navigator url="/pages/market/transfer?id={{item.id}}">
+					<view class="btn">抢购</view>
+				</navigator>
 				<view class="clear"></view>
 			</view>
 		</view>
@@ -46,7 +48,10 @@
 				<view class="tex">
 					<text class="nam">{{item.name}}</text>
 					<text class="p">{{item.description}}</text>
-					<text class="pic"><text class="num">{{item.price}}</text>元<text class="del">原价{{item.marketPrice}}元</text></text>
+					<text class="pic">
+						<text class="num">{{item.price}}</text>元
+						<text class="del">原价{{item.marketPrice}}元</text>
+					</text>
 				</view>
 				<view class="btn">抢购</view>
 				<view class="clear"></view>
@@ -55,5 +60,5 @@
 	</view>
 	<view class="h15"></view>
 </view>
-<import src="../template/nav.wxml"/>
+<import src="../template/nav.wxml" />
 <template is="nav" data="{{tabid:1}}" />

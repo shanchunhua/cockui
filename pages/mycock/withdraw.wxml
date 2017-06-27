@@ -7,7 +7,8 @@
 					<text class="te">红公鸡净重量：</text>
 				</view>
 				<view class="dd d2">
-					<text class="te">每只<text class="b">6</text>斤以上</text>
+					<text class="te">每只
+						<text class="b">6</text>斤以上</text>
 				</view>
 				<view class="clear"></view>
 			</view>
@@ -16,7 +17,8 @@
 					<text class="te">收回价格：</text>
 				</view>
 				<view class="dd d2">
-					<text class="te"><text class="b">209</text>元/只</text>
+					<text class="te">
+						<text class="b">209</text>元/只</text>
 				</view>
 				<view class="clear"></view>
 			</view>
@@ -25,7 +27,8 @@
 					<text class="te">一共可收回：</text>
 				</view>
 				<view class="dd d2">
-					<text class="te"><text class="b">{{order.availableQuantity}}</text>只</text>
+					<text class="te">
+						<text class="b">{{adoptionOrder.availableQuantity}}</text>只</text>
 				</view>
 				<view class="clear"></view>
 			</view>
@@ -36,7 +39,7 @@
 				<view class="dd d2">
 					<view class="vfo">
 						<view class="v_lef vbtn" bindtap="minus">-</view>
-						<view class="inp vinp"><input  value="{{withdrawOrder.quantity}}" /></view>
+						<view class="inp vinp"><input value="{{withdrawOrder.quantity}}" /></view>
 						<view class="v_rig vbtn" bindtap="plus">+</view>
 						<view class="clear"></view>
 					</view>
@@ -47,22 +50,7 @@
 		</view>
 	</view>
 	<view class="h15"></view>
-	<view class="orddl">
-		<view class="in40">
-			<view class="h2">
-				<text>皮箱存货</text>
-			</view>
-			<block wx:for="{{goods}}">
-			<view class="h15"></view>
-			<view class="che">
-				<checkbox class="le" value="value" checked="false" />
-				<text class="at">{{item.goods.name}}</text>
-				<text class="rt">{{item.quantity}}份</text>
-				<view class="clear"></view>
-			</view>
-			</block>
-		</view>
-	</view>
+	<include src="../template/boxItems.wxml" />
 	<view class="h15"></view>
 	<view class="orddl">
 		<view class="in40">
@@ -80,7 +68,9 @@
 					<text class="te">转让人：</text>
 				</view>
 				<view class="dd d2">
-					<text class="te"><text class="b">张三</text></text>
+					<text class="te">
+						<text class="b">张三</text>
+					</text>
 				</view>
 				<view class="clear"></view>
 			</view>
@@ -89,7 +79,9 @@
 					<text class="te">联系电话：</text>
 				</view>
 				<view class="dd d2">
-					<text class="te"><text class="b">13453434567</text></text>
+					<text class="te">
+						<text class="b">13453434567</text>
+					</text>
 				</view>
 				<view class="clear"></view>
 			</view>
@@ -98,7 +90,9 @@
 					<text class="te">收货地址：</text>
 				</view>
 				<view class="dd d2">
-					<text class="te"><text class="b">内蒙古乌拉特前旗3号</text></text>
+					<text class="te">
+						<text class="b">内蒙古乌拉特前旗3号</text>
+					</text>
 				</view>
 				<view class="clear"></view>
 			</view>
@@ -107,18 +101,11 @@
 	</view>
 </view>
 <view class="foo_btn2">
-	<view><text class="tax">合计：<text class="or">{{withdrawOrder.total}} </text>元</text></view>
-	<view class="btn"><text>立即支付</text></view>
+	<view>
+		<text class="tax">合计：
+			<text class="or">{{withdrawOrder.total}} </text>元</text>
+	</view>
+	<view class="btn">
+		<text>立即支付</text>
+	</view>
 </view>
-
-
-
-
-
-
-
-
-
-
-
-

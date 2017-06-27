@@ -42,5 +42,10 @@ module.exports = {
             method: 'POST',
             data: order
         });
+    },
+    getById: function (id) {
+        return wxe.requestP({
+            url: 'cockTransfer/' + id, method: 'GET'
+        });
     }
-}
+};

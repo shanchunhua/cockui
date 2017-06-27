@@ -2,6 +2,8 @@
 var app = getApp();
 var cockAdoptionOrderService = require('../../service/cockAdoptionOrder.js');
 var customerBoxService = require('../../service/customerBox.js');
+var paymentService = require('../../service/payment.js');
+var shippingOrderService = require('../../service/shippingOrder.js');
 Page({
 
   /**
@@ -25,12 +27,12 @@ Page({
     var self = this;
    
     cockAdoptionOrderService.getById(id).then(function (res) {
-      self.data.withdrawOrder.quantity = res.data.availableQuantity;
-      self.data.withdrawOrder.adoptionOrder=res.data;
+      self.data.order.quantity = res.data.availableQuantity;
+      self.data.order.adoptionOrder=res.data;
 
       self.setData({
-        order: res.data,
-        withdrawOrder: self.data.withdrawOrder
+        adoptionOrder: res.data,
+        order: self.data.order
       });
     });
     customerBoxService.loadCustomerBoxItems().then(function (res) {
@@ -39,21 +41,58 @@ Page({
     });
   },
   plus: function () {
-    if (this.data.withdrawOrder.quantity < this.data.order.quantity) {
-      this.data.withdrawOrder.quantity = this.data.withdrawOrder.quantity + 1;
-      this.data.withdrawOrder.total = this.data.withdrawOrder.quantity * this.data.withdrawOrder.price;
+    if (this.data.order.quantity < this.data.order.quantity) {
+      this.data.order.quantity = this.data.order.quantity + 1;
+      this.data.order.total = this.data.order.quantity * this.data.order.price;
       this.setData({
-        withdrawOrder: this.data.withdrawOrder
+        order: this.data.order
       });
     }
 
   },
   minus: function () {
-    if (this.data.withdrawOrder.quantity > 1) {
-      this.data.withdrawOrder.quantity = this.data.withdrawOrder.quantity - 1;
-      this.data.withdrawOrder.total = this.data.withdrawOrder.quantity * this.data.withdrawOrder.price;
+    if (this.data.order.quantity > 1) {
+      this.data.order.quantity = this.data.order.quantity - 1;
+      this.data.order.total = this.data.order.quantity * this.data.order.price;
       this.setData({
-        withdrawOrder: this.data.withdrawOrder
+        withdrawOrder: this.data.order
+      });
+    }
+
+  },
+   create: function () {
+    var self = this;
+    this.data.goods.forEach(function(item){
+      if(item.checked){
+        self.data.order.items.push(item);
+      }
+    });
+    //订单已创建，直接支付
+    if (!this.data.order.id) {
+      shippingOrder.create(this.data.order).then(function (res) {
+        var order = res.data;
+        self.setData({ order: order });
+        paymentService.payOrder({
+          order: order,
+          type: 1,
+          success: function (res) {
+            console.log('success');
+            wx.navigateTo({
+              url: '/pages/choosehennery/success?id=' + self.data.order.id
+            });
+          }
+        });
+      });
+    } else {
+      paymentService.payOrder({
+        order: this.data.order,
+        type: 1,
+        success: function (res) {
+          console.log('success');
+          wx.navigateTo({
+            url: '/pages/choosehennery/success?id=' + self.data.order.id
+          });
+        }
       });
     }
 

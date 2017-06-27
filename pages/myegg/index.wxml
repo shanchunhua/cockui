@@ -103,25 +103,7 @@
 		</view>
 	</view>
 	<view class="h15"></view>
-	<view class="h15"></view>
-	<view class="eggs_ol">
-		<view class="orddl">
-			<view class="in40">
-				<view class="h2">
-					<text>皮箱存货</text>
-				</view>
-				<block wx:for="{{goods}}">
-				<view class="h15"></view>
-				<view class="che">
-					<checkbox class="le" value="value" checked="false" />
-					<text class="at">{{item.goods.name}}</text>
-					<text class="rt">{{item.quantity}}份</text>
-					<view class="clear"></view>
-				</view>
-				</block>
-			</view>
-		</view>
-	</view>
+	<include src="../template/boxItems.wxml" />
 	<view class="h15"></view>
 </view>
 <view class="foo_btn2">

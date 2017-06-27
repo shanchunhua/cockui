@@ -43,5 +43,12 @@ module.exports = {
                 orderNo: null
             }
         });
-    }
+    },
+    create: function (order) {
+        return wxe.requestP({
+            url: 'shippingOrder',
+            method: 'POST',
+            data: order
+        });
+    },
 };
