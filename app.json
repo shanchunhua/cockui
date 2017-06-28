@@ -9,6 +9,7 @@
     "pages/choosehennery/success",
     "pages/market/index",
     "pages/market/transfer",
+    "pages/market/collection",
     "pages/henrental/index",
     "pages/henrental/success",
     "pages/uc_mycock/index",

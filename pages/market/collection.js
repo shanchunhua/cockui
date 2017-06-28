@@ -1,9 +1,9 @@
-// pages/payment/index.js
-var app = getApp()
-var cockTransferService = require('../../service/cockTransfer.js');
-var shippingOrderService = require('../../service/shippingOrder.js');
+// pages/suborder2/index.js
+var app = getApp();
+var collectionGoodsService = require('../../service/collectionGoods.js');
+var customerBoxService = require('../../service/customerBox.js');
 var paymentService = require('../../service/payment.js');
-var moment = require('../../utils/we-moment-with-locales');
+var shippingOrderService = require('../../service/shippingOrder.js');
 Page({
 
   /**
@@ -12,10 +12,9 @@ Page({
   data: {
     order: {
       quantity: 1,
-      price: 209,
-      total: 209,
-      items: [],
-      goodsType: 'MORNING_MARKET'
+      price: 0,
+      total: 0,
+      goodsType: 'SELECTION'
     }
   },
 
@@ -23,23 +22,39 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var self = this;
     var id = options.id;
+    console.log(id);
+    var self = this;
     self.data.order.customer = app.globalData.userInfo;
-    cockTransferService.getById(id).then(function (res) {
-      var data = res.data;
-      data.dateStr = moment(data.createdTime).format('YYYY-MM-DD');
+    collectionGoodsService.getById(id).then(function (res) {
+      self.data.order.collectionGoods = res.data;
+      self.data.order.price = res.data.price;
+      self.data.order.total = res.data.price;
       self.setData({
-        'cockTransfer': data
+        collectionGoods: res.data,
+        order: self.data.order
       });
-      this.data.order.cockTransfer = data;
+    });
+    customerBoxService.loadCustomerBoxItems().then(function (res) {
+      var list = res.data;
+      self.setData({ goods: list.filter(function (item) { return item.quantity > 0; }) });
     });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  plus: function () {
+    this.data.order.quantity = this.data.order.quantity + 1;
+    this.data.order.total = this.data.order.quantity * this.data.order.price;
+    this.setData({
+      order: this.data.order
+    });
+  },
+  minus: function () {
+    if (this.data.order.quantity > 1) {
+      this.data.order.quantity = this.data.order.quantity - 1;
+      this.data.order.total = this.data.order.quantity * this.data.order.price;
+      this.setData({
+        order: this.data.order
+      });
+    }
 
   },
   create: function () {
@@ -74,6 +89,13 @@ Page({
     }
 
   },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
   /**
    * 生命周期函数--监听页面显示
    */

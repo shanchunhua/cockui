@@ -18,7 +18,7 @@ Page({
       userInfo: app.globalData.userInfo
     });
     var self = this;
-    customerService.loadCustomerProperty(2).then(function (res) {
+    customerService.loadCustomerProperty(this.data.userInfo.id).then(function (res) {
       self.setData({ customerProperty: res.data });
     })
   },

@@ -1,0 +1,99 @@
+<view class="pb100">
+	<view class="h15"></view>
+	<view class="orddl">
+		<view class="in40">
+			<view class="indl">
+				<view class="dd d1">
+					<text class="te">产品名称：</text>
+				</view>
+				<view class="dd d2">
+					<text class="te">{{collectionGoods.name}}</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="indl">
+				<view class="dd d1">
+					<text class="te">产品单价：</text>
+				</view>
+				<view class="dd d2">
+					<text class="te">
+						<text class="b">{{collectionGoods.price}}</text>元</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="indl">
+				<view class="dd d1">
+					<text class="te">购买数量：</text>
+				</view>
+				<view class="dd d2">
+					<view class="vfo">
+						<view class="v_lef vbtn" bindtap="minus">-</view>
+						<view class="inp vinp"><input value="{{order.quantity}}" /></view>
+						<view class="v_rig vbtn" bindtap="plus">+</view>
+						<view class="clear"></view>
+					</view>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="h15"></view>
+		</view>
+	</view>
+	<view class="h15"></view>
+	<include src="../template/boxItems.wxml" />
+	<view class="h15"></view>
+	<view class="orddl">
+		<view class="in40">
+			<view class="h2">
+				<text class="h2">默认收货地址</text>
+				<view class="btn">
+					<image class="img" src="/img/s74.png"></image>
+					<text class="on">修改</text>
+					<view class="clear"></view>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="indl">
+				<view class="dd d1">
+					<text class="te">转让人：</text>
+				</view>
+				<view class="dd d2">
+					<text class="te">
+						<text class="b">张三</text>
+					</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="indl">
+				<view class="dd d1">
+					<text class="te">联系电话：</text>
+				</view>
+				<view class="dd d2">
+					<text class="te">
+						<text class="b">13453434567</text>
+					</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+			<view class="indl">
+				<view class="dd d1">
+					<text class="te">收货地址：</text>
+				</view>
+				<view class="dd d2">
+					<text class="te">
+						<text class="b">内蒙古乌拉特前旗3号</text>
+					</text>
+				</view>
+				<view class="clear"></view>
+			</view>
+		</view>
+
+	</view>
+</view>
+<view class="foo_btn2">
+	<view>
+		<text class="tax">合计：<text class="or">{{order.total}} </text>元</text>
+	</view>
+	<view class="btn" bindtap="create">
+		<text>立即支付</text>
+	</view>
+</view>

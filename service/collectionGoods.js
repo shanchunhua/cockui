@@ -11,5 +11,10 @@ module.exports = {
             }
 
         });
+    },
+    getById: function (id) {
+        return wxe.requestP({
+            url: 'collectionGoods/' + id, method: 'GET'
+        });
     }
-}
+};
