@@ -50,6 +50,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    baseUrl: 'https://wxapp.mujia.com/'
+    baseUrl: 'https://www.huanlemujia.com/'
   }
 })

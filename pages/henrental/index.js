@@ -51,7 +51,7 @@ Page({
         self.setData({ order: order });
         paymentService.payOrder({
           order: order,
-          type: 1,
+          type: 2,
           success: function (res) {
             console.log('success');
             wx.navigateTo({
