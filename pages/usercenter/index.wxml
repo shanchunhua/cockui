@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="mem_head w" style="background:url('/img/s19.jpg'); background-size: cover;">
+<view class="mem_head w" style="background:url('http://static.huanlemujia.com/static/s19.jpg'); background-size: cover;">
 	<view class="in40">
 		<view class="pro">
 			<view class="lef">
@@ -8,8 +8,8 @@
 			</view>
 			<view class="rig">
 				<view class="cent">
-					<text class="t1">张老三牧民</text>
-					<text class="t1">ID:4828190</text>
+					<text class="t1">{{userInfo.nickName}}</text>
+					<text class="t1">ID:{{userInfo.id}}</text>
 				</view>
 			</view>
 			<view class="clear"></view>
@@ -43,9 +43,9 @@
 			<view class="in35">
 				<navigator url="/pages/uc_mycock/index">
 				<view class="li_b">
-					<view class="icon lef" style="background:url('/img/s9.png'); background-size: cover;"></view>
+					<view class="icon lef" style="background:url('http://static.huanlemujia.com/static/s9.png'); background-size: cover;"></view>
 					<text>公鸡订单</text>
-					<view class="icon rig" style="background:url('/img/s8.png'); background-size: cover;"></view>
+					<view class="icon rig" style="background:url('http://static.huanlemujia.com/static/s8.png'); background-size: cover;"></view>
 					<view class="clear"></view>
 				</view>
 				</navigator>
@@ -55,9 +55,9 @@
 			<view class="in35">
 				<navigator url="/pages/uc_myegg/index">
 				<view class="li_b">
-					<view class="icon lef" style="background:url('/img/s10.png'); background-size: cover;"></view>
+					<view class="icon lef" style="background:url('http://static.huanlemujia.com/static/s10.png'); background-size: cover;"></view>
 					<text>鸡蛋订单</text>
-					<view class="icon rig" style="background:url('/img/s8.png'); background-size: cover;"></view>
+					<view class="icon rig" style="background:url('http://static.huanlemujia.com/static/s8.png'); background-size: cover;"></view>
 					<view class="clear"></view>
 				</view>
 				</navigator>
@@ -67,9 +67,9 @@
 			<view class="in35">
 				<navigator url="/pages/uc_mymarket/index">
 				<view class="li_b">
-					<view class="icon lef" style="background:url('/img/s11.png'); background-size: cover;"></view>
+					<view class="icon lef" style="background:url('http://static.huanlemujia.com/static/s11.png'); background-size: cover;"></view>
 					<text>早市订单</text>
-					<view class="icon rig" style="background:url('/img/s8.png'); background-size: cover;"></view>
+					<view class="icon rig" style="background:url('http://static.huanlemujia.com/static/s8.png'); background-size: cover;"></view>
 					<view class="clear"></view>
 				</view>
 				</navigator>
@@ -79,9 +79,9 @@
 			<view class="in35">
 				<navigator url="/pages/uc_myselection/index">
 				<view class="li_b">
-					<view class="icon lef" style="background:url('/img/s12.png'); background-size: cover;"></view>
+					<view class="icon lef" style="background:url('http://static.huanlemujia.com/static/s12.png'); background-size: cover;"></view>
 					<text>精选订单</text>
-					<view class="icon rig" style="background:url('/img/s8.png'); background-size: cover;"></view>
+					<view class="icon rig" style="background:url('http://static.huanlemujia.com/static/s8.png'); background-size: cover;"></view>
 					<view class="clear"></view>
 				</view>
 				</navigator>
@@ -91,9 +91,9 @@
 			<view class="in35">
 				<navigator url="/pages/uc_mybox/index">
 				<view class="li_b">
-					<view class="icon lef" style="background:url('/img/s13.png'); background-size: cover;"></view>
+					<view class="icon lef" style="background:url('http://static.huanlemujia.com/static/s13.png'); background-size: cover;"></view>
 					<text>皮箱订单</text>
-					<view class="icon rig" style="background:url('/img/s8.png'); background-size: cover;"></view>
+					<view class="icon rig" style="background:url('http://static.huanlemujia.com/static/s8.png'); background-size: cover;"></view>
 					<view class="clear"></view>
 				</view>
 				</navigator>
@@ -102,9 +102,9 @@
 		<view class="li">
 			<view class="in35">
 				<view class="li_b" bindtap="addressManagement">
-					<view class="icon lef" style="background:url('/img/s14.png'); background-size: cover;"></view>
+					<view class="icon lef" style="background:url('http://static.huanlemujia.com/static/s14.png'); background-size: cover;"></view>
 					<text>收货地址</text>
-					<view class="icon rig" style="background:url('/img/s8.png'); background-size: cover;"></view>
+					<view class="icon rig" style="background:url('http://static.huanlemujia.com/static/s8.png'); background-size: cover;"></view>
 					<view class="clear"></view>
 				</view>
 			</view>

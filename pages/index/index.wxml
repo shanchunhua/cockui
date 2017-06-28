@@ -1,7 +1,6 @@
 <view class="pb100">
-	<view class="index">
-		<image src="/img/s20.jpg" class="bann_img h420"></image>
-	</view>
+	<video class="index" src="http://hls-live.jia.360.cn/live_jia_public/_LC_RE_non_3608174718614986407651160293_CX/index.m3u8">
+	</video>
 	<view class="ind_ad">
 		<image src="/img/s21.png" class="icon"></image>
 		<text class="at">推荐直播</text>

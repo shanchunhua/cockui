@@ -1,4 +1,4 @@
-var app = getApp()
+var app = getApp();
 var customerService = require('../../service/customer.js');
 // index.js
 Page({

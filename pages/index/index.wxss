@@ -16,7 +16,9 @@
 .ind_ta .ta{position: absolute; left: 40rpx; top: 40rpx; width: 390rpx; line-height: 36rpx;}
 .ind_ta .ta .a{color: #3292ff;}
 
-
+.index{
+width:100%;
+}
 
 
 
