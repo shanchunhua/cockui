@@ -1,6 +1,7 @@
 // pages/rawegg/index.js
 var henRentOrderService = require('../../service/henRentOrder.js');
 var paymentService = require('../../service/payment.js');
+var customerService = require('../../service/customer.js');
 var app = getApp();
 Page({
 
@@ -20,15 +21,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var self=this;
     console.log(app.globalData.userInfo);
     this.data.order.customer = app.globalData.userInfo;
+    customerService.loadCustomerProperty(app.globalData.userInfo.id).then(function (res) {
+      self.setData({ customerProperty: res.data });
+    });
+    henRentOrderService.loadMyOrders(this.data.order.customer).then(function(res){
+      self.setData({
+        rentOrders:res.data
+      });
+    });
   },
   plus: function () {
     this.data.order.quantity = this.data.order.quantity + 1;
     this.data.order.total = this.data.order.quantity * this.data.order.price;
     this.setData({
       order: this.data.order
-    })
+    });
   },
   minus: function () {
     if (this.data.order.quantity > 1) {

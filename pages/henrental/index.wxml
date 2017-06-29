@@ -4,19 +4,19 @@
 	<view class="raw_dl">
 		<view class="dd">
 			<text class="num">
-				<text class="bu">20</text>枚
+				<text class="bu">{{customerProperty.laidEggCountToday}}</text>枚
 			</text>
 			<text class="at">今天生蛋数</text>
 		</view>
 		<view class="dd">
 			<text class="num">
-				<text class="bu">12</text>只
+				<text class="bu">{{customerProperty.henCount}}</text>只
 			</text>
 			<text class="at">母鸡租借数量</text>
 		</view>
 		<view class="dd">
 			<text class="num">
-				<text class="bu">43</text>枚
+				<text class="bu">{{customerProperty.laidEggCount}}</text>枚
 			</text>
 			<text class="at">累计总生蛋</text>
 		</view>
@@ -25,22 +25,13 @@
 	<view class="h15"></view>
 	<view class="lis1">
 		<view class="in40">
-			<view class="li">
+			<view class="li" wx:for="{{henRentOrders}}">
 				<image src="/img/s72.png" class="img"></image>
 				<view class="tex">
-					<text class="num"><text class="b">2</text>只</text>
-					<text class="p">还剩123天到期</text>
+					<text class="num"><text class="b">{{item.quantity}}</text>只</text>
+					<text class="p">还剩{{daysLeft}}天到期</text>
 				</view>
-				<text class="com">共生蛋12枚</text>
-				<view class="clear"></view>
-			</view>
-			<view class="li">
-				<image src="/img/s72.png" class="img"></image>
-				<view class="tex">
-					<text class="num"><text class="b">2</text>只</text>
-					<text class="p">还剩123天到期</text>
-				</view>
-				<text class="com">共生蛋12枚</text>
+				<text class="com">共生蛋{{item.laidEggCount}}枚</text>
 				<view class="clear"></view>
 			</view>
 		</view>

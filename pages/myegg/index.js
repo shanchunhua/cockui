@@ -48,7 +48,7 @@ Page({
     if (this.data.order.quantity > min) {
       laidEgg = this.data.order.quantity - min;
       var order = this.data.order;
-      order.total = price * laidEgg
+      order.total = price * laidEgg;
       this.setData({
         order: order
       })
