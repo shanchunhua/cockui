@@ -3,7 +3,7 @@
 var customerService = require('../../service/customer.js');
 var stealOrderService = require('../../service/stealOrder.js');
 var goodsForStealService = require('../../service/goodsForSteal.js');
-
+var henneryService = require('../../service/hennery.js');
 var app = getApp();
 Page({
   data: {
@@ -41,7 +41,12 @@ Page({
         goodsForSteal: res.data
       });
     });
-
+    henneryService.getRecommended().then(function(res){
+      var recommendedHennery=res.data[0];
+      self.setData({
+        recommendedHennery:recommendedHennery
+      });
+    });
   },
   steal: function () {
     var property = this.data.customerProperty;

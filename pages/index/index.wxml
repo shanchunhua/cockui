@@ -1,10 +1,10 @@
 <view class="pb100">
-	<video class="index" src="http://hlive.jia.360.cn/live_jia_public/_LC_RE_non_3608174718614987957001441589_CX/index.m3u8">
+	<video class="index" src="{{recommendedHennery.videoUrl}}">
 	</video>
 	<view class="ind_ad">
 		<image src="/img/s21.png" class="icon"></image>
 		<text class="at">推荐直播</text>
-		<text class="ad">***牧家正在进行直播</text>
+		<text class="ad">{{recommendedHennery.ownerName}}正在进行直播</text>
 		<view class="clear"></view>
 	</view>
 	<view class="h15"></view>

@@ -9,5 +9,13 @@ module.exports = {
         return wxe.requestP({
             url: 'hennery/' + id, method: 'GET'
         });
+    },
+    getRecommended: function () {
+        return wxe.requestP({
+            url: 'hennery/example', method: 'POST',
+            data: {
+                recommended: true
+            }
+        });
     }
 };
