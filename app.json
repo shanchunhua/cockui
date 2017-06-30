@@ -1,6 +1,7 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
+    "pages/understand/index",
     "pages/index/stealsuccess",
     "pages/index/stealfailed",
     "pages/usercenter/index",
@@ -28,12 +29,11 @@
     "pages/mybox/index",
     "pages/myegg/rewarddog",
     "pages/myegg/rewardhen"
-    
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
 }

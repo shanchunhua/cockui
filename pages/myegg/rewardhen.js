@@ -9,12 +9,12 @@ Page({
    */
   data: {
     options: [
-      { price: 0.1, text: '初来乍到一点心意' },
-      { price: 0.5, text: '初来乍到一点心意' },
-      { price: 1.0, text: '初来乍到一点心意' },
-      { price: 5.0, text: '初来乍到一点心意' },
-      { price: 10.0, text: '初来乍到一点心意' },
-      { price: 20.0, text: '初来乍到一点心意' }
+      { price: 0.1, text: '干的还行' },
+      { price: 0.5, text: '不错不错' },
+      { price: 1.0, text: '我很满意' },
+      { price: 10, text: '继续加油' },
+      { price: 20, text: '你太美了' },
+      { price: 100, text: '我很感动' }
     ]
 
   },

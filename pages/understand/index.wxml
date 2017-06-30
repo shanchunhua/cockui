@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<view class="pb100">
+	<view class="ind_tab">
+		<view class="tbtn on">了解红公鸡</view>
+		<navigator url="/pages/choosehennery/index" style="display:inline;" open-type="redirect">
+		<view class="tbtn">选择牧民饲养</view>
+		</navigator>
+	</view>
+	<view class="h15"></view>
+	<view class="un_img">
+		<image src="/img/a1.jpg" class="a1"></image>
+		<image src="/img/a2.jpg" class="a2"></image>
+		<image src="/img/a3.jpg" class="a3"></image>
+		<image src="/img/a4.jpg" class="a4"></image>
+		<image src="/img/a5.jpg" class="a5"></image>
+		<image src="/img/a6.jpg" class="a6"></image>
+		<image src="/img/a7.jpg" class="a7"></image>
+		<image src="/img/a8.jpg" class="a8"></image>
+		<image src="/img/a9.jpg" class="a9"></image>
+		<image src="/img/a10.jpg" class="a10"></image>
+		<image src="/img/a11.jpg" class="a11"></image>
+		<image src="/img/a12.jpg" class="a12"></image>
+		<image src="/img/a13.jpg" class="a13"></image>
+		<image src="/img/a14.jpg" class="a14"></image>
+		<image src="/img/a15.jpg" class="a15"></image>
+		<image src="/img/a16.jpg" class="a16"></image>
+		<image src="/img/a17.jpg" class="a17"></image>
+	</view>
+	<view class="h15"></view>
+	<navigator url="/pages/choosehennery/index" open-type="redirect">
+	<view class="foo_btn">
+	    <view class="btn_con">
+	        <text>立即领养</text>
+	    </view>
+	</view>
+	</navigator>
+</view>
+	

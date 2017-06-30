@@ -1,6 +1,8 @@
 <!--index.wxml-->
 <view class="ind_tab">
+<navigator url="/pages/understand/index" style="display:inline;" open-type="redirect">	
 	<view class="tbtn">了解红公鸡</view>
+</navigator>
 	<view class="tbtn on">选择牧民饲养</view>
 </view>
 <view class="in12">
