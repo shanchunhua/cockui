@@ -5,9 +5,14 @@ module.exports = {
             url: 'stealOrder/pick', method: 'GET'
         });
     },
-    steal: function () {
+    getById: function (id) {
         return wxe.requestP({
-            url: 'stealOrder/steal'
+            url: 'stealOrder/' + id, method: 'GET'
+        });
+    },
+    steal: function (id) {
+        return wxe.requestP({
+            url: 'stealOrder/steal/'+id
         });
     }
 }

@@ -1,7 +1,7 @@
 <view class="pb100">
 	<view class="suc_img">
-		<image src="/img/s65.png" style=""></image>
-		<text>您成功偷取一个XXX（所偷的产品名称）</text>
+		<image src="/img/s65.png"></image>
+		<text>您成功偷取一个{{order.goods.name}}（所偷的产品名称）</text>
 	</view>
 	<view class="h15"></view>
 	<view class="time">
@@ -29,7 +29,7 @@
 						<text class="te">产品价格：</text>
 					</view>
 					<view class="dd d2">
-						<text class="te"><text class="b">0.5元</text></text>
+						<text class="te"><text class="b">{{order.price}}元</text></text>
 					</view>
 					<view class="clear"></view>
 				</view>
@@ -38,7 +38,7 @@
 						<text class="te">被偷牧家：</text>
 					</view>
 					<view class="dd d2">
-						<text class="te"><text class="b">张老四</text></text>
+						<text class="te"><text class="b">{{order.hennery.ownerName}}</text></text>
 					</view>
 					<view class="clear"></view>
 				</view>
@@ -47,7 +47,7 @@
 						<text class="te">饲养地址：</text>
 					</view>
 					<view class="dd d2">
-						<text class="te"><text class="b">内蒙古乌拉特前旗23号</text></text>
+						<text class="te"><text class="b">{{order.hennery.address}}</text></text>
 					</view>
 					<view class="clear"></view>
 				</view>
@@ -57,6 +57,6 @@
 	</view>
 </view>
 <view class="foo_btn2">
-	<view><text class="tax">合计：<text class="or">0.5</text>元</text></view>
-	<view class="btn"><text>立即支付</text></view>
+	<view><text class="tax">合计：<text class="or">{{order.price}}</text>元</text></view>
+	<view class="btn" bindtap="pay"><text>立即支付</text></view>
 </view>

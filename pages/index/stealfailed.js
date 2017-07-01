@@ -1,4 +1,5 @@
 // pages/defeated/index.js
+var app = getApp();
 Page({
 
   /**
@@ -13,6 +14,10 @@ Page({
    */
   onLoad: function (options) {
     console.log(options);
+    var dog=app.globalData.stealHennery.dogName;
+    this.setData({
+      dog:dog
+    });
   },
 
   /**

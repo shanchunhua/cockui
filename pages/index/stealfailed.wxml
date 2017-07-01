@@ -1,6 +1,6 @@
 <view class="suc_img">
 	<image src="/img/s66.png" style=""></image>
-	<text>您已经被看门狗XXX给抓到了</text>
+	<text>您已经被看门狗{{dog}}给抓到了</text>
 </view>
 <image src="/img/s67.jpg" style="width: 100%; height: 300rpx;"></image>
 

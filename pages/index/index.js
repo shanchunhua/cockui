@@ -30,6 +30,7 @@ Page({
           return stealOrderService.pickHenneryToSteal();
         }
       }).then(function (res) {
+        app.globalData.stealHennery=res.data;
         self.setData({
           stealHennery: res.data
         });
@@ -54,7 +55,7 @@ Page({
     if (property.eligibleForSteal) {
       //今天没偷
       if (!property.stealToday) {
-        stealOrderService.steal().then(function (res) {
+        stealOrderService.steal(this.data.stealHennery.id).then(function (res) {
           if (res.success) {
             wx.navigateTo({
               url: '/pages/index/stealsuccess?id='+res.data.id
