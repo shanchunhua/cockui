@@ -46,7 +46,9 @@
 .rec_list .imgbod .imgt{position: absolute; right: 0; top: 50%; margin-top: -42rpx; height: 85rpx; background: rgba(0,0,0,0.5); width: 85rpx; text-align: center; line-height: 85rpx; color: #fff;}
 
 .li_btn_tw  .large{width: 100%; float: left; background: #fff;}
-
+.index{
+width:100%;
+}
 
 
 

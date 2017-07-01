@@ -1,8 +1,8 @@
 <!--index.wxml-->
 <view class="ind_tab">
-<navigator url="/pages/understand/index" style="display:inline;" open-type="redirect">	
-	<view class="tbtn">了解红公鸡</view>
-</navigator>
+	<navigator url="/pages/understand/index" style="display:inline;" open-type="redirect">
+		<view class="tbtn">了解红公鸡</view>
+	</navigator>
 	<view class="tbtn on">选择牧民饲养</view>
 </view>
 <view class="in12">
@@ -11,7 +11,7 @@
 			<image src="/img/s37.png" class="lef"></image>
 			<view class="tex">
 				<view class="he">
-					<text class="tit">{{item.ownerName}}  看门狗:{{item.dogName}}</text>
+					<text class="tit">{{item.ownerName}} 看门狗:{{item.dogName}}</text>
 					<text class="at">已有{{item.adoptedCustomerCount}}人选择领养</text>
 					<text class="clear"></text>
 				</view>
@@ -22,7 +22,7 @@
 			<view class="clear"></view>
 		</view>
 		<view class="vid">
-			<image src="/img/s33.jpg"></image>
+			<video class="index" src="{{item.videoUrl}}"></video>
 		</view>
 		<view class="min_vid">
 			<view class="in18">
@@ -30,11 +30,11 @@
 					<image src="/img/s34.jpg"></image>
 					<text>生活照</text>
 				</view>
-				<view class="img"  bindtap="preview">
+				<view class="img" bindtap="preview">
 					<image src="/img/s35.jpg"></image>
 					<text>大牧场</text>
 				</view>
-				<view class="img"  bindtap="preview">
+				<view class="img" bindtap="preview">
 					<image src="/img/s36.jpg"></image>
 					<text>家禽记</text>
 				</view>
@@ -43,10 +43,10 @@
 		</view>
 		<view class="li_btn">
 			<navigator url="/pages/choosehennery/adopt?id={{item.id}}">
-	        <view class="btn_con">
-	            <view class="icon" style="background: url('/img/s48.png'); background-size: cover;"></view>
-	            <text>选择该牧民饲养</text>
-	        </view>
+				<view class="btn_con">
+					<view class="icon" style="background: url('http://static.huanlemujia.com/static/s48.png'); background-size: cover;"></view>
+					<text>选择该牧民饲养</text>
+				</view>
 			</navigator>
 		</view>
 	</view>

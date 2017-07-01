@@ -18,4 +18,6 @@
 .li_btn_tw .li_btn .btn_con text{color: #3292ff;}
 .li_btn_tw .li_btn:nth-child(2){box-sizing: border-box; border-left: 1px solid #e5e5e5;}
 
-
+.index{
+width:100%;
+}

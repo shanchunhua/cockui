@@ -17,13 +17,13 @@
 			<view class="clear"></view>
 		</view>
 		<view class="vid">
-			<image src="/img/s33.jpg"></image>
+			<video class="index" src="{{item.hennery.videoUrl}}"></video>
 		</view>
 		<view class="li_btn_tw">
 				<navigator url="/pages/choosehennery/adopt?id={{item.hennery.id}}">
 			<view class="li_btn">
 		        <view class="btn_con">
-		            <view class="icon" style="background: url('/img/s50.png'); background-size: cover;"></view>
+		            <view class="icon" style="background: url('http://static.huanlemujia.com/static/s50.png'); background-size: cover;"></view>
 		            <text>继续领养</text>
 		        </view>
 		    </view>
@@ -31,7 +31,7 @@
 		    <view class="li_btn">
 				<navigator url="/pages/mycock/detail?id={{item.hennery.id}}">
 		        <view class="btn_con">
-		            <view class="icon" style="background: url('/img/s51.png'); background-size: cover;"></view>
+		            <view class="icon" style="background: url('http://static.huanlemujia.com/static/s51.png'); background-size: cover;"></view>
 		            <text>育养情况</text>
 		        </view>
 				</navigator>

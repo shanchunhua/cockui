@@ -4,17 +4,17 @@
 		<image src="/img/s37.png" class="lef"></image>
 		<view class="tex">
 			<view class="he">
-				<text class="tit">张老四  看门狗XX</text>
+				<text class="tit">{{currentOrder.hennery.ownerName}}  看门狗:{{currentOrder.hennery.dogName}}</text>
 				<text class="clear"></text>
 			</view>
 			<view class="fo">
-				<text class="add">距离您16km  南京市溧水市XX街道</text>
+				<text class="add">{{currentOrder.hennery.address}}</text>
 			</view>
 		</view>
 		<view class="clear"></view>
 	</view>
 	<view class="vid">
-		<image src="/img/s33.jpg"></image>
+		<video class="index" src="{{currentOrder.hennery.videoUrl}}"></video>
 	</view>
 	<view class="min_vid">
 		
@@ -46,13 +46,13 @@
             <swiper-item class="swip_pa">
                 <view class="swiper-item">
                 	<view class="he">
-                		<text class="num"><text class="mu">8</text>天</text>
+                		<text class="num"><text class="mu">{{item.daysLeft}}</text>天</text>
 						<text class="sp">回收剩余天数</text>
 						<view class="clear"></view>
                 	</view>
                 	<view class="btn">育养完成</view>
                 	<view class="ul">
-                		<text class="li">领养时间：<text class="b"><text class="sr">2017-04-30 17:00</text></text></text>
+                		<text class="li">领养时间：<text class="b"><text class="sr">{{item.dateStr}}</text></text></text>
                 		<text class="li">领养数量：<text class="b"><text class="sr">{{item.quantity}}</text> 只</text></text>
                 		<text class="li">领养价格：<text class="b"><text class="sr">{{item.price}}</text>元</text></text>
                 	</view>
@@ -65,7 +65,7 @@
 	<view class="li_btn{{currentOrder.status!='COMPLETED'?' large':''}}">
 		<navigator url="/pages/mycock/reward?id={{henneryId}}">
         <view class="btn_con">
-            <view class="icon" style="background: url('/img/s53.png'); background-size: cover;"></view>
+            <view class="icon" style="background: url('http://static.huanlemujia.com/static/s53.png'); background-size: cover;"></view>
             <text>打赏</text>
         </view>
 		</navigator>
@@ -73,7 +73,7 @@
     <view class="li_btn" wx:if="{{currentOrder.status=='COMPLETED'}}">
 		<navigator url="/pages/mycock/transfer?id={{currentOrder.id}}">
         <view class="btn_con">
-            <view class="icon" style="background: url('/img/s54.png'); background-size: cover;"></view>
+            <view class="icon" style="background: url('http://static.huanlemujia.com/static/s54.png'); background-size: cover;"></view>
             <text>转让</text>
         </view>
 		</navigator>
@@ -81,7 +81,7 @@
 	<view class="li_btn" wx:if="{{currentOrder.status=='COMPLETED'}}">
 		<navigator url="/pages/mycock/withdraw?id={{currentOrder.id}}">
         <view class="btn_con">
-            <view class="icon" style="background: url('/img/s55.png'); background-size: cover;"></view>
+            <view class="icon" style="background: url('http://static.huanlemujia.com/static/s55.png'); background-size: cover;"></view>
             <text>收回</text>
         </view>
 		</navigator>

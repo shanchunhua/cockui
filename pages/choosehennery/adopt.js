@@ -59,7 +59,7 @@ Page({
           type: 1,
           success: function (res) {
             console.log('success');
-            wx.navigateTo({
+            wx.redirectTo({
               url: '/pages/choosehennery/success?id=' + self.data.order.id
             });
           }
@@ -71,7 +71,7 @@ Page({
         type: 1,
         success: function (res) {
           console.log('success');
-          wx.navigateTo({
+         wx.redirectTo({
             url: '/pages/choosehennery/success?id=' + self.data.order.id
           });
         }

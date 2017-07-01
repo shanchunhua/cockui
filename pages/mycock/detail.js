@@ -1,6 +1,7 @@
 // index.js
 var app = getApp();
 var cockAdoptionOrderService = require('../../service/cockAdoptionOrder.js');
+var moment = require('../../utils/we-moment-with-locales');
 Page({
 
     /**
@@ -22,7 +23,7 @@ Page({
     changeVertical: function (e) {
         this.setData({
             vertical: !this.data.vertical
-        })
+        });
     },
     changeAutoplay: function (e) {
         this.setData({
@@ -54,8 +55,12 @@ Page({
     onLoad: function (options) {
         var self = this;
         cockAdoptionOrderService.getMyRaisingOrdersByHennery(options.id).then(function (res) {
+            res.data.forEach(function (item) {
+                item.dateStr = moment(item.paidDate).format('YYYY-MM-DD hh:mm');
+            });
+
             self.setData({
-                henneryId:options.id,
+                henneryId: options.id,
                 orders: res.data,
                 currentOrder: res.data[0]
             });
