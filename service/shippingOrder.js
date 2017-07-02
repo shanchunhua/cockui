@@ -51,4 +51,14 @@ module.exports = {
             data: order
         });
     },
+    getById: function (id) {
+        return wxe.requestP({
+            url: 'shippingOrder/' + id, method: 'GET'
+        });
+    },
+    getLastOrder: function () {
+        return wxe.requestP({
+            url: 'shippingOrder/lastOrder', method: 'GET'
+        });
+    }
 };

@@ -23,8 +23,17 @@ Page({
    */
   onLoad: function (options) {
     var id = options.id;
-    console.log(id);
     var self = this;
+    shippingOrderService.getLastOrder().then(function (res) {
+      if (res.data) {
+        self.data.order.contact = res.data.contact;
+        self.data.order.tel = res.data.tel;
+        self.data.order.address = res.data.address;
+        self.setData({
+        order: self.data.order
+      });
+      }
+    });
     self.data.order.customer = app.globalData.userInfo;
     collectionGoodsService.getById(id).then(function (res) {
       self.data.order.collectionGoods = res.data;
@@ -69,8 +78,8 @@ Page({
           type: 4,
           success: function (res) {
             console.log('success');
-            wx.navigateTo({
-              url: '/pages/choosehennery/success?id=' + self.data.order.id
+            wx.redirectTo({
+              url: '/pages/market/success?id=' + self.data.order.id
             });
           }
         });
@@ -81,13 +90,37 @@ Page({
         type: 1,
         success: function (res) {
           console.log('success');
-          wx.navigateTo({
-            url: '/pages/choosehennery/success?id=' + self.data.order.id
+          wx.redirectTo({
+            url: '/pages/market/success?id=' + self.data.order.id
           });
         }
       });
     }
 
+  },
+
+  changeAddress: function () {
+    var self = this;
+    wx.chooseAddress({
+      success: function (res) {
+        var order = self.data.order;
+        order.contact = res.userName;
+        order.tel = res.telNumber;
+        order.address = res.provinceName + res.cityName + res.detailInfo;
+        self.setData({
+          order: order
+        });
+        console.log(res.userName)
+        console.log(res.postalCode)
+        console.log(res.provinceName)
+        console.log(res.cityName)
+        console.log(res.countyName)
+        console.log(res.detailInfo)
+        console.log(res.nationalCode)
+        console.log(res.telNumber)
+
+      }
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -11,6 +11,7 @@
     "pages/market/index",
     "pages/market/transfer",
     "pages/market/collection",
+    "pages/market/success",
     "pages/henrental/index",
     "pages/henrental/success",
     "pages/uc_mycock/index",

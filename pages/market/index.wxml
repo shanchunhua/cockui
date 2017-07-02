@@ -49,8 +49,7 @@
 					<text class="nam">{{item.name}}</text>
 					<text class="p">{{item.description}}</text>
 					<text class="pic">
-						<text class="num">{{item.price}}</text>元
-						<text class="del">原价{{item.marketPrice}}元</text>
+						<text class="num">{{item.price}}</text>元<text class="del">原价{{item.marketPrice}}元</text>
 					</text>
 				</view>
 				<navigator url="/pages/market/collection?id={{item.id}}">
