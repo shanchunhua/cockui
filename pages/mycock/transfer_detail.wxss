@@ -1,0 +1,51 @@
+/* pages/my_eggs2/index.wxss */
+.my_egg2_he{width: 100%; height: 338rpx; text-align: center;}
+.my_egg2_he .bod{display: inline-block; padding-top: 86rpx;}
+.my_egg2_he .img{float: left; width: 120rpx; height: 120rpx; border:6rpx solid #59869d; border-radius: 50%;}
+.my_egg2_he .h2{color: #fff;display: block;text-align: left; font-size: 32rpx; font-weight: bold; padding-bottom: 25rpx}
+.my_egg2_he .sp{color: #fff; display: block;text-align: left; line-height: 36rpx;}
+.my_egg2_he .tex{float: left;margin-left: 40rpx;}
+
+.sel_li{background: #fff; overflow: hidden;}
+.sel_li .hea{padding:20rpx 15rpx;}
+.sel_li .lef{display: block; width: 65rpx; height: 65rpx; float: left;}
+.sel_li .tex{float: left; margin-left: 15rpx; width: 600rpx;}
+.sel_li .tex .tit{float: left; color: #333; font-weight: bold;}
+.sel_li .tex .at{float: right;}
+.sel_li .tex .fo{padding-top: 15rpx;}
+.sel_li .vid image{width: 100%; height: 470rpx; display: block;}
+.sel_li .min_vid{}
+.sel_li .min_vid .img{width: 33.33%; float: left; position: relative;}
+.sel_li .min_vid .img text{position: absolute; top:0; left: 0; display: block; width: 100%; text-align: center; height: 180rpx; line-height: 180rpx; background: rgba(0,0,0,0.5); color: #fff; font-size: 26rpx;}
+.sel_li .min_vid image{width: 100%;height: 180rpx; display: block; }
+
+.map{padding: 22rpx 24rpx; background: #fff; border-bottom: 1rpx solid #f6f6f6;}
+.map image{width: 100%; height: 250rpx; display: block;}
+
+
+.rec_list{padding-top: 30rpx; background: #fff;}
+.rec_list .li{padding-bottom: 30rpx; box-sizing: border-box; border-left: 3rpx solid #e6e6e6; position: relative;}
+.rec_list .li .cir{display: block; width: 34rpx; height: 34rpx; background: #fff; box-sizing: border-box; border:3rpx solid #e6e6e6; border-radius: 50%; position: absolute; top: 0; left: -17rpx;}
+.rec_list .li .cir .ci{display: block; width: 16rpx; height: 16rpx; position: absolute; top: 50%; margin-top: -6rpx; left: 50%; margin-left: -6rpx; border-radius: 50%; background: #3292ff;}
+.rec_list .tit{display: block;}
+.rec_list .centent{display: block; color: #4c4c4c; padding-top: 20rpx;}
+.rec_list .rig{margin-left: 50rpx;}
+.rec_list .imgbod {margin-top: 20rpx; position: relative;}
+.rec_list .imgbod image{width: 193rpx; height: 193rpx; margin-right: 21rpx; float: left;}
+.rec_list .imgbod image:nth-child(3){margin-right: 0;float: right;}
+.rec_list .imgbod .imgt{position: absolute; right: 0; top: 50%; margin-top: -42rpx; height: 85rpx; background: rgba(0,0,0,0.5); width: 85rpx; text-align: center; line-height: 85rpx; color: #fff;}
+
+.egg_h2{background: #fff; padding: 28rpx 0;}
+.egg_h2.bor{border-bottom: 1rpx solid #e5e5e5;}
+.egg_h2 .bor{display: block; float: left; width: 8rpx; height: 30rpx; border-radius: 4rpx; background: #3292ff;}
+.egg_h2 .h2{float: left; margin-left: 15rpx;}
+
+.egg_exp{width: 100%; height: 453rpx; color: #fff;}
+.egg_exp .exp{padding: 20rpx 0;}
+.egg_exp .li3 .li{width: 33.33%;float: left; text-align: center; padding: 20rpx 0 20rpx;}
+.egg_exp .li3 .li .sp{display: block;}
+.egg_exp .li3 .li .sp .b{font-size: 46rpx; font-weight: bold; padding-right: 5rpx; }
+.egg_exp .li3 .li .sp2{padding-top: 15rpx;}
+
+
+

@@ -14,44 +14,36 @@
 			</view>
 			<view class="clear"></view>
 		</view>
+
 		<view class="li2">
 			<view class="li">
-				<text class="at">快递公司：<text class="b">1只</text></text>
+				<text class="at">偷的鸡蛋：<text class="b">0</text></text>
 			</view>
 			<view class="li">
-				<text class="at">快递单号：<text class="b">234元</text></text>
+				<text class="at">下的鸡蛋：<text class="b">30</text></text>
 			</view>
 			<view class="clear"></view>
 		</view>
 		<view class="li2">
 			<view class="li">
-				<text class="at">转让单价：<text class="b">张老四</text></text>
+				<text class="at">快递公司：<text class="b">{{item.expressCompany}}</text></text>
 			</view>
 			<view class="li">
-				<text class="at">购买数量：<text class="b">饲养中</text></text>
+				<text class="at">快递单号：<text class="b">{{item.expressNo}}</text></text>
 			</view>
 			<view class="clear"></view>
 		</view>
 				<view class="li2">
 			<view class="li">
-				<text class="at">定单总额：<text class="b">张老四</text></text>
+				<text class="at">收货人：<text class="b">{{item.contact}}</text></text>
 			</view>
 			<view class="li">
-				<text class="at">转让人：<text class="b">饲养中</text></text>
-			</view>
-			<view class="clear"></view>
-		</view>
-				<view class="li2">
-			<view class="li">
-				<text class="at">收货人：<text class="b">张老四</text></text>
-			</view>
-			<view class="li">
-				<text class="at">联系电话：<text class="b">饲养中</text></text>
+				<text class="at">联系电话：<text class="b">{{item.tel}}</text></text>
 			</view>
 			<view class="clear"></view>
 		</view>
 		<view class="li">
-			<text class="at">收货地址：<text class="b">内蒙古乌拉特前旗23号</text></text>
+			<text class="at">收货地址：<text class="b">{{item.address}}</text></text>
 		</view>
 	</view>
 </view>

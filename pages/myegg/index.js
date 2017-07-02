@@ -2,6 +2,8 @@
 var app = getApp()
 var customerService = require('../../service/customer.js');
 var customerBoxService = require('../../service/customerBox.js');
+var paymentService = require('../../service/payment.js');
+var shippingOrderService = require('../../service/shippingOrder.js');
 Page({
 
   /**
@@ -10,7 +12,9 @@ Page({
   data: {
     customerProperty: {},
     order: {
-      quantity: 30
+      quantity: 30,
+      goodsType:'EGG',
+      price:2.5
     },
     eggs: {
       stealEgg: 0,
@@ -23,6 +27,7 @@ Page({
    */
   onLoad: function (options) {
     var self = this;
+     self.data.order.customer = app.globalData.userInfo;
     customerService.loadCustomerProperty(app.globalData.userInfo.id).then(function (res) {
       self.setData({ customerProperty: res.data });
       console.log(self.data);
@@ -77,7 +82,47 @@ Page({
     }
 
   },
+  create: function () {
+    var self = this;
+    this.data.goods.forEach(function (item) {
+      if (item.checked) {
+        self.data.order.items.push({
+          goods: item.goods,
+          quantity: item.quantity,
+          name: item.goods.name
+        });
+      }
+    });
+    //订单已创建，直接支付
+    if (!this.data.order.id) {
+      shippingOrderService.create(this.data.order).then(function (res) {
+        var order = res.data;
+        self.setData({ order: order });
+        paymentService.payOrder({
+          order: order,
+          type: 4,
+          success: function (res) {
+            console.log('success');
+            wx.redirectTo({
+              url: '/pages/common/shippingOrderSuccess?id=' + self.data.order.id
+            });
+          }
+        });
+      });
+    } else {
+      paymentService.payOrder({
+        order: this.data.order,
+        type: 1,
+        success: function (res) {
+          console.log('success');
+          wx.redirectTo({
+            url: '/pages/common/shippingOrderSuccess?id=' + self.data.order.id
+          });
+        }
+      });
+    }
 
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -85,6 +130,20 @@ Page({
 
   },
 
+    changeAddress: function () {
+    var self = this;
+    wx.chooseAddress({
+      success: function (res) {
+        var order = self.data.order;
+        order.contact = res.userName;
+        order.tel = res.telNumber;
+        order.address = res.provinceName + res.cityName + res.detailInfo;
+        self.setData({
+          order: order
+        });
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

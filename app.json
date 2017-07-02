@@ -24,12 +24,14 @@
     "pages/mycock/index",
     "pages/mycock/detail",
     "pages/mycock/transfer",
+    "pages/mycock/transfer_detail",
     "pages/mycock/reward",
     "pages/mycock/withdraw",
     "pages/myegg/index",
     "pages/mybox/index",
     "pages/myegg/rewarddog",
-    "pages/myegg/rewardhen"
+    "pages/myegg/rewardhen",
+    "pages/common/shippingOrderSuccess"
   ],
   "window": {
     "backgroundTextStyle": "light",

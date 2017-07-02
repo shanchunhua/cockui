@@ -1,0 +1,2 @@
+<import src="../template/paySuccess" />
+<template is="paySuccess" data="{{msg:'你yi'}}"

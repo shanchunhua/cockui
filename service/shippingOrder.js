@@ -18,7 +18,7 @@ module.exports = {
             data: {
                 customer: customer,
                 goodsType: 'SELECTION',
-                paid:true
+                paid: true
             }
         });
     },
@@ -29,7 +29,7 @@ module.exports = {
             data: {
                 customer: { id: customer.id },
                 goodsType: 'MORNING_MARKET',
-                orderNo: null
+                paid: true
             }
         });
     },
@@ -40,7 +40,7 @@ module.exports = {
             data: {
                 customer: { id: customer.id },
                 goodsType: 'EGG',
-                orderNo: null
+                 paid: true
             }
         });
     },

@@ -32,7 +32,7 @@ Page({
       self.setData({
         'cockTransfer': data
       });
-      this.data.order.cockTransfer = data;
+      self.data.order.cockTransfer = data;
     });
   },
 
@@ -54,8 +54,8 @@ Page({
           type: 4,
           success: function (res) {
             console.log('success');
-            wx.navigateTo({
-              url: '/pages/choosehennery/success?id=' + self.data.order.id
+            wx.redirectTo({
+              url: '/pages/market/success?id=' + self.data.order.id
             });
           }
         });
@@ -63,16 +63,31 @@ Page({
     } else {
       paymentService.payOrder({
         order: this.data.order,
-        type: 1,
+        type: 4,
         success: function (res) {
           console.log('success');
-          wx.navigateTo({
-            url: '/pages/choosehennery/success?id=' + self.data.order.id
+          wx.redirectTo({
+            url: '/pages/market/success?id=' + self.data.order.id
           });
         }
       });
     }
 
+  },
+
+    changeAddress: function () {
+    var self = this;
+    wx.chooseAddress({
+      success: function (res) {
+        var order = self.data.order;
+        order.contact = res.userName;
+        order.tel = res.telNumber;
+        order.address = res.provinceName + res.cityName + res.detailInfo;
+        self.setData({
+          order: order
+        });
+      }
+    });
   },
   /**
    * 生命周期函数--监听页面显示

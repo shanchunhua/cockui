@@ -1,0 +1,182 @@
+<!--pages/my_eggs2/index.wxml-->
+<view class="my_egg2_he" style="background: url(/img/s82.jpg); background-size: cover;">
+	<view class="bod">
+		<image class="img" src="/img/pro.png"></image>
+		<view class="tex">
+			<text class="h2">{{cockTransfer.customer.nickName}}</text>
+			<text class="sp">转让时间：2017-04-30 17:00</text>
+			<text class="sp">转让数量：1 只</text>
+			<text class="sp">转让单价：234 元/只</text>
+		</view>
+		<view class="clear"></view>
+	</view>
+</view>
+<view class="ind_tab2">
+	<view class="li on">
+		<text>我的红公鸡</text>
+		<view class="sp"></view>
+	</view>
+	<view class="li">
+		<text>了解红公鸡</text>
+		<view class="sp"></view>
+	</view>
+	<view class="clear"></view>
+</view>
+<image src="/img/s83.jpg" style="width: 100%; height: 250rpx"></image>
+<view class="h15"></view>
+<import src="_henneryIntro.wxml" />
+<template is="henneryIntro" data="{{hennery:cockTransfer.cockAdoptionOrder.hennery}}"/>
+
+<view class="h15"></view>
+<view class="egg_h2">
+	<view class="in30">
+		<view class="bor"></view>
+		<text class="h2">该母鸡最近一个月在草原上的经历</text>
+		<view class="clear"></view>
+	</view>
+</view>
+<view class="egg_exp" style="background: url(http://52lxy.com/img/s81.jpg); background-size: cover;">
+	<view class="exp">
+		<view class="li3">
+			<view class="li">
+				<text class="sp"><text class="b">35</text>天</text>
+				<text class="sp sp2">空气质量优</text>
+			</view>
+			<view class="li">
+				<text class="sp"><text class="b">35</text>天</text>
+				<text class="sp sp2">空气质量优</text>
+			</view>
+			<view class="li">
+				<text class="sp"><text class="b">35</text>天</text>
+				<text class="sp sp2">空气质量优</text>
+			</view>
+			<view class="clear"></view>
+		</view>
+		<view class="li3">
+			<view class="li">
+				<text class="sp"><text class="b">5</text>天</text>
+				<text class="sp sp2">艳阳高照</text>
+			</view>
+			<view class="li">
+				<text class="sp"><text class="b">10</text>天</text>
+				<text class="sp sp2">风雨交加</text>
+			</view>
+			<view class="li">
+				<text class="sp"><text class="b">10</text>天</text>
+				<text class="sp sp2">阴雨绵绵</text>
+			</view>
+			<view class="clear"></view>
+		</view>
+		<view class="li3">
+			<view class="li">
+				<text class="sp"><text class="b">28</text>°</text>
+				<text class="sp sp2">最高温度</text>
+			</view>
+			<view class="li">
+				<text class="sp"><text class="b">4</text>°</text>
+				<text class="sp sp2">最低温度</text>
+			</view>
+			<view class="li">
+				<text class="sp"><text class="b">16</text>°</text>
+				<text class="sp sp2">平均温度</text>
+			</view>
+			<view class="clear"></view>
+		</view>
+	</view>
+</view>
+<view class="h15"></view>
+<view class="ind_tab2">
+	<view class="li on">
+		<text>育养记录</text>
+		<view class="sp"></view>
+	</view>
+	<view class="li">
+		<text>育雏记录</text>
+		<view class="sp"></view>
+	</view>
+	<view class="clear"></view>
+</view>
+<view class="rec_list">
+	<view class="in40">
+		<view class="li">
+			<view class="cir">
+				<view class="ci"></view>
+			</view>
+			<view class="rig">
+				<text class="tit">2017-05-01</text>
+				<text class="centent">晴天北风4级，气温24度正常，灯泡换成40W，23小时光明，1小时黑暗</text>
+				<view class="img">
+					<view class="imgbod">
+						<image src="/img/s56.jpg"></image>
+						<image src="/img/s56.jpg"></image>
+						<image src="/img/s56.jpg"></image>
+						<view class="clear"></view>
+						<text class="imgt">50>></text>
+					</view>
+					
+				</view>
+			</view>
+		</view>
+		<view class="li">
+			<view class="cir">
+				<view class="ci"></view>
+			</view>
+			<view class="rig">
+				<text class="tit">2017-05-01</text>
+				
+				<view class="img">
+					<view class="imgbod">
+						<image src="/img/s56.jpg"></image>
+						<image src="/img/s56.jpg"></image>
+						<image src="/img/s56.jpg"></image>
+						<view class="clear"></view>
+						
+					</view>
+					
+				</view>
+			</view>
+		</view>
+		<view class="li">
+			<view class="cir">
+				<view class="ci"></view>
+			</view>
+			<view class="rig">
+				<text class="tit">2017-05-01</text>
+				
+				<view class="img">
+					<view class="imgbod">
+						<image src="/img/s56.jpg"></image>
+						<image src="/img/s56.jpg"></image>
+						<image src="/img/s56.jpg"></image>
+						<view class="clear"></view>
+						
+					</view>
+					
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

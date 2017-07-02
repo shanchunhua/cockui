@@ -22,9 +22,9 @@
 	<view class="goo_lis1">
 		<view class="in40">
 			<view class="li" wx:for="{{transferCocks}}">
-				<image src="/img/s69.jpg" class="img"></image>
+				<image src="{{item.customer.avatarUrl}}" class="img"></image>
 				<view class="tex">
-					<text class="nam">{{item.customer.nickname}}</text>
+					<text class="nam">{{item.customer.nickName}}</text>
 					<text class="p">1只 {{item.dateStr}} 转让</text>
 				</view>
 				<navigator url="/pages/market/transfer?id={{item.id}}">

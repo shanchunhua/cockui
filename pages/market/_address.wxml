@@ -1,0 +1,48 @@
+<template name="address">
+<view class="orddl">
+    <view class="in40">
+        <view class="h2">
+            <text class="h2">默认收货地址</text>
+            <view class="btn" bindtap="changeAddress">
+                <image class="img" src="/img/s74.png"></image>
+                <text class="on">修改</text>
+                <view class="clear"></view>
+            </view>
+            <view class="clear"></view>
+        </view>
+        <view class="indl">
+            <view class="dd d1">
+                <text class="te">收货人：</text>
+            </view>
+            <view class="dd d2">
+                <text class="te">
+                    <text class="b">{{order.contact}}</text>
+                </text>
+            </view>
+            <view class="clear"></view>
+        </view>
+        <view class="indl">
+            <view class="dd d1">
+                <text class="te">联系电话：</text>
+            </view>
+            <view class="dd d2">
+                <text class="te">
+                    <text class="b">{{order.tel}}</text>
+                </text>
+            </view>
+            <view class="clear"></view>
+        </view>
+        <view class="indl">
+            <view class="dd d1">
+                <text class="te">收货地址：</text>
+            </view>
+            <view class="dd d2">
+                <text class="te">
+                    <text class="b">{{order.address}}</text>
+                </text>
+            </view>
+            <view class="clear"></view>
+        </view>
+    </view>
+</view>
+</template>

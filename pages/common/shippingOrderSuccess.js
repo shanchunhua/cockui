@@ -31,8 +31,11 @@ Page({
         }
         msg += "！";
       }
-      if(order.cockTransfer){
-        msg = "您已经购买" + order.quantity + "只" +order.cockTransfer.customer.nickName+"转让的红公鸡";
+      if (order.cockTransfer) {
+        msg = "您已经购买" + order.quantity + "只" + order.cockTransfer.customer.nickName + "转让的红公鸡";
+      }
+      if (order.goodsType == 'EGG') {
+        msg = "您已成功购买鸡蛋" + order.quantity + "个";
       }
       console.log(msg);
       self.setData({

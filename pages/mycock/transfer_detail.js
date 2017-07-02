@@ -1,6 +1,5 @@
-// pages/make/index.js
+// pages/my_eggs2/index.js
 var app = getApp();
-var cockAdoptionOrderService = require('../../service/cockAdoptionOrder.js');
 var cockTransferService = require('../../service/cockTransfer.js');
 Page({
 
@@ -8,79 +7,68 @@ Page({
    * 页面的初始数据
    */
   data: {
-    cockTransfer: {
-      quantity: 1,
-      status: 'PROCESSING'
-    }
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var id = options.id;
-    console.log(id);
-    var self = this;
-
-    cockAdoptionOrderService.getById(id).then(function (res) {
-      self.data.cockTransfer.cockAdoptionOrder = res.data;
-      self.data.cockTransfer.customer = app.globalData.userInfo;
+    var id=options.id;
+    var self=this;
+    cockTransferService.getById(id).then(function(res){
       self.setData({
-        cockAdoptionOrder: res.data
+        cockTransfer:res.data
       });
     });
   },
-  createOrder: function () {
-    cockTransferService.create(this.data.cockTransfer).then(function (res) {
-      wx.redirectTo({ url: '/pages/mycock/transfer_detail?id=' + res.data.id });
-    });
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+  
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+  
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+  
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+  
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+  
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+  
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+  
   }
-});
+})

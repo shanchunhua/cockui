@@ -1,0 +1,41 @@
+<template name="henneryIntro">
+    <view class="sel_li">
+        <view class="hea">
+            <image src="/img/s37.png" class="lef"></image>
+            <view class="tex">
+                <view class="he">
+                    <text class="tit">{{hennery.ownerName}} 看门狗:{{hennery.dogName}}</text>
+                    <text class="clear"></text>
+                </view>
+                <view class="fo">
+                    <text class="add">{{hennery.address}}</text>
+                </view>
+            </view>
+            <view class="clear"></view>
+        </view>
+        <view class="vid">
+            <video class="index" src="{{hennery.videoUrl}}"></video>
+        </view>
+        <view class="min_vid">
+
+            <view class="img">
+                <image src="/img/s34.jpg"></image>
+                <text>生活照</text>
+            </view>
+            <view class="img">
+                <image src="/img/s35.jpg"></image>
+                <text>大牧场</text>
+            </view>
+            <view class="img">
+                <image src="/img/s36.jpg"></image>
+                <text>家禽记</text>
+            </view>
+            <view class="clear"></view>
+
+        </view>
+    </view>
+    <view class="h15"></view>
+    <view class="map">
+        <image src="/img/s52.jpg"></image>
+    </view>
+</template>
