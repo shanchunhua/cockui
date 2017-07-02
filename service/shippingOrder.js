@@ -18,7 +18,7 @@ module.exports = {
             data: {
                 customer: customer,
                 goodsType: 'SELECTION',
-                orderNo: null
+                paid:true
             }
         });
     },

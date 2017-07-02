@@ -3,6 +3,7 @@ var app = getApp()
 var cockAdoptionOrderService = require('../../service/cockAdoptionOrder.js');
 var cockTransferService = require('../../service/cockTransfer.js');
 var shippingOrderService = require('../../service/shippingOrder.js');
+var moment = require('../../utils/we-moment-with-locales');
 Page({
 
   /**
@@ -23,6 +24,9 @@ Page({
   loadAdoptionOrder: function () {
     var self = this;
     cockAdoptionOrderService.loadCustomerAdoptionOrders({ id: app.globalData.userInfo.id }).then(function (res) {
+      res.data.forEach(function (item) {
+        item.dateStr = moment(item.paidDate).format('YYYY-MM-DD');
+      });
       self.setData({ orders: res.data });
     });
   },
@@ -49,7 +53,7 @@ Page({
         this.loadTransferOrder();
         break;
       case "2":
-     //   this.loadShoppingOrder();
+        //   this.loadShoppingOrder();
         break;
     }
 

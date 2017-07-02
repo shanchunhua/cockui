@@ -2,5 +2,5 @@
 <view class="succ">
 	<image src="/img/s57.png"></image>
 	<text class="su_s1">恭喜您，支付成功</text>
-	<text class="su_p">您已经领养XXX（牧民名称）的XX（数量）只红公鸡，饲养周期为105天，在该期间内每天有一次偷蛋机会！</text>
+	<text class="su_p">您已经成功借{{count}}只母鸡，从明天起你要记得拎着篮子来捡鸡蛋哦！</text>
 </view>

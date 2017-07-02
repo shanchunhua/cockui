@@ -1,6 +1,7 @@
 // pages/adopt/index.js
 var app = getApp();
 var shippingOrderService = require('../../service/shippingOrder.js');
+var moment = require('../../utils/we-moment-with-locales');
 Page({
 
   /**
@@ -16,6 +17,9 @@ Page({
   onLoad: function (options) {
     var self = this;
     shippingOrderService.loadCollectionOrder(app.globalData.userInfo).then(function (res) {
+      res.data.forEach(function(item){
+        item.dateStr = moment(item.createdTime).format('YYYY-MM-DD');
+      });
       self.setData({
         orders: res.data
       });

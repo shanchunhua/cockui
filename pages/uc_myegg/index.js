@@ -2,6 +2,7 @@
 var app = getApp();
 var eggGainRecordService = require('../../service/eggGainRecord.js');
 var shippingOrderService = require('../../service/shippingOrder.js');
+var moment = require('../../utils/we-moment-with-locales');
 Page({
 
   /**
@@ -39,6 +40,7 @@ Page({
             item.detailMsg = '借鸡生蛋';
             break;
         }
+        item.dateStr = moment(item.createdTime).format('YYYY-MM-DD hh:ss');
       });
       self.setData({
         eggGainRecords: data

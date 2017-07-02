@@ -7,7 +7,7 @@ module.exports = {
             method: 'POST',
             data: {
                 customer: customer,
-                orderNo: null
+                paid:true
             }
         });
     },

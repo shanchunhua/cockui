@@ -25,11 +25,11 @@
 	<view class="h15"></view>
 	<view class="lis1">
 		<view class="in40">
-			<view class="li" wx:for="{{henRentOrders}}">
+			<view class="li" wx:for="{{rentOrders}}">
 				<image src="/img/s72.png" class="img"></image>
 				<view class="tex">
 					<text class="num"><text class="b">{{item.quantity}}</text>只</text>
-					<text class="p">还剩{{daysLeft}}天到期</text>
+					<text class="p">还剩{{item.daysLeft}}天到期</text>
 				</view>
 				<text class="com">共生蛋{{item.laidEggCount}}枚</text>
 				<view class="clear"></view>

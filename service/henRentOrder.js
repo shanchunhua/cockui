@@ -16,7 +16,9 @@ module.exports = {
             url: 'henRentOrder/example',
             method: 'POST',
             data: {
-                customer: { id: customer.id }
+                customer: { id: customer.id },
+                expired:false,
+                paid:true
             }
         });
     }

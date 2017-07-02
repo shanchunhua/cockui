@@ -63,9 +63,8 @@ Page({
           order: order,
           type: 2,
           success: function (res) {
-            console.log('success');
-            wx.navigateTo({
-              url: '/pages/choosehennery/success?id=' + self.data.order.id
+            wx.redirectTo({
+              url: '/pages/henrental/success?count=' + self.data.order.quantity
             });
           }
         });
@@ -73,11 +72,10 @@ Page({
     } else {
       paymentService.payOrder({
         order: this.data.order,
-        type: 1,
+        type: 2,
         success: function (res) {
-          console.log('success');
-          wx.navigateTo({
-            url: '/pages/henrental/success?id=' + self.data.order.id
+          wx.redirectTo({
+            url: '/pages/henrental/success?count=' + self.data.order.quantity
           });
         }
       });
