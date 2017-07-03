@@ -47,6 +47,11 @@ Page({
       });
     });
     shippingOrderService.loadEggOrder(app.globalData.userInfo).then(function (res) {
+      res.data.forEach(function(item){
+        item.dateStr= moment(item.createdTime).format('YYYY-MM-DD');
+        item.buyEggs=parseInt(item.total/item.price);
+        item.stealEggs=item.quantity-item.buyEggs;
+      });
       self.setData({
         orders: res.data
       });

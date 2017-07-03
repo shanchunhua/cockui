@@ -20,7 +20,7 @@ Page({
     var self = this;
     customerService.loadCustomerProperty(this.data.userInfo.id).then(function (res) {
       self.setData({ customerProperty: res.data });
-    })
+    });
   },
 
   /**

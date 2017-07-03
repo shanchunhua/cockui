@@ -1,7 +1,9 @@
 // pages/wallet/index.js
 var app = getApp();
+var customerService = require('../../service/customer.js');
 var withdrawRecordService = require('../../service/withdrawRecord.js');
 var customerIncomeService = require('../../service/customerIncome.js');
+
 Page({
 
   /**
@@ -16,6 +18,10 @@ Page({
    */
   onLoad: function (options) {
     this.loadWithdrawRecords();
+    var self = this;
+    customerService.loadCustomerProperty(app.globalData.userInfo.id).then(function (res) {
+      self.setData({ customerProperty: res.data });
+    });
   },
   loadWithdrawRecords: function () {
     var self = this;

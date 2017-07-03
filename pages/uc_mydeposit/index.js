@@ -1,6 +1,7 @@
 // pages/pledge/index.js
 var app = getApp();
 var henRentOrderService = require('../../service/henRentOrder.js');
+var customerService = require('../../service/customer.js');
 Page({
 
   /**
@@ -15,6 +16,9 @@ Page({
    */
   onLoad: function (options) {
     var self = this;
+    customerService.loadCustomerProperty(app.globalData.userInfo.id).then(function (res) {
+      self.setData({ customerProperty: res.data });
+    });
     henRentOrderService.loadMyOrders(app.globalData.userInfo).then(function (res) {
       self.setData({
         orders: res.data

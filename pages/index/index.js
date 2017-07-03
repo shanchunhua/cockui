@@ -10,11 +10,8 @@ Page({
     customerProperty: {},
     userInfo: {}
   },
-  //事件处理函数
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  onShow: function () {
+    console.log(arguments);
   },
   onLoad: function () {
     console.log('onLoad');

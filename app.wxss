@@ -110,6 +110,9 @@ page{background-color: #f2f2f2; flex: 1; height: 100%; font-family: -apple-syste
 .orddl .lef{float: left;}
 .orddl .rig{float: right;}
 .orddl .rig .vinp{width: 125rpx;}
+.index{
+  width: 100%;
+}
 
 
 

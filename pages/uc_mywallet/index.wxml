@@ -1,7 +1,7 @@
 <view class="body">
 	<view class="walha" style="background:url(/img/s75.jpg) no-repeat; background-size: cover;">
 		<image class="img" src="/img/s76.png"></image>
-		<text class="num">¥<text class="b">800.00</text></text>
+		<text class="num">¥<text class="b">{{customerProperty.balance}}</text></text>
 		<view class="btn">提现到微信零钱</view>
 		<text class="at">最低提现金额为49元，24小时内到账</text>
 	</view>

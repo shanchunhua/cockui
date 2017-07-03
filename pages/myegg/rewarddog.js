@@ -33,9 +33,10 @@ Page({
         order: order,
         type: 5,
         success: function (res) {
-          console.log('success');
-          wx.navigateTo({
-            url: '/pages/choosehennery/success?id=' + self.data.order.id
+          wx.showToast({
+            title: '打赏成功',
+            icon: 'success',
+            duration: 2000
           });
         }
       });
