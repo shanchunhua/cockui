@@ -14,13 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      userInfo: app.globalData.userInfo
-    });
-    var self = this;
-    customerService.loadCustomerProperty(this.data.userInfo.id).then(function (res) {
-      self.setData({ customerProperty: res.data });
-    });
+
   },
 
   /**
@@ -34,7 +28,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      userInfo: app.globalData.userInfo
+    });
+    var self = this;
+    customerService.loadCustomerProperty(this.data.userInfo.id).then(function (res) {
+      self.setData({ customerProperty: res.data });
+    });
   },
 
   /**
@@ -71,7 +71,7 @@ Page({
   onShareAppMessage: function () {
 
   },
-  test:function(){
+  test: function () {
     console.log("test");
   },
   addressManagement: function () {

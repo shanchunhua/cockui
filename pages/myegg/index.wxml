@@ -110,5 +110,5 @@
 </view>
 <view class="foo_btn2">
 	<view><text class="tax">合计：<text class="or">{{order.total}} </text>元</text></view>
-	<view class="btn" bindtap="create"><text>立即支付</text></view>
+	<button class="btn on" disabled="{{order.quantity<=0||disabled}}" style="border-radius:0" bindtap="create">立即支付</button>
 </view>

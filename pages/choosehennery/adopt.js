@@ -13,7 +13,8 @@ Page({
       quantity: 1,
       price: 29,
       total: 29
-    }
+    },
+    disabled: false
   },
 
   /**
@@ -48,33 +49,43 @@ Page({
 
   },
   create: function () {
+
     var self = this;
     //订单已创建，直接支付
+    self.setData({
+      disabled: true
+    });
     if (!this.data.order.id) {
       cockAdoptionOrderService.create(this.data.order).then(function (res) {
         var order = res.data;
         self.setData({ order: order });
         paymentService.payOrder({
-          order: order,
-          type: 1,
-          success: function (res) {
-            console.log('success');
-            wx.redirectTo({
-              url: '/pages/choosehennery/success?id=' + self.data.order.id
-            });
-          }
+          order: self.data.order,
+          type: 1
+        }).then(function (res) {
+          wx.redirectTo({
+            url: '/pages/choosehennery/success?id=' + self.data.order.id
+          });
+        }).catch(function (err) {
+          console.error(err);
+          self.setData({
+            disabled: false
+          });
         });
       });
     } else {
       paymentService.payOrder({
         order: this.data.order,
-        type: 1,
-        success: function (res) {
-          console.log('success');
-         wx.redirectTo({
-            url: '/pages/choosehennery/success?id=' + self.data.order.id
-          });
-        }
+        type: 1
+      }).then(function (res) {
+        wx.redirectTo({
+          url: '/pages/choosehennery/success?id=' + self.data.order.id
+        });
+      }).catch(function (err) {
+        console.error(err);
+        self.setData({
+          disabled: false
+        });
       });
     }
 
@@ -90,7 +101,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  console.log(arguments);
+    console.log(arguments);
   },
 
   /**

@@ -4,6 +4,7 @@ var cockAdoptionOrderService = require('../../service/cockAdoptionOrder.js');
 var customerBoxService = require('../../service/customerBox.js');
 var paymentService = require('../../service/payment.js');
 var shippingOrderService = require('../../service/shippingOrder.js');
+var wxe = require('../../utils/wxe.js');
 Page({
 
   /**
@@ -16,7 +17,8 @@ Page({
       total: 209,
       items: [],
       goodsType: 'COCK'
-    }
+    },
+    disabled: false
   },
 
   /**
@@ -62,8 +64,44 @@ Page({
     }
 
   },
+  invokePay: function () {
+    var self = this;
+    paymentService.payOrder({
+      order: self.data.order,
+      type: 4
+    }).then(function (res) {
+      console.log('success');
+      wx.redirectTo({
+         url: '/pages/common/shippingOrderSuccess?id=' + self.data.order.id
+      });
+    }).catch(function () {
+      self.setData({
+        disabled: false
+      });
+    });
+  },
+  changeAddress: function () {
+    var self = this;
+    wx.chooseAddress({
+      success: function (res) {
+        var order = self.data.order;
+        order.contact = res.userName;
+        order.tel = res.telNumber;
+        order.address = res.provinceName + res.cityName + res.detailInfo;
+        self.setData({
+          order: order
+        });
+      }
+    });
+  },
   create: function () {
     var self = this;
+    if (!wxe.checkAddress(this.data.order)) {
+      return false;
+    }
+    self.setData({
+      disabled: true
+    });
     this.data.goods.forEach(function (item) {
       if (item.checked) {
         self.data.order.items.push({
@@ -78,28 +116,10 @@ Page({
       shippingOrderService.create(this.data.order).then(function (res) {
         var order = res.data;
         self.setData({ order: order });
-        paymentService.payOrder({
-          order: order,
-          type: 4,
-          success: function (res) {
-            console.log('success');
-            wx.navigateTo({
-              url: '/pages/choosehennery/success?id=' + self.data.order.id
-            });
-          }
-        });
+        self.invokePay();
       });
     } else {
-      paymentService.payOrder({
-        order: this.data.order,
-        type: 1,
-        success: function (res) {
-          console.log('success');
-          wx.navigateTo({
-            url: '/pages/choosehennery/success?id=' + self.data.order.id
-          });
-        }
-      });
+      invokePay();
     }
 
   },

@@ -25,7 +25,9 @@
 
 .eggs_ol{padding: 30rpx 0; background: #fff;}
 
-
+button.on{
+    color:#fff;
+}
 
 
 

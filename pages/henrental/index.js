@@ -14,22 +14,23 @@ Page({
       price: 39,
       total: 39,
       customer: app.globalData.userInfo
-    }
+    },
+    disabled: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var self=this;
+    var self = this;
     console.log(app.globalData.userInfo);
     this.data.order.customer = app.globalData.userInfo;
     customerService.loadCustomerProperty(app.globalData.userInfo.id).then(function (res) {
       self.setData({ customerProperty: res.data });
     });
-    henRentOrderService.loadMyOrders(this.data.order.customer).then(function(res){
+    henRentOrderService.loadMyOrders(this.data.order.customer).then(function (res) {
       self.setData({
-        rentOrders:res.data
+        rentOrders: res.data
       });
     });
   },
@@ -54,30 +55,41 @@ Page({
   pay: function () {
 
     var self = this;
+    self.setData({
+      disabled: true
+    });
     //订单已创建，直接支付
     if (!this.data.order.id) {
       henRentOrderService.save(this.data.order).then(function (res) {
         var order = res.data;
         self.setData({ order: order });
         paymentService.payOrder({
-          order: order,
-          type: 2,
-          success: function (res) {
-            wx.redirectTo({
-              url: '/pages/henrental/success?count=' + self.data.order.quantity
-            });
-          }
+          order: self.data.order,
+          type: 2
+        }).then(function (res) {
+          wx.redirectTo({
+            url: '/pages/henrental/success?count=' + self.data.order.quantity
+          });
+        }).catch(function (err) {
+          console.error(err);
+          self.setData({
+            disabled: false
+          });
         });
       });
     } else {
       paymentService.payOrder({
         order: this.data.order,
-        type: 2,
-        success: function (res) {
-          wx.redirectTo({
-            url: '/pages/henrental/success?count=' + self.data.order.quantity
-          });
-        }
+        type: 2
+      }).then(function (res) {
+        wx.redirectTo({
+          url: '/pages/henrental/success?count=' + self.data.order.quantity
+        });
+      }).catch(function (err) {
+        console.error(err);
+        self.setData({
+          disabled: false
+        });
       });
     }
   },

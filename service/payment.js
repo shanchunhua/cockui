@@ -5,27 +5,37 @@ module.exports = {
             url: '/wechat/payment/unifiedorder?id=' + id + '&type=' + type, method: 'GET'
         });
     },
-    payOrder: function (options) {
-        var order=options.order;
-        var type=options.type;
-        var success=options.success;
-        this.prepareForPay(order.id, type).then(function (res) {
-            var params = res;
-            params.timeStamp = params.timestamp;
-            params.success = success;
+    wxPay: function (params) {
+        var promise = new Promise(function (resolve, reject) {
+            params.success = function (res) {
+                resolve(res);
+            };
             params.fail = function (res) {
-                console.log('fail');
                 console.error(res);
                 wx.showModal({
                     title: '支付失败',
                     content: '支付失败,请重新支付.错误信息：' + res.errMsg,
-                    showCancel: false,
-                    success: function () {
-
-                    }
+                    showCancel: false
                 });
+                reject(res);
             };
             wx.requestPayment(params);
         });
+        return promise;
     },
+    payOrder: function (options) {
+        var self = this;
+        var order = options.order;
+        var type = options.type;
+        if (!order.params) {
+            return this.prepareForPay(order.id, type).then(function (res) {
+                var params = res;
+                params.timeStamp = params.timestamp;
+                order.params = params;
+                return self.wxPay(params);
+            });
+        } else {
+            return self.wxPay(order.params);
+        }
+    }
 };

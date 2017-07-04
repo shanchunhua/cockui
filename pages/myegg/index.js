@@ -4,6 +4,7 @@ var customerService = require('../../service/customer.js');
 var customerBoxService = require('../../service/customerBox.js');
 var paymentService = require('../../service/payment.js');
 var shippingOrderService = require('../../service/shippingOrder.js');
+var wxe = require('../../utils/wxe.js');
 Page({
 
   /**
@@ -12,14 +13,15 @@ Page({
   data: {
     customerProperty: {},
     order: {
-      quantity: 30,
-      goodsType:'EGG',
-      price:2.5
+      quantity: 0,
+      goodsType: 'EGG',
+      price: 2.5
     },
     eggs: {
       stealEgg: 0,
       laidEgg: 0
-    }
+    },
+    disabled: false
   },
 
   /**
@@ -27,7 +29,7 @@ Page({
    */
   onLoad: function (options) {
     var self = this;
-     self.data.order.customer = app.globalData.userInfo;
+    self.data.order.customer = app.globalData.userInfo;
     customerService.loadCustomerProperty(app.globalData.userInfo.id).then(function (res) {
       self.setData({ customerProperty: res.data });
       console.log(self.data);
@@ -56,7 +58,7 @@ Page({
       order.total = price * laidEgg;
       this.setData({
         order: order
-      })
+      });
     }
     this.setData({
       eggs: {
@@ -66,6 +68,17 @@ Page({
     });
   },
   plus: function () {
+    if (this.data.order.quantity + 30 > this.data.customerProperty.leftEggCount) {
+      wx.showModal({
+        title: '提示',
+        content: '您鸡篮中数量不足，可租更多的母鸡或到牧家精选中购',
+        showCancel: false,
+        success: function (res) {
+
+        }
+      });
+      return false;
+    }
     this.data.order.quantity = this.data.order.quantity + 30;
     this.setData({
       order: this.data.order
@@ -73,17 +86,38 @@ Page({
     this.calculate();
   },
   minus: function () {
-    if (this.data.order.quantity > 30) {
-      this.data.order.quantity = this.data.order.quantity - 30;
-      this.setData({
-        order: this.data.order
-      });
-      this.calculate();
-    }
+    //  if (this.data.order.quantity > 30) {
+    this.data.order.quantity = this.data.order.quantity - 30;
+    this.setData({
+      order: this.data.order
+    });
+    this.calculate();
+    //    }
 
+  },
+  invokePay: function () {
+    var self = this;
+    paymentService.payOrder({
+      order: self.data.order,
+      type: 4
+    }).then(function () {
+      wx.redirectTo({
+        url: '/pages/common/shippingOrderSuccess?id=' + self.data.order.id
+      });
+    }).catch(function () {
+      self.setData({
+        disabled: false
+      });
+    });
   },
   create: function () {
     var self = this;
+    if (!wxe.checkAddress(this.data.order)) {
+      return false;
+    }
+    self.setData({
+      disabled: true
+    });
     this.data.goods.forEach(function (item) {
       if (item.checked) {
         self.data.order.items.push({
@@ -98,28 +132,10 @@ Page({
       shippingOrderService.create(this.data.order).then(function (res) {
         var order = res.data;
         self.setData({ order: order });
-        paymentService.payOrder({
-          order: order,
-          type: 4,
-          success: function (res) {
-            console.log('success');
-            wx.redirectTo({
-              url: '/pages/common/shippingOrderSuccess?id=' + self.data.order.id
-            });
-          }
-        });
+        self.invokePay();
       });
     } else {
-      paymentService.payOrder({
-        order: this.data.order,
-        type: 1,
-        success: function (res) {
-          console.log('success');
-          wx.redirectTo({
-            url: '/pages/common/shippingOrderSuccess?id=' + self.data.order.id
-          });
-        }
-      });
+      self.invokePay();
     }
 
   },
@@ -130,7 +146,7 @@ Page({
 
   },
 
-    changeAddress: function () {
+  changeAddress: function () {
     var self = this;
     wx.chooseAddress({
       success: function (res) {

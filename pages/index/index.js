@@ -10,41 +10,49 @@ Page({
     customerProperty: {},
     userInfo: {}
   },
-  onShow: function () {
-    console.log(arguments);
-  },
   onLoad: function () {
     console.log('onLoad');
 
     var self = this;
     app.globalData.loadUserPromise.then(function () {
+      console.log('load property');
       customerService.loadCustomerProperty(app.globalData.userInfo.id).then(function (res) {
         console.log(res);
         self.setData({ customerProperty: res.data });
         return res.data;
       }).then(function (property) {
         if (property.eligibleForSteal) {
-          return stealOrderService.pickHenneryToSteal();
+          stealOrderService.pickHenneryToSteal().then(function (res) {
+            app.globalData.stealHennery = res.data;
+            self.setData({
+              stealHennery: res.data
+            });
+            goodsForStealService.getGoodsForStealToday().then(function (res) {
+              self.setData({
+                goodsForSteal: res.data
+              });
+            });
+          });
         }
-      }).then(function (res) {
-        app.globalData.stealHennery=res.data;
-        self.setData({
-          stealHennery: res.data
-        });
-        console.log(self.data);
       });
     });
-    goodsForStealService.getGoodsForStealToday().then(function (res) {
+
+    henneryService.getRecommended().then(function (res) {
+      var recommendedHennery = res.data[0];
       self.setData({
-        goodsForSteal: res.data
+        recommendedHennery: recommendedHennery
       });
     });
-    henneryService.getRecommended().then(function(res){
-      var recommendedHennery=res.data[0];
-      self.setData({
-        recommendedHennery:recommendedHennery
+  },
+  onShow: function () {
+    if (app.globalData.userInfo) {
+      var self = this;
+      customerService.loadCustomerProperty(app.globalData.userInfo.id).then(function (res) {
+        self.setData({ customerProperty: res.data });
+        return res.data;
       });
-    });
+    }
+
   },
   steal: function () {
     var property = this.data.customerProperty;
@@ -55,7 +63,7 @@ Page({
         stealOrderService.steal(this.data.stealHennery.id).then(function (res) {
           if (res.success) {
             wx.navigateTo({
-              url: '/pages/index/stealsuccess?id='+res.data.id
+              url: '/pages/index/stealsuccess?id=' + res.data.id
             });
           } else {
             wx.navigateTo({

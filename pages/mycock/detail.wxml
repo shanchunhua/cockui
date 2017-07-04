@@ -78,7 +78,7 @@
         </view>
 		</navigator>
 	</view>
-	<view class="li_btn" wx:if="{{currentOrder.status=='COMPLETED'}}">
+	<view class="li_btn">
 		<navigator url="/pages/mycock/withdraw?id={{currentOrder.id}}">
         <view class="btn_con">
             <view class="icon" style="background: url('http://static.huanlemujia.com/static/s55.png'); background-size: cover;"></view>

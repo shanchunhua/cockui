@@ -7,8 +7,7 @@
 					<text class="te">红公鸡净重量：</text>
 				</view>
 				<view class="dd d2">
-					<text class="te">每只
-						<text class="b">6</text>斤以上</text>
+					<text class="te">每只<text class="b">6</text>斤以上</text>
 				</view>
 				<view class="clear"></view>
 			</view>
@@ -56,7 +55,7 @@
 		<view class="in40">
 			<view class="h2">
 				<text class="h2">默认收货地址</text>
-				<view class="btn">
+				<view class="btn" bindtap="changeAddress">
 					<image class="img" src="/img/s74.png"></image>
 					<text class="on">修改</text>
 					<view class="clear"></view>
@@ -69,7 +68,7 @@
 				</view>
 				<view class="dd d2">
 					<text class="te">
-						<text class="b">张三</text>
+						<text class="b">{{order.contact}}</text>
 					</text>
 				</view>
 				<view class="clear"></view>
@@ -80,7 +79,7 @@
 				</view>
 				<view class="dd d2">
 					<text class="te">
-						<text class="b">13453434567</text>
+						<text class="b">{{order.tel}}</text>
 					</text>
 				</view>
 				<view class="clear"></view>
@@ -91,7 +90,7 @@
 				</view>
 				<view class="dd d2">
 					<text class="te">
-						<text class="b">内蒙古乌拉特前旗3号</text>
+						<text class="b">{{order.address}}</text>
 					</text>
 				</view>
 				<view class="clear"></view>
@@ -104,7 +103,5 @@
 	<view>
 		<text class="tax">合计：<text class="or">{{order.total}} </text>元</text>
 	</view>
-	<view class="btn" bindtap="create">
-		<text>立即支付</text>
-	</view>
+	<button class="btn on" bindtap="create" disabled="{{disabled}}">立即支付</button>
 </view>

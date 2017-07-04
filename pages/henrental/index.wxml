@@ -95,7 +95,7 @@
 
 <view class="foo_btn2">
 	<view><text class="tax">合计：<text class="or">{{order.quantity*order.price}} </text>元</text></view>
-	<view class="btn" bindtap="pay"><text>立即支付</text></view>
+	<button class="btn on" bindtap="pay" disabled="{{disabled}}">立即支付</button>
 </view>
 
 

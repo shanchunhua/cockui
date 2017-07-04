@@ -37,6 +37,17 @@ Page({
       if (order.goodsType == 'EGG') {
         msg = "您已成功购买鸡蛋" + order.quantity + "个";
       }
+      if (order.goodsType == 'COCK') {
+
+        msg += '您已经收回' + order.adoptionOrder.hennery.ownerName + '家的' + order.quantity + '只红公鸡';
+        if (order.items && order.items.length > 0) {
+          order.items.forEach(function (item) {
+            msg += "," + item.name + item.quantity + "份";
+          });
+          msg += "一并配送";
+        }
+         msg += "！";
+      }
       console.log(msg);
       self.setData({
         msg: msg
