@@ -22,7 +22,7 @@ Page({
       });
       var msg = "";
       if (order.collectionGoods) {
-        msg = "您已经购买" + order.quantity + "个" + order.collectionGoods.name;
+        msg = "您已经购买" + order.quantity + "份" + order.collectionGoods.name;
         if (order.items && order.items.length > 0) {
           order.items.forEach(function (item) {
             msg += "," + item.name + item.quantity + "份";

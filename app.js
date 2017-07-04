@@ -5,9 +5,12 @@ App({
     this.globalData.loadUserPromise = this.getUserInfo();
   },
   onShow: function (options) {
+    console.log(options);
     var path = options.path;
+    var scene=options.scene;
     //退出再返回，返回首页
-    if (path != '/pages/index/index') {
+    console.log(this.globalData.stopReLaunch);
+    if (path != '/pages/index/index'&&!this.globalData.stopReLaunch) {
       wx.reLaunch({
         url: '/pages/index/index'
       });
@@ -83,6 +86,7 @@ App({
   },
   globalData: {
     userInfo: null,
+    stopReLaunch:false,
     baseUrl: 'https://www.huanlemujia.com/'
   }
 })

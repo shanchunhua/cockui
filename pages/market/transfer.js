@@ -83,6 +83,7 @@ Page({
 
   changeAddress: function () {
     var self = this;
+    app.globalData.stopReLaunch = true;
     wx.chooseAddress({
       success: function (res) {
         var order = self.data.order;
@@ -99,7 +100,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+ app.globalData.stopReLaunch = false;
   },
 
   /**

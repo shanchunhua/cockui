@@ -2,6 +2,7 @@
 var app = getApp();
 var henRentOrderService = require('../../service/henRentOrder.js');
 var customerService = require('../../service/customer.js');
+var moment = require('../../utils/we-moment-with-locales');
 Page({
 
   /**
@@ -20,6 +21,9 @@ Page({
       self.setData({ customerProperty: res.data });
     });
     henRentOrderService.loadMyOrders(app.globalData.userInfo).then(function (res) {
+      res.data.forEach(function (item) {
+        item.dateStr = moment(item.createdTime).format('YYYY-MM-DD hh:ss');
+      });
       self.setData({
         orders: res.data
       });

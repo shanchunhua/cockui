@@ -75,6 +75,7 @@ Page({
     console.log("test");
   },
   addressManagement: function () {
+    app.globalData.stopReLaunch = true;
     if (wx.chooseAddress) {
       wx.chooseAddress({
         success: function (res) {
