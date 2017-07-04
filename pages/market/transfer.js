@@ -4,6 +4,7 @@ var cockTransferService = require('../../service/cockTransfer.js');
 var shippingOrderService = require('../../service/shippingOrder.js');
 var paymentService = require('../../service/payment.js');
 var moment = require('../../utils/we-moment-with-locales');
+var wxe = require('../../utils/wxe.js');
 Page({
 
   /**
@@ -16,7 +17,8 @@ Page({
       total: 209,
       items: [],
       goodsType: 'MORNING_MARKET'
-    }
+    },
+    disabled: false
   },
 
   /**
@@ -42,40 +44,44 @@ Page({
   onReady: function () {
 
   },
-  create: function () {
+  invokePay: function () {
     var self = this;
+    paymentService.payOrder({
+      order: self.data.order,
+      type: 4
+    }).then(function (res) {
+      console.log('success');
+      wx.redirectTo({
+        url: '/pages/market/success?id=' + self.data.order.id
+      });
+    }).catch(function () {
+      self.setData({
+        disabled: false
+      });
+    });
+  },
+  create: function () {
+    if (!wxe.checkAddress(this.data.order)) {
+      return false;
+    }
+    var self = this;
+    self.setData({
+      disabled: true
+    });
     //订单已创建，直接支付
     if (!this.data.order.id) {
       shippingOrderService.create(this.data.order).then(function (res) {
         var order = res.data;
         self.setData({ order: order });
-        paymentService.payOrder({
-          order: order,
-          type: 4,
-          success: function (res) {
-            console.log('success');
-            wx.redirectTo({
-              url: '/pages/market/success?id=' + self.data.order.id
-            });
-          }
-        });
+        self.invokePay();
       });
     } else {
-      paymentService.payOrder({
-        order: this.data.order,
-        type: 4,
-        success: function (res) {
-          console.log('success');
-          wx.redirectTo({
-            url: '/pages/market/success?id=' + self.data.order.id
-          });
-        }
-      });
+      self.invokePay();
     }
 
   },
 
-    changeAddress: function () {
+  changeAddress: function () {
     var self = this;
     wx.chooseAddress({
       success: function (res) {
@@ -130,4 +136,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+});
