@@ -2,7 +2,7 @@
 	<view class="walha" style="background:url(/img/s75.jpg) no-repeat; background-size: cover;">
 		<image class="img" src="/img/s76.png"></image>
 		<text class="num">¥<text class="b">{{customerProperty.balance}}</text></text>
-		<view class="btn">提现到微信零钱</view>
+		<button class="btn" disabled="{{customerProperty.balance>49}}" bindtap="inputAmount">提现到微信零钱</button>
 		<text class="at">最低提现金额为49元，24小时内到账</text>
 	</view>
 	<view class="ind_tab2">
@@ -47,3 +47,9 @@
 		</view>
 	</view>
 </view>
+
+
+<modal hidden="{{hidden}}" title="请输入提现金额"  bindconfirm="confirm" bindcancel="cancel">
+   <input class=""/>
+</modal>
+

@@ -8,5 +8,11 @@ module.exports = {
                 customer: { id: customer.id }
             }
         });
+    }, create: function (record) {
+        return wxe.requestP({
+            url: 'withdrawRecord',
+            method: 'POST',
+            data: record
+        });
     }
 };

@@ -34,6 +34,11 @@ Page({
       });
     });
   },
+  inputAmount: function () {
+    this.setData({
+      hidden:false
+    });
+  },
   loadCustomerIncomes: function () {
     var self = this;
     customerIncomeService.loadMyIncome(app.globalData.userInfo).then(function (res) {
@@ -104,7 +109,9 @@ Page({
   onPullDownRefresh: function () {
 
   },
-
+  cancel:function(){
+    this.setData({hidden:true});
+  },
   /**
    * 页面上拉触底事件的处理函数
    */
