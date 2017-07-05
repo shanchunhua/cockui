@@ -1,17 +1,17 @@
 <!--pages/mine/index.wxml-->
 <image src="/img/s49.jpg" style="width: 100%; height: 323rpx;"></image>
-<view class="in12">
+<view class="in12 pb20">
 	<view class="sel_li" wx:for="{{henneries}}">
 		<view class="hea">
 			<image src="/img/s37.png" class="lef"></image>
 			<view class="tex">
 				<view class="he">
-					<text class="tit">{{item.hennery.ownerName}}  {{item.hennery.dogName}} </text>
+					<text class="tit">{{item.hennery.ownerName}}家，看门狗：{{item.hennery.dogName}} </text>
 					<text class="at">当前领养<text class="bu">{{item.totalQuantity}}</text>只</text>
 					<text class="clear"></text>
 				</view>
 				<view class="fo">
-					<text class="add">距离您16km  {{item.hennery.address}} </text>
+					<text class="add">{{item.hennery.address}} </text>
 				</view>
 			</view>
 			<view class="clear"></view>

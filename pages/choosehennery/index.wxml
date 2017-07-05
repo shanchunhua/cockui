@@ -5,13 +5,13 @@
 	</navigator>
 	<view class="tbtn on">选择牧民饲养</view>
 </view>
-<view class="in12">
+<view class="in12 pb20">
 	<view class="sel_li" wx:for="{{henneries}}">
 		<view class="hea">
 			<image src="/img/s37.png" class="lef"></image>
 			<view class="tex">
 				<view class="he">
-					<text class="tit">{{item.ownerName}} 看门狗:{{item.dogName}}</text>
+					<text class="tit">{{item.ownerName}}家 看门狗：{{item.dogName}}</text>
 					<text class="at">已有{{item.adoptedCustomerCount}}人选择领养</text>
 					<text class="clear"></text>
 				</view>

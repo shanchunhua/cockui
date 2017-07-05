@@ -7,6 +7,7 @@
 .h15{width: 100%; height: 15rpx;}
 .mt15{margin-top: 15rpx;}
 .pb100{padding-bottom: 100rpx;}
+.pb20{padding-bottom: 20rpx;}
 .w{width: 100%;}
 .clear:after {content: "."; display: block; height:0; clear:both; visibility: hidden; font-size:0;}
 page{background-color: #f2f2f2; flex: 1; height: 100%; font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif; color: #808080; font-size: 26rpx;}
@@ -58,7 +59,7 @@ page{background-color: #f2f2f2; flex: 1; height: 100%; font-family: -apple-syste
 .ind_nav .li image{margin: 0 auto; display: block; width: 75rpx; height: 75rpx;}
 .ind_nav .li text{display: block; text-align: center; padding-top: 12rpx;}
 
-.ind_tab{height: 70rpx; line-height: 70rpx; box-sizing: border-box; background: #fff; width: 726rpx; border-radius: 10rpx;border:2rpx solid #3292ff; margin: 8rpx auto 0;overflow: hidden;}
+.ind_tab{height: 70rpx; line-height: 70rpx; box-sizing: border-box; background: #fff; width: 726rpx; border-radius: 10rpx;border:2rpx solid #3292ff; margin: 18rpx auto 0;overflow: hidden;}
 .ind_tab .tbtn{width: 50%; text-align: center; color: #3292ff; font-size: 32rpx; display: inline-block; }
 .ind_tab .tbtn.on{background: #3292ff; color: #fff;}
 

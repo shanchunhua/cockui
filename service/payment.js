@@ -14,7 +14,7 @@ module.exports = {
                 console.error(res);
                 wx.showModal({
                     title: '支付失败',
-                    content: '支付失败,请重新支付.错误信息：' + res.errMsg,
+                    content: '支付失败,请重新支付.',
                     showCancel: false
                 });
                 reject(res);
