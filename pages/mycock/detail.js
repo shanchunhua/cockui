@@ -1,6 +1,7 @@
 // index.js
 var app = getApp();
 var cockAdoptionOrderService = require('../../service/cockAdoptionOrder.js');
+
 var moment = require('../../utils/we-moment-with-locales');
 Page({
 
@@ -13,8 +14,17 @@ Page({
         vertical: false,
         autoplay: false,
         interval: 3000,
-        duration: 1000
+        duration: 1000,
+        markers: [{
+            id: 0,
+            latitude: 23.099994,
+            longitude: 113.324520,
+            width: 20,
+            height: 20,
+            iconPath: '/img/s14.png'
+        }]
     },
+
     changeIndicatorDots: function (e) {
         this.setData({
             indicatorDots: !this.data.indicatorDots
@@ -39,13 +49,18 @@ Page({
         this.setData({
             duration: e.detail.value
         });
+
     },
     changeOrder: function (e) {
         var current = e.detail.current;
         console.log(current);
         var order = this.data.orders[current];
+        var markers = self.data.markers[0];
+        markers.longitude = order.hennery.longitude;
+        markers.latitude = order.hennery.latitude;
         this.setData({
-            currentOrder: order
+            currentOrder: order,
+            markers: [markers]
         });
         console.log(order);
     },
@@ -58,11 +73,15 @@ Page({
             res.data.forEach(function (item) {
                 item.dateStr = moment(item.paidDate).format('YYYY-MM-DD hh:mm');
             });
+            var markers = self.data.markers[0];
+            markers.longitude = res.data[0].hennery.longitude;
+            markers.latitude = res.data[0].hennery.latitude;
 
             self.setData({
                 henneryId: options.id,
                 orders: res.data,
-                currentOrder: res.data[0]
+                currentOrder: res.data[0],
+                markers: [markers]
             });
         });
     },

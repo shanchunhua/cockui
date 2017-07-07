@@ -36,6 +36,6 @@
     </view>
     <view class="h15"></view>
     <view class="map">
-        <image src="/img/s52.jpg"></image>
+       <map id="map" longitude="{{hennery.longitude}}" latitude="{{hennery.latitude}}" scale="12" markers="{{markers}}" show-location style="width: 100%;"></map>
     </view>
 </template>

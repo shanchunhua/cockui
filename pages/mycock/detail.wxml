@@ -36,7 +36,7 @@
 </view>
 <view class="h15"></view>
 <view class="map">
-	<image src="/img/s52.jpg"></image>
+	<map id="map" longitude="{{currentOrder.hennery.longitude}}" latitude="{{currentOrder.hennery.latitude}}" scale="12" markers="{{markers}}" show-location style="width: 100%;"></map>
 </view>
 <view class="h15"></view>
 <view class="section section_gap swiper">
@@ -50,7 +50,7 @@
 						<text class="sp">回收剩余天数</text>
 						<view class="clear"></view>
                 	</view>
-                	<view class="btn">育养完成</view>
+                	<view class="btn">{{item.status=='RAISING'?'饲养中':'饲养完成'}}</view>
                 	<view class="ul">
                 		<text class="li">领养时间：<text class="b"><text class="sr">{{item.dateStr}}</text></text></text>
                 		<text class="li">领养数量：<text class="b"><text class="sr">{{item.quantity}}</text> 只</text></text>
@@ -92,10 +92,6 @@
 <view class="ind_tab2">
 	<view class="li on">
 		<text>育养记录</text>
-		<view class="sp"></view>
-	</view>
-	<view class="li">
-		<text>育雏记录</text>
 		<view class="sp"></view>
 	</view>
 	<view class="clear"></view>

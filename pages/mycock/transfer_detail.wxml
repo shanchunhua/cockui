@@ -25,7 +25,7 @@
 <image src="/img/s83.jpg" style="width: 100%; height: 250rpx"></image>
 <view class="h15"></view>
 <import src="_henneryIntro.wxml" />
-<template is="henneryIntro" data="{{hennery:cockTransfer.cockAdoptionOrder.hennery}}"/>
+<template is="henneryIntro" data="{{hennery:cockTransfer.cockAdoptionOrder.hennery,markers:markers}}"/>
 
 <view class="h15"></view>
 <view class="egg_h2">
