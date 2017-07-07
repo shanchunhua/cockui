@@ -72,7 +72,7 @@
 	</view>
 	<view class="h15"></view>
 	<view class="index ind_ta" bindtap="steal">
-		<text class="ta" wx:if="{{chance==4}}">你有一个偷到的物品尚未支付，请尽快支付！</text>
+		<text class="ta" wx:if="{{chance==4}}">你有一个偷到的物品尚未支付，请尽快点击进入支付！</text>
 		<text class="ta" wx:if="{{chance==2}}">你有<text class="a">1</text>次偷<text class="a">{{stealHennery.ownerName}}</text> 牧民家的<text class="a">{{goodsForSteal.name}}</text> 机会</text>
 		<text class="ta" wx:if="{{chance==3}}">你今天的机会已用完，请明天再来</text>
 		<text class="ta" wx:if="{{chance==1}}">领养红公鸡后，每天才有偷盗牧家美味的机会哦！</text>

@@ -6,7 +6,7 @@
 	<view class="h15"></view>
 	<view class="time">
 		<view class="in40">
-			<text class="tim"><text class="b">30:00</text>分钟</text>
+			<text class="tim"><text class="b">{{countDown.minutes}}分:{{countDown.seconds}}秒</text></text>
 			<text class="at">当前剩余支付时间，过期则送回！</text>
 		</view>
 	</view>

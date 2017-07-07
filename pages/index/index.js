@@ -77,6 +77,11 @@ Page({
 
   },
   steal: function () {
+    if (this.data.stealOrder) {
+      wx.navigateTo({
+        url: '/pages/index/stealsuccess?id=' + this.data.stealOrder.id
+      });
+    }
     var property = this.data.customerProperty;
     //如果有偷盗资格
     if (property.eligibleForSteal) {
