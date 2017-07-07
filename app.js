@@ -86,7 +86,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    stopReLaunch:false,
-    baseUrl: 'https://www.huanlemujia.com/'
+    stopReLaunch:false
   }
 })

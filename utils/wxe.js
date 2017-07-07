@@ -1,4 +1,4 @@
-var baseUrl = 'https://www.huanlemujia.com/';
+var baseUrl = 'https://wxapp.mujia.com/';
 var request = function (config) {
     wx.showLoading({
         title: '加载中',

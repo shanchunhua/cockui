@@ -22,16 +22,38 @@ Page({
         return res.data;
       }).then(function (property) {
         if (property.eligibleForSteal) {
-          stealOrderService.pickHenneryToSteal().then(function (res) {
-            app.globalData.stealHennery = res.data;
-            self.setData({
-              stealHennery: res.data
+          if (property.stealToday) {
+            stealOrderService.unpaidOrder().then(function (res) {
+              if (res.data) {
+                self.setData({
+                  stealOrder: res.data,
+                  chance: 4//有订单未支付
+                });
+              } else {
+                self.setData({
+                  chance: 3//已偷过
+                });
+              }
             });
-            goodsForStealService.getGoodsForStealToday().then(function (res) {
+          } else {
+            self.setData({
+              chance: 2//还没偷
+            });
+            stealOrderService.pickHenneryToSteal().then(function (res) {
+              app.globalData.stealHennery = res.data;
               self.setData({
-                goodsForSteal: res.data
+                stealHennery: res.data
+              });
+              goodsForStealService.getGoodsForStealToday().then(function (res) {
+                self.setData({
+                  goodsForSteal: res.data
+                });
               });
             });
+          }
+        } else {
+          self.setData({
+            chance: 1//没资格
           });
         }
       });

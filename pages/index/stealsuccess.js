@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    order:null
+    order: null,
+    disabled: false
   },
 
   /**
@@ -25,17 +26,23 @@ Page({
     });
   },
   pay: function () {
+    self.setData({
+      disabled: true
+    });
     paymentService.payOrder({
       order: this.data.order,
-      type: 3,
-      success: function (res) {
-        console.log('success');
-        wx.showToast({
-          title: '支付成功',
-          icon: 'success',
-          duration: 2000
-        });
-      }
+      type: 3
+    }).then(function (res) {
+      wx.showToast({
+        title: '支付成功',
+        icon: 'success',
+        duration: 2000
+      });
+    }).catch(function (err) {
+      console.error(err);
+      self.setData({
+        disabled: false
+      });
     });
   },
   /**
