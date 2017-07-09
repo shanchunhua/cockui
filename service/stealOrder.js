@@ -19,5 +19,11 @@ module.exports = {
         return wxe.requestP({
             url: 'stealOrder/unpaidOrder'
         });
+    },
+    loadStealingOrderToday: function () {
+        return wxe.requestP({
+            url: 'stealOrder/today',
+            method: 'GET'
+        });
     }
 };

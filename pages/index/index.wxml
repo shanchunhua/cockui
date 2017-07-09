@@ -78,11 +78,11 @@
 		<text class="ta" wx:if="{{chance==1}}">领养红公鸡后，每天才有偷盗牧家美味的机会哦！</text>
 		<image src="/img/s31.jpg" class="bann_img h257"></image>
 	</view>
-	<view class="ind_ad">
+	<view class="ind_ad">		
 		<image src="/img/s32.png" class="icon"></image>
-		<text class="ad">***刚偷了一个草鸡蛋</text>
-		<text class="ad">***刚偷了一个草鸡蛋</text>
-		<text class="ad">***刚偷了一个草鸡蛋</text>
+		<view animation="{{animationData}}">
+		<text class="ad" wx:for="{{stealOrders}}" >{{item.customer.nickName}}刚偷了一个{{item.goods.name}}</text>
+		</view>
 		<view class="clear"></view>
 	</view>
 	<view class="h15"></view>

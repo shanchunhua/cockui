@@ -3,14 +3,15 @@ var app = getApp();
 var customerService = require('../../service/customer.js');
 var withdrawRecordService = require('../../service/withdrawRecord.js');
 var customerIncomeService = require('../../service/customerIncome.js');
-
+var moment = require('../../utils/we-moment-with-locales');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    currentTab: 0
+    currentTab: 0,
+    hidden:true
   },
 
   /**
@@ -27,7 +28,7 @@ Page({
     var self = this;
     withdrawRecordService.loadMyWithdrawRecord(app.globalData.userInfo).then(function (res) {
       res.data.forEach(function (item) {
-        item.createdTime = new Date(item.createdTime);
+         item.createdTime = moment(item.createdTime).format('YYYY-MM-DD hh:ss:mm');
       });
       self.setData({
         withdrawRecords: res.data
@@ -43,7 +44,7 @@ Page({
     var self = this;
     customerIncomeService.loadMyIncome(app.globalData.userInfo).then(function (res) {
       res.data.forEach(function (item) {
-        item.createdTime = new Date(item.createdTime);
+        item.createdTime = moment(item.createdTime).format('YYYY-MM-DD hh:ss:mm');
         var type = item.type;
         switch (type) {
           case 'RETURN':

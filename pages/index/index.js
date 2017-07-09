@@ -67,14 +67,55 @@ Page({
     });
   },
   onShow: function () {
+    var self = this;
     if (app.globalData.userInfo) {
-      var self = this;
       customerService.loadCustomerProperty(app.globalData.userInfo.id).then(function (res) {
         self.setData({ customerProperty: res.data });
         return res.data;
       });
     }
+    self.marquee();
+    var i = 1;
+    self.interval = setInterval(function () {
+      self.marquee();
+      i = 0;
+    }, 60000);
+    var animation = wx.createAnimation({
+      duration: 1000
+    });
 
+    self.interval2 = setInterval(function () {
+      console.log('animate');
+      if (i == 0) {
+        animation.timingFunction = 'step-start';
+      }
+      animation.translateX(-i * 10).step();
+      i++;
+      self.setData({
+        animationData: animation.export()
+      });
+    }, 1000);
+
+  },
+  onHide: function () {
+    console.log('hide');
+    var self = this;
+    clearInterval(self.interval);
+    clearInterval(self.interval2);
+
+  },
+  onUnload: function () {
+    console.log('unload');
+    this.onHide();
+  },
+  marquee: function () {
+    var self = this;
+    stealOrderService.loadStealingOrderToday().then(function (res) {
+      var stealOrders = res.data;
+      self.setData({
+        stealOrders: stealOrders
+      });
+    });
   },
   steal: function () {
     if (this.data.stealOrder) {

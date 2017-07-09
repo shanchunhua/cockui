@@ -12,5 +12,5 @@
 .wal_list .rig{float: right;}
 .wal_list .rig .pic{ color: #4c4c4c;}
 .wal_list .lef .tit{color: #4c4c4c;display: block;}
-.wal_list .data{ font-size: 22rpx;display: block;padding-top: 10rpx;}
+.wal_list .data{ /*font-size: 22rpx;*/display: block;padding-top: 10rpx;}
 .wal_list .rig .data{text-align: right;}
