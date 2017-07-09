@@ -10,12 +10,12 @@
   border-radius: 5px;
 }
 .lis .li .bo{
-  width: 167rpx;
+  width: 170rpx;
   border: 2px solid #9fc7f6;
   border-radius: 10rpx;
   color: #4c4c4c;
   margin: 0 auto;
-  padding:20rpx 0;
+  padding:35rpx 0;
   font-family: "微软雅黑";
 }
 .lis .li .bo .te1{

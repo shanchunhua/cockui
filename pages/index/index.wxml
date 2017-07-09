@@ -54,7 +54,7 @@
 
 					<text class="t1">我的鸡蛋</text>
 					<text class="t2">
-						<text class="usm">{{customerProperty.leftEggCount}}</text>只</text>
+						<text class="usm">{{customerProperty.leftEggCount}}</text>枚</text>
 					<image src="/img/s29.jpg" class="img"></image>
 
 				</view>

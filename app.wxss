@@ -103,7 +103,7 @@ page{background-color: #f2f2f2; flex: 1; height: 100%; font-family: -apple-syste
 .ind_tab2 .li.on .sp{display: block; height: 4rpx; width: 100%; background: #3292ff; left: 0; bottom: -1rpx; position: absolute;}
 
 .ind_tab3 .li{width: 33.33%;}
-.orddl{padding: 25rpx 0; background: #fff; border-bottom: 1px solid #e5e5e5;}
+.orddl{padding: 25rpx 0; background: #fff;/* border-bottom: 1px solid #e5e5e5;*/}
 .orddl .h2 {padding-bottom: 10rpx;}
 .orddl .h2 .btn{float: right;}
 .orddl .h2 .btn .img{width: 40rpx; height: 40rpx; float: left;}

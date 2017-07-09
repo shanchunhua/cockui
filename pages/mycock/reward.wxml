@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<image class="userinfo-avatar" src="/img/s1.jpg" background-size="cover"></image>
+<image class="userinfo-avatar" src="/img/s1.jpg" width="100%"></image>
 <view class="lis">
     <view class="li" wx:for="{{options}}" bindtap="create" data-price="{{item.price}}">
         <view class="bo">

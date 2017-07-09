@@ -1,4 +1,4 @@
-	<view class="eggs_ol">
+	<view class="eggs_ol" wx:if="{{goods&&goods.length>0}}">
 		<view class="orddl">
 			<view class="in40">
 				<view class="h2">

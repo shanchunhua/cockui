@@ -64,6 +64,22 @@ Page({
         });
         console.log(order);
     },
+    preview: function () {
+        wx.previewImage({
+            // current: 'String', // 当前显示图片的链接，不填则默认为 urls 的第一张
+            urls: ['http://bbsatt.yineitong.com/forum/2011/03/25/110325164993a2105258f0d314.jpg',
+                'http://img.sj33.cn/uploads/allimg/201302/1-130201105055.jpg'],
+            success: function (res) {
+                // success
+            },
+            fail: function () {
+                // fail
+            },
+            complete: function () {
+                // complete
+            }
+        });
+    },
     /**
      * 生命周期函数--监听页面加载
      */

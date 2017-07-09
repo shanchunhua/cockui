@@ -5,6 +5,7 @@ App({
     this.globalData.loadUserPromise = this.getUserInfo();
   },
   onShow: function (options) {
+    /*
     console.log(options);
     var path = options.path;
     var scene=options.scene;
@@ -14,7 +15,7 @@ App({
       wx.reLaunch({
         url: '/pages/index/index'
       });
-    }
+    }*/
   },
   checkSetting: function (setting) {
     var self = this;

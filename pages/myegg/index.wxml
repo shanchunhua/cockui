@@ -103,8 +103,10 @@
 		</view>
 	</view>
 	<view class="h15"></view>
-	<include src="../template/boxItems.wxml" />
+	<block wx:if="{{goods&&goods.length>0}}">
+	<include src="../template/boxItems.wxml"/>
 	<view class="h15"></view>
+	</block>
 	<import src="../template/_address.wxml" />
 	<template is="address" data="{{order:order}}" />
 </view>
