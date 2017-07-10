@@ -29,6 +29,7 @@ Page({
    */
   onShow: function () {
     app.globalData.stopReLaunch = false;
+    app.globalData.userInfo.id=this.prefixInteger(app.globalData.userInfo.id, 9);
     this.setData({
       userInfo: app.globalData.userInfo
     });
@@ -38,6 +39,9 @@ Page({
     });
   },
 
+  prefixInteger: function (num, length) {
+    return (Array(length).join('0') + num).slice(-length);
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

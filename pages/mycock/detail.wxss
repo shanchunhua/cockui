@@ -49,7 +49,12 @@
 .index{
 width:100%;
 }
+.h2{
+  padding:10rpx 10rpx;
+  font-size:32rpx;
+color:#333;
 
+}
 
 
 

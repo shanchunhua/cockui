@@ -12,8 +12,17 @@ Page({
   },
   onLoad: function () {
     console.log('onLoad');
-
     var self = this;
+    henneryService.getRecommended().then(function (res) {
+      var recommendedHennery = res.data[0];
+      self.setData({
+        recommendedHennery: recommendedHennery
+      });
+    });
+  },
+  onShow: function () {
+    var self = this;
+
     app.globalData.loadUserPromise.then(function () {
       console.log('load property');
       customerService.loadCustomerProperty(app.globalData.userInfo.id).then(function (res) {
@@ -58,22 +67,6 @@ Page({
         }
       });
     });
-
-    henneryService.getRecommended().then(function (res) {
-      var recommendedHennery = res.data[0];
-      self.setData({
-        recommendedHennery: recommendedHennery
-      });
-    });
-  },
-  onShow: function () {
-    var self = this;
-    if (app.globalData.userInfo) {
-      customerService.loadCustomerProperty(app.globalData.userInfo.id).then(function (res) {
-        self.setData({ customerProperty: res.data });
-        return res.data;
-      });
-    }
     self.marquee();
     var i = 1;
     self.interval = setInterval(function () {

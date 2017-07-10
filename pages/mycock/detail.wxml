@@ -90,9 +90,8 @@
 </view>
 <view class="h15"></view>
 <view class="ind_tab2">
-	<view class="li on">
-		<text>育养记录</text>
-		<view class="sp"></view>
+	<view class="h2">
+	<text class="h2">育养记录</text>
 	</view>
 	<view class="clear"></view>
 </view>
