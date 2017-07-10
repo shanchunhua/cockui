@@ -37,14 +37,15 @@ Page({
       var order = res.data;
       paymentService.payOrder({
         order: order,
-        type: 6,
-        success: function (res) {
-          wx.showToast({
-            title: '打赏成功',
-            icon: 'success',
-            duration: 2000
-          });
-        }
+        type: 6
+      }).then(function (res) {
+        wx.showToast({
+          title: '打赏成功',
+          icon: 'success',
+          duration: 2000
+        });
+      }).catch(function (err) {
+        consle.error(err);
       });
     });
 
