@@ -58,6 +58,15 @@ Page({
         var markers = self.data.markers[0];
         markers.longitude = order.hennery.longitude;
         markers.latitude = order.hennery.latitude;
+        var hennery = order.hennery;
+        if (!hennery.LIFE) {
+            hennery.LIFE = [];
+            hennery.ENVIRONMENT = [];
+            hennery.AMINAL = [];
+            hennery.images.forEach(function (image) {
+                hennery[image.type].push(image.url);
+            });
+        }
         this.setData({
             currentOrder: order,
             markers: [markers]
@@ -83,20 +92,11 @@ Page({
             urls: urls
         });
     },
-    preview: function () {
+    preview: function (e) {
+        var type = e.currentTarget.dataset.type;
+        var hennery = this.data.currentOrder.hennery;
         wx.previewImage({
-            // current: 'String', // 当前显示图片的链接，不填则默认为 urls 的第一张
-            urls: ['http://bbsatt.yineitong.com/forum/2011/03/25/110325164993a2105258f0d314.jpg',
-                'http://img.sj33.cn/uploads/allimg/201302/1-130201105055.jpg'],
-            success: function (res) {
-                // success
-            },
-            fail: function () {
-                // fail
-            },
-            complete: function () {
-                // complete
-            }
+            urls: hennery[type]
         });
     },
     /**
@@ -111,7 +111,15 @@ Page({
             var markers = self.data.markers[0];
             markers.longitude = res.data[0].hennery.longitude;
             markers.latitude = res.data[0].hennery.latitude;
-
+            var hennery = res.data[0].hennery;
+            if (!hennery.LIFE) {
+                hennery.LIFE = [];
+                hennery.ENVIRONMENT = [];
+                hennery.AMINAL = [];
+                hennery.images.forEach(function (image) {
+                    hennery[image.type].push(image.url);
+                });
+            }
             self.setData({
                 henneryId: options.id,
                 orders: res.data,

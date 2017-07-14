@@ -1,6 +1,8 @@
 // pages/my_eggs2/index.js
 var app = getApp();
 var cockTransferService = require('../../service/cockTransfer.js');
+var moment = require('../../utils/we-moment-with-locales');
+var raisingRecordService = require('../../service/raisingRecord.js');
 Page({
 
   /**
@@ -24,16 +26,55 @@ Page({
     var id = options.id;
     var self = this;
     cockTransferService.getById(id).then(function (res) {
+      var cockTransfer = res.data;
       var markers = self.data.markers[0];
       markers.longitude = cockTransfer.cockAdoptionOrder.hennery.longitude;
       markers.latitude = cockTransfer.cockAdoptionOrder.hennery.latitude;
+      var hennery = cockTransfer.cockAdoptionOrder.hennery;
+      cockTransfer.dateStr = moment(cockTransfer.createdDate).format('YYYY-MM-DD hh:mm:ss');
+      if (!hennery.LIFE) {
+        hennery.LIFE = [];
+        hennery.ENVIRONMENT = [];
+        hennery.AMINAL = [];
+        hennery.images.forEach(function (image) {
+          hennery[image.type].push(image.url);
+        });
+      }
+      raisingRecordService.loadAdoptionRaisingRecords(cockTransfer.cockAdoptionOrder.id).then(function (res) {
+        res.data.forEach(function (item) {
+          item.dateStr = moment(item.paidDate).format('YYYY-MM-DD');
+        });
+        self.setData({
+          raisingRecords: res.data
+        });
+      });
+
       self.setData({
-        cockTransfer: res.data,
-        markers: [markers]
+        cockTransfer: cockTransfer,
+        markers: [markers],
+        hennery: hennery
       });
     });
+  }, 
+  previewRaisingImage: function (e) {
+    var id = e.currentTarget.dataset.id;
+    var record = this.data.raisingRecords.find(function (item) {
+      return item.id == id;
+    });
+    var urls = record.images.map(function (item) {
+      return item.url;
+    });
+    wx.previewImage({
+      urls: urls
+    });
   },
-
+  preview: function (e) {
+    var type = e.currentTarget.dataset.type;
+    var hennery = this.data.hennery;
+    wx.previewImage({
+      urls: hennery[type]
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -82,4 +123,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+});

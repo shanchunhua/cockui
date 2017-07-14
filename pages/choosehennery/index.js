@@ -1,6 +1,7 @@
 // index.js
 var app = getApp()
 var henneryService = require('../../service/hennery.js');
+var henneryImageService = require('../../service/henneryImage.js');
 Page({
 
   /**
@@ -17,24 +18,27 @@ Page({
     console.log('onLoad');
     var self = this;
     henneryService.findAll().then(function (res) {
+      res.data.forEach(function (item) {
+        item.LIFE = [];
+        item.ENVIRONMENT = [];
+        item.AMINAL = [];
+        item.images.forEach(function (image) {
+          item[image.type].push(image.url);
+        });
+      });
       self.setData({ henneries: res.data });
       console.log(res);
     });
   },
-  preview: function () {
+  preview: function (e) {
+    var type = e.currentTarget.dataset.type;
+    var id = e.currentTarget.dataset.id;
+    var hennery = this.data.henneries.find(function (item) {
+      return item.id == id;
+    });
+
     wx.previewImage({
-      // current: 'String', // 当前显示图片的链接，不填则默认为 urls 的第一张
-      urls: ['http://bbsatt.yineitong.com/forum/2011/03/25/110325164993a2105258f0d314.jpg',
-        'http://img.sj33.cn/uploads/allimg/201302/1-130201105055.jpg'],
-      success: function (res) {
-        // success
-      },
-      fail: function () {
-        // fail
-      },
-      complete: function () {
-        // complete
-      }
+      urls: hennery[type]
     });
   },
   /**

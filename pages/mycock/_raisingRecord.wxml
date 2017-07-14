@@ -1,0 +1,32 @@
+<template name="raisingRecord">
+    <view class="h15"></view>
+    <view class="ind_tab2">
+        <view class="h2">
+            <text class="h2">育养记录</text>
+        </view>
+        <view class="clear"></view>
+    </view>
+    <view class="rec_list">
+        <view class="in40">
+            <view class="li" wx:for="{{raisingRecords}}">
+                <view class="cir">
+                    <view class="ci"></view>
+                </view>
+                <view class="rig">
+                    <text class="tit">{{item.dateStr}}</text>
+                    <text class="centent">{{item.description}}</text>
+                    <view class="img" bindtap="previewRaisingImage" data-id="{{item.id}}">
+                        <view class="imgbod">
+                            <block wx:for="{{item.images}}" wx:for-item="image" wx:for-index="imageIndex">
+                                <image src="{{image.url}}" wx:if="{{imageIndex<3}}"></image>
+                            </block>
+                            <view class="clear"></view>
+                            <text class="imgt" wx:if="item.images.length>3">{{item.images.length}}>></text>
+                        </view>
+
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
