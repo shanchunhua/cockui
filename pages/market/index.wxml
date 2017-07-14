@@ -52,7 +52,7 @@
 						<text class="num">{{item.price}}</text>元<text class="del">原价{{item.marketPrice}}元</text>
 					</text>
 				</view>
-				<navigator url="/pages/market/collection?id={{item.id}}">
+				<navigator url="/pages/market/collectiondetail?id={{item.id}}">
 				<view class="btn">抢购</view>
 				</navigator>
 				<view class="clear"></view>

@@ -10,6 +10,7 @@
     "pages/choosehennery/success",
     "pages/market/index",
     "pages/market/transfer",
+    "pages/market/collectiondetail",
     "pages/market/collection",
     "pages/market/success",
     "pages/henrental/index",

@@ -97,58 +97,20 @@
 </view>
 <view class="rec_list">
 	<view class="in40">
-		<view class="li">
+		<view class="li" wx:for="{{raisingRecords}}">
 			<view class="cir">
 				<view class="ci"></view>
 			</view>
 			<view class="rig">
-				<text class="tit">2017-05-01</text>
-				<text class="centent">晴天北风4级，气温24度正常，灯泡换成40W，23小时光明，1小时黑暗</text>
-				<view class="img">
+				<text class="tit">{{item.dateStr}}</text>
+				<text class="centent">{{item.description}}</text>
+				<view class="img" bindtap="previewRaisingImage" data-id="{{item.id}}">
 					<view class="imgbod">
-						<image src="/img/s56.jpg"></image>
-						<image src="/img/s56.jpg"></image>
-						<image src="/img/s56.jpg"></image>
+						<block wx:for="{{item.images}}" wx:for-item="image" wx:for-index="imageIndex">
+						<image src="{{image.url}}" wx:if="{{imageIndex<3}}"></image>
+						</block>
 						<view class="clear"></view>
-						<text class="imgt">50>></text>
-					</view>
-					
-				</view>
-			</view>
-		</view>
-		<view class="li">
-			<view class="cir">
-				<view class="ci"></view>
-			</view>
-			<view class="rig">
-				<text class="tit">2017-05-01</text>
-				
-				<view class="img">
-					<view class="imgbod">
-						<image src="/img/s56.jpg"></image>
-						<image src="/img/s56.jpg"></image>
-						<image src="/img/s56.jpg"></image>
-						<view class="clear"></view>
-						
-					</view>
-					
-				</view>
-			</view>
-		</view>
-		<view class="li">
-			<view class="cir">
-				<view class="ci"></view>
-			</view>
-			<view class="rig">
-				<text class="tit">2017-05-01</text>
-				
-				<view class="img">
-					<view class="imgbod">
-						<image src="/img/s56.jpg"></image>
-						<image src="/img/s56.jpg"></image>
-						<image src="/img/s56.jpg"></image>
-						<view class="clear"></view>
-						
+						<text class="imgt" wx:if="item.images.length>3">{{item.images.length}}>></text>
 					</view>
 					
 				</view>

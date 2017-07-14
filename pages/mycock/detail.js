@@ -1,7 +1,7 @@
 // index.js
 var app = getApp();
 var cockAdoptionOrderService = require('../../service/cockAdoptionOrder.js');
-
+var raisingRecordService = require('../../service/raisingRecord.js');
 var moment = require('../../utils/we-moment-with-locales');
 Page({
 
@@ -62,7 +62,26 @@ Page({
             currentOrder: order,
             markers: [markers]
         });
-        console.log(order);
+        raisingRecordService.loadAdoptionRaisingRecords(self.data.currentOrder.id).then(function (res) {
+            res.data.forEach(function (item) {
+                item.dateStr = moment(item.paidDate).format('YYYY-MM-DD');
+            });
+            self.setData({
+                raisingRecords: res.data
+            });
+        });
+    },
+    previewRaisingImage: function (e) {
+        var id = e.currentTarget.dataset.id;
+        var record = this.data.raisingRecords.find(function (item) {
+            return item.id == id;
+        });
+        var urls = record.images.map(function (item) {
+            return item.url;
+        });
+        wx.previewImage({
+            urls: urls
+        });
     },
     preview: function () {
         wx.previewImage({
@@ -98,6 +117,14 @@ Page({
                 orders: res.data,
                 currentOrder: res.data[0],
                 markers: [markers]
+            });
+            raisingRecordService.loadAdoptionRaisingRecords(self.data.currentOrder.id).then(function (res) {
+                res.data.forEach(function (item) {
+                    item.dateStr = moment(item.paidDate).format('YYYY-MM-DD');
+                });
+                self.setData({
+                    raisingRecords: res.data
+                });
             });
         });
     },

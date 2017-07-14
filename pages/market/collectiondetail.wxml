@@ -1,0 +1,11 @@
+<view class="pb100">
+{{collectionGoods.description}}
+</view>
+<view class="foo_btn2">
+	<view>
+		<text class="tax">价格：<text class="or">{{collectionGoods.price}} </text>元</text>
+	</view>
+	<navigator url="/pages/market/collection?id={{collectionGoods.id}}">
+		<button class="btn on">立即购买</button>
+	</navigator>
+</view>
