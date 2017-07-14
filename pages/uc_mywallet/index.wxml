@@ -1,5 +1,5 @@
 <view class="body">
-	<view class="walha" style="background:url(/img/s75.jpg) no-repeat; background-size: cover;">
+	<view class="walha" style="background:url(http://static.huanlemujia.com/static/s75.jpg) no-repeat; background-size: cover;">
 		<image class="img" src="/img/s76.png"></image>
 		<text class="num">¥<text class="b">{{customerProperty.balance}}</text></text>
 		<button class="btn" disabled="{{customerProperty.balance>49}}" bindtap="inputAmount">提现到微信零钱</button>

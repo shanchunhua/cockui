@@ -1,5 +1,5 @@
 <view class="body">
-	<view class="walha" style="background:url(/img/s77.jpg) no-repeat; background-size: cover;">
+	<view class="walha" style="background:url(http://static.huanlemujia.com/static/s77.jpg) no-repeat; background-size: cover;">
 		<image class="img" src="/img/s78.png"></image>
 		<text class="num">¥<text class="b">{{customerProperty.deposit}}</text></text>
 		<text class="at">当前借了{{customerProperty.henCount}}只老母鸡</text>

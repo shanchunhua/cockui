@@ -67,28 +67,19 @@
 			<view class="li">
 				<text class="tit">他是一枚纯天然的蛋</text>
 				<text class="p">以天然谷物、青菜、嫩草牙、昆虫、矿物质水等天然饵料为食自然生长</text>
-				<image src="http://static.huanlemujia.com/static/s73.jpg" class="img"></image>
+				<image src="http://static.huanlemujia.com/static/egg1.jpg" class="img"></image>
 			</view>
 			<view class="li">
-				<text class="tit">他是一枚纯天然的蛋</text>
-				<text class="p">以天然谷物、青菜、嫩草牙、昆虫、矿物质水等天然饵料为食自然生长</text>
-				<image src="http://static.huanlemujia.com/static/s73.jpg" class="img"></image>
+				<text class="tit">他是一枚有营养的蛋</text>
+				<text class="p">与传统散养土鸡蛋相比，草原牧家鸡蛋皮厚，黄红，营养价值更丰富，口感更鲜美！</text>
+				<image src="http://static.huanlemujia.com/static/egg2.jpg" class="img"></image>
 			</view>
 			<view class="li">
-				<text class="tit">他是一枚纯天然的蛋</text>
-				<text class="p">以天然谷物、青菜、嫩草牙、昆虫、矿物质水等天然饵料为食自然生长</text>
-				<image src="http://static.huanlemujia.com/static/s73.jpg" class="img"></image>
+				<text class="tit">他是您送礼的首选</text>
+				<text class="p">特别适合对母婴、儿童、术后、亚健康人群，具有美容养生食效，是居家餐饮、送礼、宴请最佳选择</text>
+				<image src="http://static.huanlemujia.com/static/egg3.jpg" class="img"></image>
 			</view>
-			<view class="li">
-				<text class="tit">他是一枚纯天然的蛋</text>
-				<text class="p">以天然谷物、青菜、嫩草牙、昆虫、矿物质水等天然饵料为食自然生长</text>
-				<image src="http://static.huanlemujia.com/static/s73.jpg" class="img"></image>
-			</view>
-			<view class="li">
-				<text class="tit">他是一枚纯天然的蛋</text>
-				<text class="p">以天然谷物、青菜、嫩草牙、昆虫、矿物质水等天然饵料为食自然生长</text>
-				<image src="http://static.huanlemujia.com/static/s73.jpg" class="img"></image>
-			</view>
+			
 		</view>
 	</view>
 	<view class="h15"></view>
