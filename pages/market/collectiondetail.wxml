@@ -1,5 +1,6 @@
 <view class="pb100">
-{{collectionGoods.description}}
+	<image class="detail" src="{{collectionGoods.description}}" mode="widthFix"></image>
+
 </view>
 <view class="foo_btn2">
 	<view>

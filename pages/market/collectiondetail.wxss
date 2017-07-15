@@ -7,3 +7,8 @@
 .orddl .lef{float: left;}
 .orddl .rig{float: right;}
 .orddl .rig .vinp{width: 125rpx;}
+
+.detail{
+    width:100%;
+    height: auto;
+}

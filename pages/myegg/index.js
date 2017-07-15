@@ -15,7 +15,7 @@ Page({
     order: {
       quantity: 0,
       goodsType: 'EGG',
-      price: 2.5
+      price: 2.2
     },
     eggs: {
       stealEgg: 0,

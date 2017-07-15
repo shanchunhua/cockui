@@ -9,7 +9,7 @@
 				<text class="at">{{customerProperty.laidEggCount}}</text>
 				<view class="tes">
 					<text>母鸡下的蛋</text>
-					<text>2.5元/枚</text>
+					<text>{{order.price}}元/枚</text>
 				</view>
 				<navigator url="/pages/myegg/rewardhen">
 				<view class="btn">给母鸡打赏</view>
@@ -85,7 +85,7 @@
 						<text class="te">鸡蛋单价：</text>
 					</view>
 					<view class="dd d2">
-						<text class="te"><text class="b">2.5</text>元/枚</text>
+						<text class="te"><text class="b">{{order.price}}</text>元/枚</text>
 					</view>
 					<view class="clear"></view>
 				</view>

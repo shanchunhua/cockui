@@ -18,7 +18,6 @@ Page({
     var self = this;
 
     collectionGoodsService.getById(id).then(function (res) {
-      res.data.description='<image src="http://static.huanlemujia.com/static/a1.jpg" class="a1"></image>';
       self.setData({
         collectionGoods: res.data
       });
