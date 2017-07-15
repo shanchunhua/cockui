@@ -87,6 +87,9 @@ App({
   },
   globalData: {
     userInfo: null,
-    stopReLaunch:false
+    stopReLaunch:false,
+    settings:{
+      
+    }
   }
 })

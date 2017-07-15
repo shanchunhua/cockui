@@ -16,7 +16,8 @@ Page({
       width: 20,
       height: 20,
       iconPath: '/img/s14.png'
-    }]
+    }],
+    isOwner:false
   },
 
   /**
@@ -24,13 +25,22 @@ Page({
    */
   onLoad: function (options) {
     var id = options.id;
+    console.log("*****"+id);
     var self = this;
     cockTransferService.getById(id).then(function (res) {
       var cockTransfer = res.data;
+      console.log("********"+res.data.createdTime);
+      if(app.globalData.userInfo&&app.globalData.userInfo.id==cockTransfer.customer.id){
+        self.setData({
+          isOwner:true
+        });
+      }
+      console.log("********here");
       var markers = self.data.markers[0];
       markers.longitude = cockTransfer.cockAdoptionOrder.hennery.longitude;
       markers.latitude = cockTransfer.cockAdoptionOrder.hennery.latitude;
       var hennery = cockTransfer.cockAdoptionOrder.hennery;
+
       cockTransfer.dateStr = moment(cockTransfer.createdDate).format('YYYY-MM-DD hh:mm:ss');
       if (!hennery.LIFE) {
         hennery.LIFE = [];
@@ -54,6 +64,7 @@ Page({
         markers: [markers],
         hennery: hennery
       });
+      console.log("*******"+self.data.cockTransfer.hennery.ownerName);
     });
   }, 
   previewRaisingImage: function (e) {
@@ -88,7 +99,23 @@ Page({
   onShow: function () {
 
   },
-
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target);
+    }
+    console.log("*****"+this.data.cockTransfer.id);
+    return {
+      title: '我的红公鸡',
+      path: '/pages/mycock/transfer_detail?id='+this.data.cockTransfer.id,
+      success: function(res) {
+        // 转发成功
+      },
+      fail: function(res) {
+        // 转发失败
+      }
+    }
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

@@ -1,12 +1,12 @@
 <!--pages/my_eggs2/index.wxml-->
-<view class="my_egg2_he" style="background: url(/img/s82.jpg); background-size: cover;">
+<view class="my_egg2_he" style="background: url(http://static.huanlemujia.com/static/s82.jpg); background-size: cover;">
 	<view class="bod">
-		<image class="img" src="/img/pro.png"></image>
+		<image class="img" src="{{cockTransfer.customer.avatarUrl}}"></image>
 		<view class="tex">
 			<text class="h2">{{cockTransfer.customer.nickName}}</text>
 			<text class="sp">转让时间：{{cockTransfer.dateStr}}</text>
 			<text class="sp">转让数量：1 只</text>
-			<text class="sp">转让单价：234 元/只</text>
+			<text class="sp">转让单价：258 元/只</text>
 		</view>
 		<view class="clear"></view>
 	</view>
@@ -16,10 +16,12 @@
 		<text>我的红公鸡</text>
 		<view class="sp"></view>
 	</view>
+	<navigator  url="/pages/understand/index" style="display:inline;" open-type="redirect">
 	<view class="li">
 		<text>了解红公鸡</text>
 		<view class="sp"></view>
 	</view>
+	</navigator>
 	<view class="clear"></view>
 </view>
 <image src="/img/s83.jpg" style="width: 100%; height: 250rpx"></image>
@@ -86,7 +88,7 @@
 </view>
 <import src="_raisingRecord.wxml"/>
 <template is="raisingRecord" data="{{raisingRecords: raisingRecords}}"/>
-<view class="foo_btn2">
+<view class="foo_btn2" wx:if="{{!isOwner}}">
 	<view>
 		<text class="tax">转让价：<text class="or">258</text>元</text>
 	</view>

@@ -56,7 +56,7 @@
 					<text class="te">单价：</text>
 				</view>
 				<view class="dd d2">
-					<text class="te"><text class="b">{{order.price}}元（每只净重保证7斤以上）</text></text>
+					<text class="te"><text class="b">{{order.price}}元（每只净重保证5斤以上）</text></text>
 				</view>
 				<view class="clear"></view>
 			</view>
