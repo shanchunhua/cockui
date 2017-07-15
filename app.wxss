@@ -111,6 +111,9 @@ page{background-color: #f2f2f2; flex: 1; height: 100%; font-family: -apple-syste
 .orddl .lef{float: left;}
 .orddl .rig{float: right;}
 .orddl .rig .vinp{width: 125rpx;}
+.null_img{margin: 0 auto 0;padding-top: 110rpx; width: 306rpx; height: 146rpx; display: block;}
+.null_tex{display: block; text-align: center; margin-top: 32rpx; font-size: 30rpx; line-height: 1;}
+
 .index{
   width: 100%;
 }

@@ -8,7 +8,9 @@ var app = getApp();
 Page({
   data: {
     customerProperty: {},
-    userInfo: {}
+    userInfo: {},
+    mycockUrl: "/pages/mycock/index",
+    myboxUrl: '/pages/mybox/index'
   },
   onLoad: function () {
     console.log('onLoad');
@@ -30,6 +32,16 @@ Page({
         self.setData({ customerProperty: res.data });
         return res.data;
       }).then(function (property) {
+        if (property.adoptedCockCount === 0) {
+          self.setData({
+            mycockUrl: '/pages/mycock/none'
+          });
+        }
+        if (property.goodsCountInBag === 0) {
+          self.setData({
+            myboxUrl: '/pages/mybox/none'
+          });
+        }
         if (property.eligibleForSteal) {
           if (property.stealToday) {
             stealOrderService.unpaidOrder().then(function (res) {

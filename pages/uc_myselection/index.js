@@ -17,6 +17,12 @@ Page({
   onLoad: function (options) {
     var self = this;
     shippingOrderService.loadCollectionOrder(app.globalData.userInfo).then(function (res) {
+      if (res.data.length<=0) {
+        wx.redirectTo({
+          url: '/pages/usercenter/none'
+        });
+        return false;
+      }
       res.data.forEach(function(item){
         item.dateStr = moment(item.createdTime).format('YYYY-MM-DD');
       });

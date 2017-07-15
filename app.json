@@ -5,6 +5,7 @@
     "pages/index/stealsuccess",
     "pages/index/stealfailed",
     "pages/usercenter/index",
+    "pages/usercenter/none",
     "pages/choosehennery/index",
     "pages/choosehennery/adopt",
     "pages/choosehennery/success",
@@ -28,8 +29,10 @@
     "pages/mycock/transfer_detail",
     "pages/mycock/reward",
     "pages/mycock/withdraw",
+    "pages/mycock/none",
     "pages/myegg/index",
     "pages/mybox/index",
+    "pages/mybox/none",
     "pages/myegg/rewarddog",
     "pages/myegg/rewardhen",
     "pages/common/shippingOrderSuccess"

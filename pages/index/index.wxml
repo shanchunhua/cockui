@@ -40,7 +40,7 @@
 	<view class="ind_me">
 
 		<view class="lef">
-			<navigator url="/pages/mycock/index">
+			<navigator url="{{mycockUrl}}">
 				<text class="t1">我的红公鸡</text>
 				<text class="t2">
 					<text class="usm">{{customerProperty.adoptedCockCount}}</text>只</text>
@@ -59,7 +59,7 @@
 
 				</view>
 			</navigator>
-			<navigator url="/pages/mybox/index">
+			<navigator url="{{myboxUrl}}">
 				<view class="foo rig_ch">
 					<text class="t1">我的皮箱</text>
 					<text class="t2">
