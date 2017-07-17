@@ -39,7 +39,7 @@ Page({
         order: self.data.order
       });
     });
-    customerBoxService.loadCustomerBoxItems().then(function (res) {
+    customerBoxService.loadCustomerBoxItems({ id: app.globalData.userInfo.id }).then(function (res) {
       var list = res.data;
       self.setData({ goods: list.filter(function (item) { return item.quantity > 0; }) });
     });
@@ -105,6 +105,9 @@ Page({
       }
     });
   },
+    checkboxChange: function (e) {
+    this.checked = e.detail.value;
+  },
   create: function () {
     var self = this;
     if (!wxe.checkAddress(this.data.order)) {
@@ -114,7 +117,7 @@ Page({
       disabled: true
     });
     this.data.goods.forEach(function (item) {
-      if (item.checked) {
+      if (self.checked.includes(item.id+"")) {
         self.data.order.items.push({
           goods: item.goods,
           quantity: item.quantity,

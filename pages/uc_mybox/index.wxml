@@ -2,7 +2,7 @@
 	<view class="li" wx:for="{{orders}}">
 		<view class="hea">
 			<view class="in40">
-				<text class="let">2017-05-06 15:23配送</text>
+				<text class="let">{{item.dateStr}}配送</text>
 				<text class="rig">所属订单：<text class="nam">{{item.order.orderNo}}</text></text>
 				<view class="clear"></view>
 			</view>

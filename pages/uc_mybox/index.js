@@ -1,6 +1,7 @@
 // pages/leather2/index.js
 var app = getApp();
 var shippingOrderItemService = require('../../service/shippingOrderItem.js');
+var moment = require('../../utils/we-moment-with-locales');
 Page({
 
   /**
@@ -16,12 +17,15 @@ Page({
   onLoad: function (options) {
     var self = this;
     shippingOrderItemService.getBoxOrders().then(function (res) {
-      if (res.data.length<=0) {
+      if (res.data.length <= 0) {
         wx.redirectTo({
           url: '/pages/usercenter/none'
         });
         return false;
       }
+      res.data.forEach(function (item) {
+        item.dateStr = moment(item.order.createdTime).format('YYYY-MM-DD hh:mm:ss');
+      });
       self.setData({
         orders: res.data
       });

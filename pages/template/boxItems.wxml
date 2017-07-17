@@ -4,7 +4,7 @@
 				<view class="h2">
 					<text>皮箱存货</text>
 				</view>
-				<block wx:for="{{goods}}">
+				<checkbox-group wx:for="{{goods}}" bindchange="checkboxChange">
 				<view class="h15"></view>
 				<view class="che">
 					<checkbox class="le" value="{{item.id}}" checked="{{item.checked}}" />
@@ -12,7 +12,7 @@
 					<text class="rt">{{item.quantity}}份</text>
 					<view class="clear"></view>
 				</view>
-				</block>
+				</checkbox-group>
 			</view>
 		</view>
 	</view>
