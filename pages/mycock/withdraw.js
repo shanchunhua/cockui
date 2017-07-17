@@ -43,6 +43,16 @@ Page({
       var list = res.data;
       self.setData({ goods: list.filter(function (item) { return item.quantity > 0; }) });
     });
+     shippingOrderService.getLastOrder().then(function (res) {
+      if (res.data) {
+        self.data.order.contact = res.data.contact;
+        self.data.order.tel = res.data.tel;
+        self.data.order.address = res.data.address;
+        self.setData({
+          order: self.data.order
+        });
+      }
+    });
   },
   plus: function () {
     if (this.data.order.quantity < this.data.adoptionOrder.quantity) {

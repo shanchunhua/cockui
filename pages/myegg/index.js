@@ -15,7 +15,8 @@ Page({
     order: {
       quantity: 0,
       goodsType: 'EGG',
-      price: 2.2
+      price: 0.01,
+      total: 0
     },
     eggs: {
       stealEgg: 0,
@@ -39,6 +40,16 @@ Page({
       var list = res.data;
       self.setData({ goods: list.filter(function (item) { return item.quantity > 0; }) });
     });
+    shippingOrderService.getLastOrder().then(function (res) {
+      if (res.data) {
+        self.data.order.contact = res.data.contact;
+        self.data.order.tel = res.data.tel;
+        self.data.order.address = res.data.address;
+        self.setData({
+          order: self.data.order
+        });
+      }
+    });
   },
 
   /**
@@ -51,11 +62,11 @@ Page({
     //取偷蛋的订单需要的蛋的数量的小值
     var min = this.data.order.quantity < this.data.customerProperty.stolenEggCount ? this.data.order.quantity : this.data.customerProperty.stolenEggCount;
     var laidEgg = 0;
-    var price = 2.5;
+    var price = this.data.order.price;
     if (this.data.order.quantity > min) {
       laidEgg = this.data.order.quantity - min;
       var order = this.data.order;
-      order.total = price * laidEgg;
+      order.total = (price * laidEgg).toFixed(2);
       this.setData({
         order: order
       });
@@ -86,13 +97,13 @@ Page({
     this.calculate();
   },
   minus: function () {
-    //  if (this.data.order.quantity > 30) {
-    this.data.order.quantity = this.data.order.quantity - 30;
-    this.setData({
-      order: this.data.order
-    });
-    this.calculate();
-    //    }
+    if (this.data.order.quantity >= 30) {
+      this.data.order.quantity = this.data.order.quantity - 30;
+      this.setData({
+        order: this.data.order
+      });
+      this.calculate();
+    }
 
   },
   invokePay: function () {

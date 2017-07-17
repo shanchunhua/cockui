@@ -1,6 +1,7 @@
 // pages/leather/index.js
 var app = getApp()
 var customerBoxService = require('../../service/customerBox.js');
+var moment = require('../../utils/we-moment-with-locales');
 Page({
 
   /**
@@ -16,10 +17,13 @@ Page({
   onLoad: function (options) {
     var self = this;
     customerBoxService.loadCustomerBoxItems({ id: app.globalData.userInfo.id }).then(function (res) {
+      res.data.forEach(function (item) {
+        item.lastStealTime = moment(item.lastStealTime).format('YYYY-MM-DD');
+      });
       self.setData({
         list: res.data
       });
-    })
+    });
   },
 
   /**

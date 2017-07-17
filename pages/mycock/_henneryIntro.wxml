@@ -19,15 +19,15 @@
         <view class="min_vid">
 
         		<view class="img" bindtap="preview" data-type='LIFE'>
-					<image src="{{hennery['LIFE'][0]}}"></image>
+					<image src="/img/s34.jpg"></image>
 					<text>生活照</text>
 				</view>
 				<view class="img" bindtap="preview" data-type='ENVIRONMENT'>
-					<image src="{{hennery['ENVIRONMENT'][0]}}"></image>
+					<image src="/img/s35.jpg"></image>
 					<text>大牧场</text>
 				</view>
 				<view class="img" bindtap="preview" data-type='AMINAL'>
-					<image src="{{hennery['AMINAL'][0]}}"></image>
+					<image src="/img/s36.jpg"></image>
 					<text>家禽记</text>
 				</view>
             <view class="clear"></view>

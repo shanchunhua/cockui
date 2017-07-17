@@ -1,4 +1,4 @@
-var baseUrl = 'https://wxapp.mujia.com/';
+var baseUrl = 'https://www.huanlemujia.com/';
 var request = function (config) {
     wx.showLoading({
         title: '加载中',
@@ -37,7 +37,12 @@ var request = function (config) {
 var requestP = function (config) {
     var promise = new Promise(function (resolve, reject) {
         config.success = function (res) {
-            resolve(res.data);
+            if (res.statusCode > 399) {
+                reject(res);
+            } else {
+                resolve(res.data);
+            }
+
         };
         config.error = function (err) {
             console.error(err);
@@ -55,7 +60,7 @@ module.exports = {
             wx.showModal({
                 title: '信息不足',
                 content: '请填写收货信息',
-                showCancel:false
+                showCancel: false
             });
             return false;
         }

@@ -36,6 +36,16 @@ Page({
       });
       self.data.order.cockTransfer = data;
     });
+     shippingOrderService.getLastOrder().then(function (res) {
+      if (res.data) {
+        self.data.order.contact = res.data.contact;
+        self.data.order.tel = res.data.tel;
+        self.data.order.address = res.data.address;
+        self.setData({
+          order: self.data.order
+        });
+      }
+    });
   },
 
   /**
@@ -74,6 +84,17 @@ Page({
         var order = res.data;
         self.setData({ order: order });
         self.invokePay();
+      }).catch(function(err){
+          wx.showModal({
+          title: '订单无效',
+          content: '您手慢了该产品已被人抢走，请重新抢购',
+          showCancel: false,
+          success: function () {
+            wx.redirectTo({
+              url: '/pages/market/index'
+            });
+          }
+        });
       });
     } else {
       self.invokePay();

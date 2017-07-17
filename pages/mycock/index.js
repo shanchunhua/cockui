@@ -14,11 +14,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var self = this;
-    customerService.loadCockAdoptionOrderSummary().then(function (result) {
-      console.log(result.data);
-      self.setData({ henneries: result.data });
-    });
   },
 
   /**
@@ -32,7 +27,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var self = this;
+    customerService.loadCockAdoptionOrderSummary().then(function (result) {
+      if(result.data.length===0){
+        wx.redirectTo({
+          url: '/pages/mycock/none'
+        });
+        return false;
+      }
+      console.log(result.data);
+      self.setData({ henneries: result.data });
+    });
   },
 
   /**

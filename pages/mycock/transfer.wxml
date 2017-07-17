@@ -46,5 +46,5 @@
 	<text>2、为了尽快成单，每次只能挂单1只，请分享给您更多的朋友！</text>
 </view>
 <view class="foo_btn2">
-	<view class="btn" bindtap="createOrder"><text>立即挂单</text></view>
+	<button class="btn on" bindtap="createOrder" disabled="{{cockAdoptionOrder.availableQuantity<=0}}">立即挂单</button>
 </view>
