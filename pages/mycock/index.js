@@ -28,15 +28,14 @@ Page({
    */
   onShow: function () {
     var self = this;
-    customerService.loadCockAdoptionOrderSummary().then(function (result) {
-      if(result.data.length===0){
-        wx.redirectTo({
-          url: '/pages/mycock/none'
+    customerService.loadCockAdoptionOrderSummary().then(function (res) {
+      if (res.data.length <= 0) {
+        self.setData({
+          none: true
         });
         return false;
       }
-      console.log(result.data);
-      self.setData({ henneries: result.data });
+      self.setData({ none: false, henneries: res.data });
     });
   },
 

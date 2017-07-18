@@ -18,8 +18,9 @@ Page({
     var self = this;
     shippingOrderService.loadMarketOrder(app.globalData.userInfo).then(function (res) {
       if (res.data.length <= 0) {
-        wx.redirectTo({
-          url: '/pages/usercenter/none'
+        self.setData({
+          none: true,
+          msg: '您尚未在早市下过单'
         });
         return false;
       }
@@ -27,6 +28,7 @@ Page({
         item.dateStr = moment(item.paidDate).format('YYYY-MM-DD');
       });
       self.setData({
+        none: false,
         orders: res.data
       });
     });

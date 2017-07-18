@@ -1,2 +1,4 @@
+<template name="none">
 <image class="null_img" src="http://static.huanlemujia.com/static/s87.png"></image>
-<text class="null_tex">您还未品味过该产品！</text>
+<text class="null_tex">{{msg}}</text>
+</template>

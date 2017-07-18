@@ -12,7 +12,8 @@ Page({
     currentTab: 0,
     order: {
       quantity: 30
-    }
+    },
+    none: false
   },
 
   /**
@@ -25,6 +26,14 @@ Page({
     var self = this;
     eggGainRecordService.loadCustomerEggGainRecords(app.globalData.userInfo).then(function (res) {
       var data = res.data;
+      if (res.data.length <= 0) {
+        self.setData({
+          none: true,
+          msg: '您的鸡篮还没有鸡蛋'
+        });
+        return false;
+      }
+
       data.forEach(function (item) {
         switch (item.type) {
           case 'STEAL':
@@ -43,16 +52,28 @@ Page({
         item.dateStr = moment(item.createdTime).format('YYYY-MM-DD hh:ss');
       });
       self.setData({
+        none: false,
         eggGainRecords: data
       });
     });
+  },
+  loadEggOrder: function () {
+    var self=this;
     shippingOrderService.loadEggOrder(app.globalData.userInfo).then(function (res) {
-      res.data.forEach(function(item){
-        item.dateStr= moment(item.createdTime).format('YYYY-MM-DD');
-        item.buyEggs=parseInt(item.total/item.price);
-        item.stealEggs=item.quantity-item.buyEggs;
+      if (res.data.length <= 0) {
+        self.setData({
+          none: true,
+          msg: '您尚未下单购买鸡蛋'
+        });
+        return false;
+      }
+      res.data.forEach(function (item) {
+        item.dateStr = moment(item.createdTime).format('YYYY-MM-DD');
+        item.buyEggs = parseInt(item.total / item.price);
+        item.stealEggs = item.quantity - item.buyEggs;
       });
       self.setData({
+        none: false,
         orders: res.data
       });
     });
@@ -65,7 +86,7 @@ Page({
         this.loadEggGainRecords();
         break;
       case "1":
-        this.loadEggGainRecords();
+        this.loadEggOrder();
         break;
     }
 

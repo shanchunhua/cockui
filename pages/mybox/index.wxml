@@ -1,5 +1,6 @@
 <image src="/img/s63.jpg" style="width: 100%; height: 404rpx;"></image>
-<view class="leat_list">
+<include src="none.wxml" wx:if="{{none}}"/>
+<view class="leat_list" wx:if="{{!none}}">
 	<view class="li" wx:for="{{list}}">
 		<view class="in40">
 			<image src="/img/s64.jpg" class="lef_img"></image>

@@ -9,7 +9,7 @@
 				<text class="at">转让状态：<text class="b">{{item.paid?'已':'未'}}支付</text></text>
 			</view>
 			<view class="li">
-				<text class="at">转让时间：<text class="b">2017-05-07</text></text>
+				<text class="at">转让时间：<text class="b">{{item.dateStr}}</text></text>
 			</view>
 			<view class="clear"></view>
 		</view>
@@ -23,7 +23,7 @@
 			<view class="clear"></view>
 		</view>
 		<view class="li">
-			<text class="at">所属领养订单：<text class="b">{{item.hennery.address}}</text></text>
+			<text class="at">所属领养订单：<text class="b">{{item.adoptionOrder.orderNo}}</text></text>
 		</view>
 	</view>
 </view>

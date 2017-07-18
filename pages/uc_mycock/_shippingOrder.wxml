@@ -13,7 +13,7 @@
 				</view>
 				<view class="li">
 					<text class="at">提交时间：</text>
-					<text class="b">2017-05-07</text>
+					<text class="b">{{item.dateStr}}</text>
 
 				</view>
 				<view class="clear"></view>
@@ -21,11 +21,11 @@
 			<view class="li2">
 				<view class="li">
 					<text class="at">快递公司：</text>
-					<text class="b">{{item.paid?'已':'未'}}支付</text>
+					<text class="b">{{item.expressNo}}</text>
 				</view>
 				<view class="li">
 					<text class="at">快递单号：</text>
-					<text class="b">2017-05-07</text>
+					<text class="b">{{item.expressCompany}}</text>
 				</view>
 				<view class="clear"></view>
 			</view>
@@ -43,21 +43,21 @@
 			<view class="li2">
 				<view class="li">
 					<text class="at">联系人：</text>
-					<text class="b">{{item.hennery.ownerName}}</text>
+					<text class="b">{{item.contact}}</text>
 				</view>
 				<view class="li">
 					<text class="at">联系电话：</text>
-					<text class="b bu">饲养中</text>
+					<text class="b bu">{{item.tel}}</text>
 				</view>
 				<view class="clear"></view>
 			</view>
 			<view class="li">
 				<text class="at">快递地址：</text>
-				<text class="b">{{item.hennery.address}}</text>
+				<text class="b">{{item.address}}</text>
 			</view>
 			<view class="li">
 				<text class="at">所属领养订单：</text>
-				<text class="b">{{item.hennery.address}}</text>
+				<text class="b">{{item.adoptionOrder.orderNo}}</text>
 			</view>
 		</view>
 	</view>

@@ -13,9 +13,13 @@
 	</view>
 	<view class="clear"></view>
 </view>
-<block wx:for="{{orders}}">
+<block wx:if="{{none}}">
+<import src="../usercenter/none.wxml"/>
+<template is="none" data="{{msg:msg}}" />
+</block>
+<block wx:for="{{orders}}" wx:if="{{!none}}">
 <view class="h15"></view>
-<block wx:if="{{currentTab==0}}">
+<block wx:if="{{currentTab==0}}">	
 <import src="_adoptionOrder.wxml"/>
 <template is="adoptionOrder" data="{{item}}" />
 </block>

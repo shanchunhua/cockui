@@ -103,8 +103,29 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        this.id=options.id;
+    },
+
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady: function () {
+
+    },
+
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    onShow: function () {
+
         var self = this;
-        cockAdoptionOrderService.getMyRaisingOrdersByHennery(options.id).then(function (res) {
+        cockAdoptionOrderService.getMyRaisingOrdersByHennery(this.id).then(function (res) {
+            if (res.data.length === 0) {
+                wx.redirectTo({
+                    url: '/pages/index/index'
+                });
+                return false;
+            }
             res.data.forEach(function (item) {
                 item.dateStr = moment(item.paidDate).format('YYYY-MM-DD hh:mm');
             });
@@ -121,7 +142,7 @@ Page({
                 });
             }
             self.setData({
-                henneryId: options.id,
+                henneryId: self.id,
                 orders: res.data,
                 currentOrder: res.data[0],
                 markers: [markers]
@@ -135,19 +156,6 @@ Page({
                 });
             });
         });
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
 
     },
 

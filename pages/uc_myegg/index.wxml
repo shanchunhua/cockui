@@ -10,7 +10,12 @@
 		</view>
 		<view class="clear"></view>
 	</view>
-	<view class="wal_list" wx:if="{{currentTab==0}}">
+<block wx:if="{{none}}">
+<import src="../usercenter/none.wxml"/>
+<template is="none" data="{{msg:msg}}" />
+</block>
+
+	<view class="wal_list" wx:if="{{currentTab==0&&!none}}">
 		<view class="in40">
 			<view class="li" wx:for="{{eggGainRecords}}">
 				<view class="lef">
@@ -26,7 +31,7 @@
 
 		</view>
 	</view>
-<block wx:if="{{currentTab==1}}">
+<block wx:if="{{currentTab==1&!none}}">
 <import src="_shippingOrder.wxml"/>
  <view wx:for="{{orders}}">
 <template is="shippingOrder" data="{{item}}" />

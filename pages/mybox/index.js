@@ -17,10 +17,17 @@ Page({
   onLoad: function (options) {
     var self = this;
     customerBoxService.loadCustomerBoxItems({ id: app.globalData.userInfo.id }).then(function (res) {
+      if (res.data.length <= 0) {
+        self.setData({
+          none: true
+        });
+        return false;
+      }
       res.data.forEach(function (item) {
         item.lastStealTime = moment(item.lastStealTime).format('YYYY-MM-DD');
       });
       self.setData({
+        none: false,
         list: res.data
       });
     });

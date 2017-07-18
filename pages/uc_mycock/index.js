@@ -11,7 +11,8 @@ Page({
    */
   data: {
     orders: [],
-    currentTab: 0
+    currentTab: 0,
+    none: false
   },
 
   /**
@@ -25,8 +26,9 @@ Page({
     var self = this;
     cockAdoptionOrderService.loadCustomerAdoptionOrders({ id: app.globalData.userInfo.id }).then(function (res) {
       if (res.data.length <= 0) {
-        wx.redirectTo({
-          url: '/pages/usercenter/none'
+        self.setData({
+          none: true,
+          msg: '您尚未领养红公鸡'
         });
         return false;
       }
@@ -34,19 +36,39 @@ Page({
       res.data.forEach(function (item) {
         item.dateStr = moment(item.paidDate).format('YYYY-MM-DD');
       });
-      self.setData({ orders: res.data });
+      self.setData({ none: false, orders: res.data });
     });
   },
   loadTransferOrder: function () {
     var self = this;
     cockTransferService.loadCustomerTransferOrders({ id: app.globalData.userInfo.id }).then(function (res) {
-      self.setData({ orders: res.data });
+      if (res.data.length <= 0) {
+        self.setData({
+          none: true,
+          msg: '您尚未转让红公鸡'
+        });
+        return false;
+      }
+      res.data.forEach(function (item) {
+        item.dateStr = moment(item.createdDate).format('YYYY-MM-DD');
+      });
+      self.setData({ none: false, orders: res.data });
     });
   },
-  loadShoppingOrder: function () {
+  loadShippingOrder: function () {
     var self = this;
     shippingOrderService.loadCustomerShippingOrders({ id: app.globalData.userInfo.id }).then(function (res) {
-      self.setData({ orders: res.data });
+      if (res.data.length <= 0) {
+        self.setData({
+          none: true,
+          msg: '您尚未收回红公鸡'
+        });
+        return false;
+      }
+      res.data.forEach(function (item) {
+        item.dateStr = moment(item.createdDate).format('YYYY-MM-DD');
+      });
+      self.setData({ none: false, orders: res.data });
     });
   },
   changeTab: function (event) {
@@ -60,7 +82,7 @@ Page({
         this.loadTransferOrder();
         break;
       case "2":
-        //   this.loadShoppingOrder();
+        this.loadShippingOrder();
         break;
     }
 

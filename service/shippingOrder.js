@@ -7,7 +7,8 @@ module.exports = {
             method: 'POST',
             data: {
                 customer: customer,
-                orderNo: null
+                goodsType: 'COCK',
+                paid: true
             }
         });
     },
@@ -40,7 +41,7 @@ module.exports = {
             data: {
                 customer: { id: customer.id },
                 goodsType: 'EGG',
-                 paid: true
+                paid: true
             }
         });
     },

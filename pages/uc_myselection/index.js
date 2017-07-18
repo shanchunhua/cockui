@@ -17,17 +17,19 @@ Page({
   onLoad: function (options) {
     var self = this;
     shippingOrderService.loadCollectionOrder(app.globalData.userInfo).then(function (res) {
-      if (res.data.length<=0) {
-        wx.redirectTo({
-          url: '/pages/usercenter/none'
+      if (res.data.length <= 0) {
+        self.setData({
+          none: true,
+          msg: '您尚未享用牧家精选'
         });
         return false;
       }
-      res.data.forEach(function(item){
+      res.data.forEach(function (item) {
         item.dateStr = moment(item.createdTime).format('YYYY-MM-DD');
       });
       self.setData({
-        orders: res.data
+        orders: res.data,
+        none: false
       });
     });
   },

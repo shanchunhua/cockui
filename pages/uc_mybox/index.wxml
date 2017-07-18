@@ -1,4 +1,9 @@
-<view class="leat_list">
+<block wx:if="{{none}}">
+<import src="../usercenter/none.wxml"/>
+<template is="none" data="{{msg:msg}}" />
+</block>
+
+<view class="leat_list" wx:if="{{!none}}">
 	<view class="li" wx:for="{{orders}}">
 		<view class="hea">
 			<view class="in40">

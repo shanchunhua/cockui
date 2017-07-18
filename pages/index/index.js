@@ -32,16 +32,6 @@ Page({
         self.setData({ customerProperty: res.data });
         return res.data;
       }).then(function (property) {
-        if (property.adoptedCockCount === 0) {
-          self.setData({
-            mycockUrl: '/pages/mycock/none'
-          });
-        }
-        if (property.goodsCountInBag === 0) {
-          self.setData({
-            myboxUrl: '/pages/mybox/none'
-          });
-        }
         if (property.eligibleForSteal) {
           if (property.stealToday) {
             stealOrderService.unpaidOrder().then(function (res) {
