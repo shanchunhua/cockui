@@ -7,25 +7,7 @@
 		</navigator>
 	</view>
 	<view class="h15"></view>
-	<view class="un_img">
-		<image src="http://static.huanlemujia.com/static/a1.jpg" class="a1"></image>
-		<image src="http://static.huanlemujia.com/static/a2.jpg" class="a2"></image>
-		<image src="http://static.huanlemujia.com/static/a3.jpg" class="a3"></image>
-		<image src="http://static.huanlemujia.com/static/a4.jpg" class="a4"></image>
-		<image src="http://static.huanlemujia.com/static/a5.jpg" class="a5"></image>
-		<image src="http://static.huanlemujia.com/static/a6.jpg" class="a6"></image>
-		<image src="http://static.huanlemujia.com/static/a7.jpg" class="a7"></image>
-		<image src="http://static.huanlemujia.com/static/a8.jpg" class="a8"></image>
-		<image src="http://static.huanlemujia.com/static/a9.jpg" class="a9"></image>
-		<image src="http://static.huanlemujia.com/static/a10.jpg" class="a10"></image>
-		<image src="http://static.huanlemujia.com/static/a11.jpg" class="a11"></image>
-		<image src="http://static.huanlemujia.com/static/a12.jpg" class="a12"></image>
-		<image src="http://static.huanlemujia.com/static/a13.jpg" class="a13"></image>
-		<image src="http://static.huanlemujia.com/static/a14.jpg" class="a14"></image>
-		<image src="http://static.huanlemujia.com/static/a15.jpg" class="a15"></image>
-		<image src="http://static.huanlemujia.com/static/a16.jpg" class="a16"></image>
-		<image src="http://static.huanlemujia.com/static/a17.jpg" class="a17"></image>
-	</view>
+	<include src="intro.wxml" />
 	<view class="h15"></view>
 	<navigator url="/pages/choosehennery/index" open-type="redirect">
 	<view class="foo_btn">

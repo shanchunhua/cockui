@@ -5,5 +5,8 @@
 .ado_li .li .b{font-weight: bold; color: #4c4c4c;}
 .ado_li .li2 .li .b.bu{color: #3292ff; font-weight: normal;}
 
-
+.ado_a{background:#fcfcfc; line-height: 41rpx; padding: 16rpx 0;}
+.ado_a .ico{width: 41rpx; height: 41rpx; float:left;}
+.ado_a .at{float: left; margin-left: 15rpx; color: #3292ff;}
+.ado_a .mo{float: right;}
 

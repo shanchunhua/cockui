@@ -2,7 +2,7 @@
 <view class="ado_li">
 	<view class="in40">
 		<view class="li">
-			<text class="at">转让编号：<text class="b">{{item.orderNo}}</text></text>
+			<text class="at">转让编号：<text class="b">{{item.transferNo}}</text></text>
 		</view>
 		<view class="li2">
 			<view class="li">
@@ -18,13 +18,23 @@
 				<text class="at">公鸡数量：<text class="b">{{item.quantity}}只</text></text>
 			</view>
 			<view class="li">
-				<text class="at">支付金额：<text class="b">{{item.total}}元</text></text>
+				<text class="at">转让金额：<text class="b">258元</text></text>
 			</view>
 			<view class="clear"></view>
 		</view>
 		<view class="li">
-			<text class="at">所属领养订单：<text class="b">{{item.adoptionOrder.orderNo}}</text></text>
+			<text class="at">所属领养订单：<text class="b">{{item.cockAdoptionOrder.orderNo}}</text></text>
 		</view>
 	</view>
+</view>
+<view class="ado_a">
+	<navigator url="/pages/mycock/transfer_detail?id={{item.id}}">
+	<view class="in40">
+		<image class="ico" src="http://static.huanlemujia.com/static/s92.png"></image>
+		<text class="at">转让成功即得49元！</text>		
+		<text class="mo">详情 》</text>		
+		<div class="clear"></div>
+	</view>
+	</navigator>
 </view>
 </template>

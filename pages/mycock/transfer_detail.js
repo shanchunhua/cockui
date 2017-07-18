@@ -17,7 +17,8 @@ Page({
       height: 20,
       iconPath: '/img/s14.png'
     }],
-    isOwner:false
+    isOwner: false,
+    currentTab:0
   },
 
   /**
@@ -25,14 +26,14 @@ Page({
    */
   onLoad: function (options) {
     var id = options.id;
-    console.log("*****"+id);
+    console.log("*****" + id);
     var self = this;
     cockTransferService.getById(id).then(function (res) {
       var cockTransfer = res.data;
-      console.log("********"+res.data.createdTime);
-      if(app.globalData.userInfo&&app.globalData.userInfo.id==cockTransfer.customer.id){
+      console.log("********" + res.data.createdTime);
+      if (app.globalData.userInfo && app.globalData.userInfo.id == cockTransfer.customer.id) {
         self.setData({
-          isOwner:true
+          isOwner: true
         });
       }
       console.log("********here");
@@ -64,9 +65,8 @@ Page({
         markers: [markers],
         hennery: hennery
       });
-      console.log("*******"+self.data.cockTransfer.hennery.ownerName);
     });
-  }, 
+  },
   previewRaisingImage: function (e) {
     var id = e.currentTarget.dataset.id;
     var record = this.data.raisingRecords.find(function (item) {
@@ -99,19 +99,24 @@ Page({
   onShow: function () {
 
   },
+  changeTab: function (event) {
+    var tabid = event.currentTarget.dataset.tabid;
+    this.setData({ currentTab: tabid });
+  },
+
   onShareAppMessage: function (res) {
     if (res.from === 'button') {
       // 来自页面内转发按钮
       console.log(res.target);
     }
-    console.log("*****"+this.data.cockTransfer.id);
+    console.log("*****" + this.data.cockTransfer.id);
     return {
       title: '我的红公鸡',
-      path: '/pages/mycock/transfer_detail?id='+this.data.cockTransfer.id,
-      success: function(res) {
+      path: '/pages/mycock/transfer_detail?id=' + this.data.cockTransfer.id,
+      success: function (res) {
         // 转发成功
       },
-      fail: function(res) {
+      fail: function (res) {
         // 转发失败
       }
     }
