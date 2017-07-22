@@ -6,7 +6,7 @@ module.exports = {
             url: 'customerBoxItem/example',
             method: 'POST',
             data: {
-                customer: customer
+                customer: {id:customer.id}
             }
         });
     }

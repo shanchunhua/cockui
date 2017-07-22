@@ -1,5 +1,5 @@
 <view class="pb100">
-	<video class="index" src="{{recommendedHennery.videoUrl}}">
+	<video class="index" src="{{recommendedHennery.hlsVideoUrl}}">
 	</video>
 	<view class="ind_ad">
 		<image src="/img/s21.png" class="icon"></image>
@@ -38,18 +38,16 @@
 	</view>
 	<view class="h15"></view>
 	<view class="ind_me">
-
-		<view class="lef">
-			<navigator url="{{mycockUrl}}">
+	<navigator url="{{mycockUrl}}" hover-class="none">
+		<view class="lef">		
 				<text class="t1">我的红公鸡</text>
 				<text class="t2">
 					<text class="usm">{{customerProperty.adoptedCockCount}}</text>只</text>
-				<image src="/img/s28.jpg" class="img"></image>
-			</navigator>
+				<image src="/img/s28.jpg" class="img"></image>		
 		</view>
-
+	</navigator>
 		<view class="rig">
-			<navigator url="/pages/myegg/index">
+			<navigator url="/pages/myegg/index" hover-class="none">
 				<view class="hea rig_ch">
 
 					<text class="t1">我的鸡蛋</text>
@@ -59,7 +57,7 @@
 
 				</view>
 			</navigator>
-			<navigator url="{{myboxUrl}}">
+			<navigator url="{{myboxUrl}}" hover-class="none">
 				<view class="foo rig_ch">
 					<text class="t1">我的皮箱</text>
 					<text class="t2">

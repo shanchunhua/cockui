@@ -2,6 +2,7 @@ var wxe = require('utils/wxe.js');
 //app.js
 App({
   onLaunch: function () {
+    wx.clearStorageSync();
     this.globalData.loadUserPromise = this.getUserInfo();
   },
   onShow: function (options) {
@@ -80,6 +81,10 @@ App({
       });
     }).then(function (res) {
       self.globalData.userInfo = res.data;
+      wx.setStorage({
+        key: 'cid',
+        data:res.data.id
+      });
       return res;
     });
 

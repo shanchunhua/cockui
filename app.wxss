@@ -141,6 +141,10 @@ button.on{
 .un_img .a16{height: 508rpx;}
 .un_img .a17{height: 707rpx;}
 
+.navigator-hover{
+  color: #fff;
+}
+
 
 
 

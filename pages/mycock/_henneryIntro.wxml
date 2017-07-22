@@ -14,7 +14,7 @@
             <view class="clear"></view>
         </view>
         <view class="vid">
-            <video class="index" src="{{hennery.videoUrl}}"></video>
+            <video class="index" src="{{hennery.hlsVideoUrl}}"></video>
         </view>
         <view class="min_vid">
 

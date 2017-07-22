@@ -19,7 +19,7 @@ Page({
     console.log(options);
     var id = options.id;
     var self = this;
-    stealOrderService.unpaidOrder().then(function (res) {
+    stealOrderService.getById(id).then(function (res) {
       if (!res.data) {
         wx.showModal({
           title: '订单无效',

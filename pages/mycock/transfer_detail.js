@@ -3,6 +3,7 @@ var app = getApp();
 var cockTransferService = require('../../service/cockTransfer.js');
 var moment = require('../../utils/we-moment-with-locales');
 var raisingRecordService = require('../../service/raisingRecord.js');
+var weatherService = require('../../service/weather.js');
 Page({
 
   /**
@@ -18,7 +19,7 @@ Page({
       iconPath: '/img/s14.png'
     }],
     isOwner: false,
-    currentTab:0
+    currentTab: 0
   },
 
   /**
@@ -64,6 +65,11 @@ Page({
         cockTransfer: cockTransfer,
         markers: [markers],
         hennery: hennery
+      });
+    });
+    weatherService.get().then(function (data) {
+      self.setData({
+        weather: data
       });
     });
   },

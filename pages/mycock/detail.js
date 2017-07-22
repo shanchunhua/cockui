@@ -149,7 +149,7 @@ Page({
             });
             raisingRecordService.loadAdoptionRaisingRecords(self.data.currentOrder.id).then(function (res) {
                 res.data.forEach(function (item) {
-                    item.dateStr = moment(item.paidDate).format('YYYY-MM-DD');
+                    item.dateStr = moment(item.recordDate).format('YYYY-MM-DD');
                 });
                 self.setData({
                     raisingRecords: res.data

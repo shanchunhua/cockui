@@ -7,7 +7,17 @@ var request = function (config) {
     if (config.url.indexOf("://") < 0) {
         config.url = baseUrl + config.url;
     }
+    var cid = wx.getStorageSync('cid');
+    if (cid) {
+        if (config.url.indexOf('?') < 0) {
+            config.url += '?cid=' + cid;
+        } else {
+            config.url += '&cid=' + cid;
+        }
+    }
     var session_id = wx.getStorageSync('JSESSIONID');//本地取存储的sessionID  
+    console.log(config.url);
+    console.log(session_id);
     var header = {};
     if (session_id) {
         header = { 'Cookie': 'JSESSIONID=' + session_id }
@@ -15,6 +25,7 @@ var request = function (config) {
     if (!config.complete) {
         config.complete = function (res) {
             console.log(res);
+            wx.hideLoading();
             var cookie = res.header['Set-Cookie'];
             if (cookie && cookie.length > 0) {
                 var sessionID = new String(cookie).split(';', 1)[0].split('=')[1];

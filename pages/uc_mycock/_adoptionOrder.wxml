@@ -27,7 +27,7 @@
 				<text class="at">饲养牧家：<text class="b">{{item.hennery.ownerName}}</text></text>
 			</view>
 			<view class="li">
-				<text class="at">饲养状态：<text class="b bu">饲养中</text></text>
+				<text class="at">饲养状态：<text class="b bu">{{item.status=='RAISING'?'饲养中':'饲养完成'}}</text></text>
 			</view>
 			<view class="clear"></view>
 		</view>

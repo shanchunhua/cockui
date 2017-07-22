@@ -6,7 +6,7 @@ module.exports = {
             url: 'shippingOrder/example',
             method: 'POST',
             data: {
-                customer: customer,
+                customer: {id:customer.id},
                 goodsType: 'COCK',
                 paid: true
             }
@@ -17,7 +17,7 @@ module.exports = {
             url: 'shippingOrder/example',
             method: 'POST',
             data: {
-                customer: customer,
+                customer: {id:customer.id},
                 goodsType: 'SELECTION',
                 paid: true
             }

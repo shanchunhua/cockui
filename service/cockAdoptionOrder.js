@@ -6,7 +6,7 @@ module.exports = {
             url: 'cockAdoptionOrder/example',
             method: 'POST',
             data: {
-                customer: customer,
+                customer: {id:customer.id},
                 paid:true
             }
         });

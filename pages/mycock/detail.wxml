@@ -14,7 +14,7 @@
 		<view class="clear"></view>
 	</view>
 	<view class="vid">
-		<video class="index" src="{{currentOrder.hennery.videoUrl}}"></video>
+		<video class="index" src="{{currentOrder.hennery.hlsVideoUrl}}"></video>
 	</view>
 	<view class="min_vid">
 		
@@ -70,7 +70,7 @@
         </view>
 		</navigator>
     </view>
-    <view class="li_btn">
+    <view class="li_btn" wx:if="{{currentOrder.status=='COMPLETED'}}">
 		<navigator url="/pages/mycock/transfer?id={{currentOrder.id}}">
         <view class="btn_con">
             <view class="icon" style="background: url('http://static.huanlemujia.com/static/s54.png'); background-size: cover;"></view>

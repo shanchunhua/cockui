@@ -1,0 +1,17 @@
+{
+    "weather":{
+        "sunny":71,
+        "cloudy":23,
+        "rainy":11
+    },
+    "air":{
+        "good":92,
+        "normal":12,
+        "bad":1
+    },
+    "temperature":{
+        "high":36,
+        "low":-18,
+        "avg":7.9
+    }
+}

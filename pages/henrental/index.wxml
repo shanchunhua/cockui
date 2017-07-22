@@ -16,7 +16,7 @@
 		</view>
 		<view class="dd">
 			<text class="num">
-				<text class="bu">{{customerProperty.laidEggCount}}</text>枚
+				<text class="bu">{{customerProperty.laidEggTotal}}</text>枚
 			</text>
 			<text class="at">累计总生蛋</text>
 		</view>

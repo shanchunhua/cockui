@@ -22,7 +22,7 @@
 			<view class="clear"></view>
 		</view>
 		<view class="vid">
-			<video class="index" src="{{item.videoUrl}}"></video>
+			<video class="index" src="{{item.hlsVideoUrl}}"></video>
 		</view>
 		<view class="min_vid">
 			<view class="in18">

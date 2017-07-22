@@ -18,7 +18,7 @@
 			<view class="clear"></view>
 		</view>
 		<view class="vid">
-			<video class="index" src="{{item.hennery.videoUrl}}"></video>
+			<video class="index" src="{{item.hennery.hlsVideoUrl}}"></video>
 		</view>
 		<view class="li_btn_tw">
 				<navigator url="/pages/choosehennery/adopt?id={{item.hennery.id}}">

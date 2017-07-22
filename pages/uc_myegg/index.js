@@ -69,7 +69,8 @@ Page({
       }
       res.data.forEach(function (item) {
         item.dateStr = moment(item.createdTime).format('YYYY-MM-DD');
-        item.buyEggs = parseInt(item.total / item.price);
+        console.log(Math.round(item.total/item.price));
+        item.buyEggs = Math.round(item.total/item.price);
         item.stealEggs = item.quantity - item.buyEggs;
       });
       self.setData({

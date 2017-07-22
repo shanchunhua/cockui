@@ -7,7 +7,8 @@
 					<text class="tit">借鸡生蛋</text>
 					<text class="p">借一只母鸡为你生蛋 好玩更好吃</text>
 				</view>
-				<view class="clear"></view>
+		<image src="http://static.huanlemujia.com/static/s93.png" class="img2"></image>
+				<view class="clear"></view>				
 			</view>
 		</navigator>
 	</view>

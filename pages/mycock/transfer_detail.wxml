@@ -1,4 +1,5 @@
 <!--pages/my_eggs2/index.wxml-->
+<view class="pb100">
 <view class="my_egg2_he" style="background: url(http://static.huanlemujia.com/static/s82.jpg); background-size: cover;">
 	<view class="bod">
 		<image class="img" src="{{cockTransfer.customer.avatarUrl}}"></image>
@@ -32,7 +33,7 @@
 <view class="egg_h2">
 	<view class="in30">
 		<view class="bor"></view>
-		<text class="h2">该母鸡最近一个月在草原上的经历</text>
+		<text class="h2">该母鸡在草原上的经历</text>
 		<view class="clear"></view>
 	</view>
 </view>
@@ -40,45 +41,45 @@
 	<view class="exp">
 		<view class="li3">
 			<view class="li">
-				<text class="sp"><text class="b">35</text>天</text>
+				<text class="sp"><text class="b">{{weather.air.good}}</text>天</text>
 				<text class="sp sp2">空气质量优</text>
 			</view>
 			<view class="li">
-				<text class="sp"><text class="b">35</text>天</text>
-				<text class="sp sp2">空气质量优</text>
+				<text class="sp"><text class="b">{{weather.air.normal}}</text>天</text>
+				<text class="sp sp2">空气质量良</text>
 			</view>
 			<view class="li">
-				<text class="sp"><text class="b">35</text>天</text>
-				<text class="sp sp2">空气质量优</text>
+				<text class="sp"><text class="b">{{weather.air.bad}}</text>天</text>
+				<text class="sp sp2">空气质量中</text>
 			</view>
 			<view class="clear"></view>
 		</view>
 		<view class="li3">
 			<view class="li">
-				<text class="sp"><text class="b">5</text>天</text>
+				<text class="sp"><text class="b">{{weather.weather.sunny}}</text>天</text>
 				<text class="sp sp2">艳阳高照</text>
 			</view>
 			<view class="li">
-				<text class="sp"><text class="b">10</text>天</text>
-				<text class="sp sp2">风雨交加</text>
+				<text class="sp"><text class="b">{{weather.weather.cloudy}}</text>天</text>
+				<text class="sp sp2">晴间多云</text>
 			</view>
 			<view class="li">
-				<text class="sp"><text class="b">10</text>天</text>
-				<text class="sp sp2">阴雨绵绵</text>
+				<text class="sp"><text class="b">{{weather.weather.rainy}}</text>天</text>
+				<text class="sp sp2">风雨交加</text>
 			</view>
 			<view class="clear"></view>
 		</view>
 		<view class="li3">
 			<view class="li">
-				<text class="sp"><text class="b">28</text>°</text>
+				<text class="sp"><text class="b">{{weather.temperature.high}}</text>°</text>
 				<text class="sp sp2">最高温度</text>
 			</view>
 			<view class="li">
-				<text class="sp"><text class="b">4</text>°</text>
+				<text class="sp"><text class="b">{{weather.temperature.low}}</text>°</text>
 				<text class="sp sp2">最低温度</text>
 			</view>
 			<view class="li">
-				<text class="sp"><text class="b">16</text>°</text>
+				<text class="sp"><text class="b">{{weather.temperature.avg}}</text>°</text>
 				<text class="sp sp2">平均温度</text>
 			</view>
 			<view class="clear"></view>
@@ -87,18 +88,19 @@
 </view>
 <import src="_raisingRecord.wxml"/>
 <template is="raisingRecord" data="{{raisingRecords: raisingRecords}}"/>
-<view class="foo_btn2" wx:if="{{!isOwner}}">
-	<view>
-		<text class="tax">转让价：<text class="or">258</text>元</text>
-	</view>
-	<navigator  url="/pages/market/transfer?id={{cockTransfer.id}}">
-	<button class="btn on">立即购买</button>
-	</navigator>
-</view>
 </block>
 
 <include src="../understand/intro.wxml" wx:if="{{currentTab==1}}"/>
-
+</view>
+<view class="foo_btn2">
+	<view>
+		<text class="tax">转让价：<text class="or">258</text>元</text>
+	</view>
+	<button class="btn on"  wx:if="{{cockTransfer.status!='PROCESSING'}}">已被抢购</button>
+	<navigator  url="/pages/market/transfer?id={{cockTransfer.id}}"  wx:if="{{cockTransfer.status=='PROCESSING'}}">
+	<button class="btn on">立即购买</button>
+	</navigator>
+</view>
 
 
 

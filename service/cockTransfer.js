@@ -8,7 +8,7 @@ module.exports = {
             url: 'cockTransfer/example',
             method: 'POST',
             data: {
-                customer: customer,
+                customer: {id:customer.id},
                 orderNo: null
             }
         });

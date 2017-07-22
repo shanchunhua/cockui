@@ -6,7 +6,7 @@ module.exports = {
             url: 'eggGainRecord/example',
             method: 'POST',
             data: {
-                customer: customer
+                customer: {id:customer.id}
             }
         });
     }

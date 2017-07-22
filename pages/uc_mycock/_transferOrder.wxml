@@ -6,7 +6,7 @@
 		</view>
 		<view class="li2">
 			<view class="li">
-				<text class="at">转让状态：<text class="b">{{item.paid?'已':'未'}}支付</text></text>
+				<text class="at">转让状态：<text class="b">{{item.status=='COMPLETED'?'已':'未'}}支付</text></text>
 			</view>
 			<view class="li">
 				<text class="at">转让时间：<text class="b">{{item.dateStr}}</text></text>
