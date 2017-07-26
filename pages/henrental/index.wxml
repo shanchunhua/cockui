@@ -38,7 +38,7 @@
 	</view>
 	<view class="raw_form">
 		<view class="in40">
-			<text class="lef"><text class="b">我要借鸡</text>（39元/12个月/只  可退）</text>
+			<text class="lef"><text class="b">我要借鸡</text>（{{order.price}}元/12个月/只  可退）</text>
 			<view class="vfo rig">
 				<view class="v_lef vbtn" bindtap="minus">-</view>
 				<view class="inp vinp"><input  value="{{order.quantity}}" /></view>

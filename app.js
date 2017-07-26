@@ -41,6 +41,9 @@ App({
           resolve(res.code);
         },
         fail: function (err) {
+          wx.showModal({
+            title: 'Login Failed'
+          })
           reject(err);
         }
       });
@@ -57,6 +60,9 @@ App({
           resolve(res);
         },
         fail: function (err) {
+           wx.showModal({
+            title: 'Get Userinfo failed'
+          })
           reject(err);
         }
       });
@@ -70,20 +76,22 @@ App({
       return wxe.requestP({
         url: 'wxapp/sessionkey/' + code
       });
-    }).then(function () {
+    }).then(function (res) {
+      self.sessionKey=res.data;
+      console.log("sessionKey:"+self.sessionKey);
       return self.wxUserInfo();
     }).then(function (res) {
       console.log('load customer');
       return wxe.requestP({
         url: 'customer/load',
-        data: { encryptedData: res.encryptedData, iv: res.iv },
+        data: { encryptedData: res.encryptedData, iv: res.iv,sessionKey:self.sessionKey },
         method: 'POST'
       });
     }).then(function (res) {
       self.globalData.userInfo = res.data;
       wx.setStorage({
         key: 'cid',
-        data:res.data.id
+        data: res.data.id
       });
       return res;
     });
@@ -92,9 +100,9 @@ App({
   },
   globalData: {
     userInfo: null,
-    stopReLaunch:false,
-    settings:{
-      
+    stopReLaunch: false,
+    settings: {
+
     }
   }
 })

@@ -3,6 +3,7 @@ var app = getApp()
 var henneryService = require('../../service/hennery.js');
 var cockAdoptionOrderService = require('../../service/cockAdoptionOrder.js');
 var paymentService = require('../../service/payment.js');
+var systemSettingService = require('../../service/systemSetting.js');
 Page({
 
   /**
@@ -29,6 +30,19 @@ Page({
         hennery: res.data
       });
       self.data.order.hennery = res.data;
+    });
+    systemSettingService.load().then(function (res) {
+      var data = res.data;
+      var priceConfig = data.find(function (item) {
+        if (item.code === 'COCK_ADOPTION_PRICE') {
+          return true;
+        }
+      });
+      var price=priceConfig.bigDecimalValue;
+      self.setData({
+        'order.price': price,
+        'order.total': price
+      });
     });
   },
   plus: function () {

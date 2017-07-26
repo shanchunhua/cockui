@@ -1,7 +1,7 @@
 <view class="pb100">
 	<view class="suc_img">
 		<image src="/img/s65.png"></image>
-		<text>您成功偷取一个{{order.goods.name}}（所偷的产品名称）</text>
+		<text>您成功偷取一个{{order.goods.name}}</text>
 	</view>
 	<view class="h15"></view>
 	<view class="time">

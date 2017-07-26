@@ -1,9 +1,8 @@
+var util = require('../utils/util.js');
 var baseUrl = 'https://www.huanlemujia.com/';
+
 var request = function (config) {
-    wx.showLoading({
-        title: '加载中',
-        mask: true
-    });
+    util.LoadMask.show();
     if (config.url.indexOf("://") < 0) {
         config.url = baseUrl + config.url;
     }
@@ -16,16 +15,14 @@ var request = function (config) {
         }
     }
     var session_id = wx.getStorageSync('JSESSIONID');//本地取存储的sessionID  
-    console.log(config.url);
-    console.log(session_id);
     var header = {};
     if (session_id) {
-        header = { 'Cookie': 'JSESSIONID=' + session_id }
+        header = { 'Cookie': 'JSESSIONID=' + session_id };
     }
     if (!config.complete) {
         config.complete = function (res) {
             console.log(res);
-            wx.hideLoading();
+            util.LoadMask.hide();
             var cookie = res.header['Set-Cookie'];
             if (cookie && cookie.length > 0) {
                 var sessionID = new String(cookie).split(';', 1)[0].split('=')[1];
@@ -34,7 +31,6 @@ var request = function (config) {
                     wx.setStorageSync('JSESSIONID', sessionID);
                 }
             }
-            wx.hideLoading();
         };
     }
     if (!config.fail) {
