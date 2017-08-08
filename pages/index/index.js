@@ -80,7 +80,6 @@ Page({
     });
 
     self.interval2 = setInterval(function () {
-      console.log('animate');
       if (i == 0) {
         animation.timingFunction = 'step-start';
       }

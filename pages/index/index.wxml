@@ -4,7 +4,7 @@
 	<view class="ind_ad">
 		<image src="/img/s21.png" class="icon"></image>
 		<text class="at">推荐直播</text>
-		<text class="ad">{{recommendedHennery.ownerName}}家正在进行直播</text>
+		<text class="ad">{{recommendedHennery.ownerName}}家正在进行直播（9:00~21:00）</text>
 		<view class="clear"></view>
 	</view>
 	<view class="h15"></view>

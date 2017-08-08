@@ -9,6 +9,10 @@
 .orddl .rig{float: right;}
 .orddl .rig .vinp{width: 125rpx;}
 
+.make_dl{background: #fff; padding: 30rpx 0;}
+
+.mak_p{padding: 30rpx 55rpx 0;}
+.mak_p text{display: block; padding-top: 15rpx; line-height: 50rpx;}
 
 
 

@@ -50,7 +50,7 @@
 				</view>
 				<view class="clear"></view>
 			</view>
-						<view class="indl">
+				<view class="indl">
 				<view class="dd d1">
 					<text class="te">支付合计：</text>
 				</view>
@@ -69,6 +69,20 @@
 				<view class="clear"></view>
 			</view>
 		</view>
+	</view>
+		<view class="h15"></view>
+	<view class="mak_p">
+		<text>105天后红公鸡净重可达5斤以上，口感最佳，你可：
+◇ 回购。回购价为209元，同比京东自营的河北柴鸡每
+斤便宜17元，顺丰冷运，物超所值。
+◇ 转让。成功转让你可获得49元返佣，你可提现到微
+信零钱。</text>
+	</view>
+	<view class="mak_p">
+		<text>注：因牧民的饲养成本，你所领养的红公鸡，在饲养结
+束后超过15天不收回或者挂单后您没有转让成功，系统
+算为违约订单，系统自动取消合作，不再享受低价回购
+或转让返佣，且所支付的29元不予退还。</text>
 	</view>
 </view>
 <view class="foo_btn2">
