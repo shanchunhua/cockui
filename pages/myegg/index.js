@@ -15,7 +15,7 @@ Page({
     order: {
       quantity: 0,
       goodsType: 'EGG',
-      price: 1.9,
+      price: 1.7,
       total: 0,
       items: []
     },
