@@ -3,7 +3,14 @@ var app = getApp()
 var cockAdoptionOrderService = require('../../service/cockAdoptionOrder.js');
 var cockTransferService = require('../../service/cockTransfer.js');
 var shippingOrderService = require('../../service/shippingOrder.js');
+var expiredRecordService = require('../../service/expiredRecord.js');
 var moment = require('../../utils/we-moment-with-locales');
+var statusMap = {
+  'PROCESSING': '转让中',
+  'COMPLETE': '已完成',
+  'EXPIRED': '已逾期',
+  'WAITFORPAY': '支付中'
+};
 Page({
 
   /**
@@ -51,6 +58,12 @@ Page({
       }
       res.data.forEach(function (item) {
         item.dateStr = moment(item.createdDate).format('YYYY-MM-DD');
+        if (item.status) {
+          item.statusStr = statusMap[item.status];
+        }
+        else {
+          item.statusStr = '转让中';
+        }
       });
       self.setData({ none: false, orders: res.data });
     });
@@ -62,6 +75,22 @@ Page({
         self.setData({
           none: true,
           msg: '您尚未收回红公鸡'
+        });
+        return false;
+      }
+      res.data.forEach(function (item) {
+        item.dateStr = moment(item.createdDate).format('YYYY-MM-DD');
+      });
+      self.setData({ none: false, orders: res.data });
+    });
+  },
+  loadExpiredRecord: function () {
+    var self=this;
+    expiredRecordService.load(app.globalData.userInfo).then(function (res) {
+       if (res.data.length <= 0) {
+        self.setData({
+          none: true,
+          msg: '当前无逾期红公鸡\n* 领养结束超过15天未回收或转让成功 *'
         });
         return false;
       }
@@ -83,6 +112,9 @@ Page({
         break;
       case "2":
         this.loadShippingOrder();
+        break;
+      case "3":
+        this.loadExpiredRecord();
         break;
     }
 

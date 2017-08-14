@@ -64,7 +64,7 @@ page{background-color: #f2f2f2; flex: 1; height: 100%; font-family: -apple-syste
 .ind_tab .tbtn.on{background: #3292ff; color: #fff;}
 
 .vbtn{width: 60rpx; height: 60rpx; background: #3292ff; color: #fff; text-align: center; line-height: 60rpx;}
-.vinp{width: 180rpx; height: 60rpx; line-height: 60rpx; margin: 0 10rpx; border:1rpx solid #e6e6e6; box-sizing: border-box; padding-left: 15rpx;}
+.vinp{width: 90rpx; height: 60rpx; line-height: 60rpx; margin: 0 10rpx; border:1rpx solid #e6e6e6; box-sizing: border-box; padding-left: 15rpx;}
 
 .indl .h2 text{font-size: 32rpx; color: #333;}
 .indl .dd{line-height: 56rpx;}

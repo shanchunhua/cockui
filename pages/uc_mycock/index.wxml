@@ -1,4 +1,4 @@
-<view class="ind_tab2 ind_tab3">
+<view class="ind_tab2 ind_tab3 ind_tab4">
 	<view class="li {{currentTab==0?'on':''}}" bindtap="changeTab" data-tabid="0">
 		<text>领养</text>
 		<view class="sp"></view>
@@ -11,26 +11,32 @@
 		<text>收回</text>
 		<view class="sp"></view>
 	</view>
+	<view class="li {{currentTab==3?'on':''}}" bindtap="changeTab" data-tabid="3">
+		<text>逾期</text>
+		<view class="sp"></view>
+	</view>
 	<view class="clear"></view>
 </view>
 <block wx:if="{{none}}">
-<import src="../usercenter/none.wxml"/>
-<template is="none" data="{{msg:msg}}" />
+	<import src="../usercenter/none.wxml" />
+	<template is="none" data="{{msg:msg}}" />
 </block>
 <block wx:for="{{orders}}" wx:if="{{!none}}">
-<view class="h15"></view>
-<block wx:if="{{currentTab==0}}">	
-<import src="_adoptionOrder.wxml"/>
-<template is="adoptionOrder" data="{{item}}" />
+	<view class="h15"></view>
+	<block wx:if="{{currentTab==0}}">
+		<import src="_adoptionOrder.wxml" />
+		<template is="adoptionOrder" data="{{item}}" />
+	</block>
+	<block wx:if="{{currentTab==1}}">
+		<import src="_transferOrder.wxml" />
+		<template is="transferOrder" data="{{item}}" />
+	</block>
+	<block wx:if="{{currentTab==2}}">
+		<import src="_shippingOrder.wxml" />
+		<template is="shippingOrder" data="{{item}}" />
+	</block>
+	<block wx:if="{{currentTab==3}}">
+		<import src="_expiredOrder.wxml" />
+		<template is="expiredOrder" data="{{item}}" />
+	</block>
 </block>
-<block wx:if="{{currentTab==1}}">
-<import src="_transferOrder.wxml"/>
-<template is="transferOrder" data="{{item}}" />
-</block>
-<block wx:if="{{currentTab==2}}">
-<import src="_shippingOrder.wxml"/>
-<template is="shippingOrder" data="{{item}}" />
-</block>
-</block>
-
-

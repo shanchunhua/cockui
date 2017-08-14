@@ -64,6 +64,9 @@ Page({
       wx.redirectTo({
         url: '/pages/market/success?id=' + self.data.order.id
       });
+    },function(res){
+      console.error('pay error');
+      cockTransferService.releaseCockTransfer(self.data.cockTransfer.id);
     }).catch(function () {
       self.setData({
         disabled: false

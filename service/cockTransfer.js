@@ -8,7 +8,7 @@ module.exports = {
             url: 'cockTransfer/example',
             method: 'POST',
             data: {
-                customer: {id:customer.id},
+                customer: { id: customer.id },
                 orderNo: null
             }
         });
@@ -41,6 +41,11 @@ module.exports = {
             url: 'cockTransfer',
             method: 'POST',
             data: order
+        });
+    },
+    releaseCockTransfer: function (id) {
+        return wxe.requestP({
+            url: 'cockTransfer/release/' + id, method: 'GET'
         });
     },
     getById: function (id) {

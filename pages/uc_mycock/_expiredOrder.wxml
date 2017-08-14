@@ -1,0 +1,22 @@
+<template name="expiredOrder">
+<view class="ado_li">
+	<view class="in40">
+		<view class="li">
+			<text class="at"> 逾期编号：<text class="b">{{item.orderNo}}</text></text>
+		</view>
+		<view class="li2">
+			<view class="li">
+				<text class="at">逾期数量：<text class="b">{{item.quantity}}只</text></text>
+			</view>
+			<view class="li">
+				<text class="at">逾期时间：<text class="b">{{item.dateStr}}</text></text>
+			</view>
+			<view class="clear"></view>
+		</view>
+		
+		<view class="li">
+			<text class="at">所属领养订单：<text class="b">{{item.order.orderNo}}</text></text>
+		</view>
+	</view>
+</view>
+</template>

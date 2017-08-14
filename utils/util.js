@@ -47,11 +47,11 @@ var LoadMask = {
   hide: function () {
     this.counter--;
     console.log(this.counter+"/"+this.isShow);
-    if (this.isShow && this.counter === 0) {
+ //   if (this.isShow && this.counter === 0) {
       console.log('hide>');
       wx.hideLoading();
       this.isShow = false;
-    }
+//    }
   }
 };
 module.exports = {

@@ -1,9 +1,9 @@
 // pages/payment/index.js
-var app = getApp()
+var app = getApp();
 var henneryService = require('../../service/hennery.js');
 var cockAdoptionOrderService = require('../../service/cockAdoptionOrder.js');
 var paymentService = require('../../service/payment.js');
-var systemSettingService = require('../../service/systemSetting.js');
+var henneryRaisingBatchService = require('../../service/henneryRaisingBatch.js');
 Page({
 
   /**
@@ -11,10 +11,11 @@ Page({
    */
   data: {
     order: {
-      quantity: 1,
-      price: 29,
-      total: 29
+      quantity: 0,
+      price: 0,
+      total: 0
     },
+    batch: { duration: 0,leftQuantity:0 },
     disabled: false
   },
 
@@ -31,26 +32,33 @@ Page({
       });
       self.data.order.hennery = res.data;
     });
-    systemSettingService.load().then(function (res) {
-      var data = res.data;
-      var priceConfig = data.find(function (item) {
-        if (item.code === 'COCK_ADOPTION_PRICE') {
-          return true;
-        }
-      });
-      var price=priceConfig.bigDecimalValue;
-      self.setData({
-        'order.price': price,
-        'order.total': price
-      });
+    henneryRaisingBatchService.loadHenneryBatch(id).then(function (res) {
+      if (res.data) {
+        self.data.order.batch = res.data.batch;
+        self.setData({
+          batch: res.data.batch,
+          btnText: '立即支付',
+          'order.price': res.data.batch.price,
+          'order.quantity': 1,
+          'order.total': res.data.batch.price
+        });
+      } else {
+        self.setData({
+          btnText: '正在育雏',
+          disabled: true
+        });
+      }
     });
   },
   plus: function () {
-    this.data.order.quantity = this.data.order.quantity + 1;
-    this.data.order.total = this.data.order.quantity * this.data.order.price;
-    this.setData({
-      order: this.data.order
-    });
+    if (this.data.order.quantity < this.data.batch.leftQuantity) {
+      this.data.order.quantity = this.data.order.quantity + 1;
+      this.data.order.total = this.data.order.quantity * this.data.order.price;
+      this.setData({
+        order: this.data.order
+      });
+    }
+
   },
   minus: function () {
     if (this.data.order.quantity > 1) {
@@ -85,6 +93,17 @@ Page({
           self.setData({
             disabled: false
           });
+        });
+      }, function (res) {
+        wx.showModal({
+          title: '创建订单失败',
+          content: res.data.message,
+          showCancel: false,
+          success: function () {
+            wx.redirectTo({
+              url: '/pages/choosehennery/index'
+            });
+          }
         });
       });
     } else {

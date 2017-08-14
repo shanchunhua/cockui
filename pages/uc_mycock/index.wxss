@@ -9,4 +9,7 @@
 .ado_a .ico{width: 41rpx; height: 41rpx; float:left;}
 .ado_a .at{float: left; margin-left: 15rpx; color: #3292ff;}
 .ado_a .mo{float: right;}
+.ind_tab4 .li{
+    width: 25%;
+}
 

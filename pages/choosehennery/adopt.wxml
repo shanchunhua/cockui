@@ -34,6 +34,7 @@
 						<view class="v_lef vbtn" bindtap="minus">-</view>
 						<view class="inp vinp"><input  value="{{order.quantity}}" /></view>
 						<view class="v_rig vbtn" bindtap="plus">+</view>
+						<view class="v_rig" style="float:left;margin-left: 25rpx; ">(剩余数量:{{batch.leftQuantity}})</view>
 						<view class="clear"></view>
 					</view>
 					<view class="clear"></view>
@@ -64,7 +65,7 @@
 					<text class="te">领养周期：</text>
 				</view>
 				<view class="dd d2">
-					<text class="te">105天</text>
+					<text class="te">{{batch.duration}}天</text>
 				</view>
 				<view class="clear"></view>
 			</view>
@@ -87,7 +88,7 @@
 </view>
 <view class="foo_btn2">
 	<view><text class="tax">合计：<text class="or">{{order.total}} </text>元</text></view>
-	<button class="btn on" bindtap="create" disabled="{{disabled}}">立即支付</button>
+	<button class="btn on" bindtap="create" disabled="{{disabled}}">{{btnText}}</button>
 </view>
 
 

@@ -7,7 +7,7 @@
 .orddl .h2 .btn .on{color: #3292ff; padding-left: 8rpx; float: left;display: block; line-height: 40rpx;}
 .orddl .lef{float: left;}
 .orddl .rig{float: right;}
-.orddl .rig .vinp{width: 125rpx;}
+.orddl .rig .vinp{width: 70rpx;}
 
 .make_dl{background: #fff; padding: 30rpx 0;}
 
