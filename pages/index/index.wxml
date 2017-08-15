@@ -79,7 +79,7 @@
 	<view class="ind_ad">		
 		<image src="/img/s32.png" class="icon"></image>
 		<view style="float:left;width:85%;margin-top:{{marginTop}}rpx" class="{{animateCls}}">
-		<text class="ad" style="width:85%" wx:for="{{stealOrders}}" wx:key="id">{{item.customer.nickName}}刚偷了一个{{item.goods.name}}</text>
+		<text class="ad" style="width:85%" wx:for="{{stealOrders}}" wx:key="id">{{item.customer.nickName}}刚偷了一份{{item.goods.name}}</text>
 		</view>
 	</view>
 	<view class="h15"></view>
