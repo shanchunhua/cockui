@@ -10,7 +10,9 @@ Page({
     customerProperty: {},
     userInfo: {},
     mycockUrl: "/pages/mycock/index",
-    myboxUrl: '/pages/mybox/index'
+    myboxUrl: '/pages/mybox/index',
+    marginTop: 0,
+    animateCls: 'trans'
   },
   onLoad: function () {
     console.log('onLoad');
@@ -70,45 +72,53 @@ Page({
       });
     });
     self.marquee();
-    var i = 1;
-    self.interval = setInterval(function () {
-      self.marquee();
-      i = 0;
-    }, 60000);
-    var animation = wx.createAnimation({
-      duration: 1000
+    self.refreshInterval = setInterval(self.marquee, 60000);
+  },
+  marquee: function () {
+    var self=this;
+    if (self.animateInterval) {
+      clearInterval(self.animateInterval);
+    }
+    self.loadStealRecord().then(function (data) {
+      var i = 0;
+      var count = data.length;
+      self.animateInterval = setInterval(function () {
+        if (i > 0) {
+          self.setData({
+            animateCls: 'trans'
+          });
+        } else {
+          self.setData({
+            animateCls: ''
+          });
+        }
+        self.setData({
+          'marginTop': -i * 45
+        });
+        i++;
+        if (i == count) {
+          i = 0;
+        }
+      }, 5000);
     });
-
-    self.interval2 = setInterval(function () {
-      if (i == 0) {
-        animation.timingFunction = 'step-start';
-      }
-      animation.translateX(-i * 10).step();
-      i++;
-      self.setData({
-        animationData: animation.export()
-      });
-    }, 1000);
-
   },
   onHide: function () {
-    console.log('hide');
     var self = this;
-    clearInterval(self.interval);
-    clearInterval(self.interval2);
+    clearInterval(self.animateInterval);
+    clearInterval(self.refreshInterval);
 
   },
   onUnload: function () {
-    console.log('unload');
     this.onHide();
   },
-  marquee: function () {
+  loadStealRecord: function () {
     var self = this;
-    stealOrderService.loadStealingOrderToday().then(function (res) {
+    return stealOrderService.loadStealingOrderToday().then(function (res) {
       var stealOrders = res.data;
       self.setData({
         stealOrders: stealOrders
       });
+      return stealOrders;
     });
   },
   steal: function () {
@@ -138,4 +148,4 @@ Page({
 
     }
   }
-})
+});

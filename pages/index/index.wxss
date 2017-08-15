@@ -19,8 +19,12 @@
 .index{
 width:100%;
 }
-
-
+.trans{
+    transition:all 300ms;
+-moz-transition:all 300ms; /* Firefox 4 */
+-webkit-transition:all 300ms; /* Safari and Chrome */
+-o-transition:all 300ms; /* Opera */
+}
 
 
 
