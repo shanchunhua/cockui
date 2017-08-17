@@ -117,7 +117,7 @@ Page({
       disabled: true
     });
     this.data.goods.forEach(function (item) {
-      if (self.checked.includes(item.id+"")) {
+      if (self.checked&&self.checked.includes(item.id+"")) {
         self.data.order.items.push({
           goods: item.goods,
           quantity: item.quantity,

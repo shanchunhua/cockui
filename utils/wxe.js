@@ -1,6 +1,6 @@
 var util = require('../utils/util.js');
-//var baseUrl = 'https://www.huanlemujia.com/';
-var baseUrl = 'https://wxapp.mujia.com/';
+var baseUrl = 'https://www.huanlemujia.com/';
+//var baseUrl = 'https://wxapp.mujia.com/';
 
 var request = function (config) {
     util.LoadMask.show();
