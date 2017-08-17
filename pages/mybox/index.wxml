@@ -3,10 +3,10 @@
 <view class="leat_list" wx:if="{{!none}}">
 	<view class="li" wx:for="{{list}}">
 		<view class="in40">
-			<image src="/img/s64.jpg" class="lef_img"></image>
+			<image src="{{item.goods.image}}" class="lef_img"></image>
 			<view class="tex">
 				<text class="titl">{{item.goods.name}}</text>
-				<text class="cent">{{item.goods.description}}</text>
+				<text class="cent">{{item.goods.name}}</text>
 				<view class="att">
 					<view class="he">
 						<text class="le">最低{{item.lowestPrice}}元</text>
