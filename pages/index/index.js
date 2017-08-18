@@ -4,6 +4,7 @@ var customerService = require('../../service/customer.js');
 var stealOrderService = require('../../service/stealOrder.js');
 var goodsForStealService = require('../../service/goodsForSteal.js');
 var henneryService = require('../../service/hennery.js');
+var templateMessageFormIdService = require('../../service/templateMessageFormId.js');
 var app = getApp();
 Page({
   data: {
@@ -75,7 +76,7 @@ Page({
     self.refreshInterval = setInterval(self.marquee, 60000);
   },
   marquee: function () {
-    var self=this;
+    var self = this;
     if (self.animateInterval) {
       clearInterval(self.animateInterval);
     }
@@ -121,7 +122,16 @@ Page({
       return stealOrders;
     });
   },
-  steal: function () {
+  createFormId:function(e){
+    console.log(e.detail);
+    templateMessageFormIdService.save({
+      customer:app.globalData.userInfo,
+      formId: e.detail.formId,
+      type: 'FORM_ID'
+    });
+  },
+  steal: function (e) {
+    this.createFormId(e);
     if (this.data.stealOrder) {
       wx.navigateTo({
         url: '/pages/index/stealsuccess?id=' + this.data.stealOrder.id

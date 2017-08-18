@@ -1,5 +1,6 @@
 var app = getApp();
 var customerService = require('../../service/customer.js');
+var templateMessageFormIdService = require('../../service/templateMessageFormId.js');
 // index.js
 Page({
 
@@ -38,7 +39,14 @@ Page({
       self.setData({ customerProperty: res.data });
     });
   },
-
+  createFormId:function(e){
+    console.log(e.detail);
+    templateMessageFormIdService.save({
+      customer:app.globalData.userInfo,
+      formId: e.detail.formId,
+      type: 'FORM_ID'
+    });
+  },
   prefixInteger: function (num, length) {
     return (Array(length).join('0') + num).slice(-length);
   },

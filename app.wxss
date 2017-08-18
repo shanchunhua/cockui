@@ -144,6 +144,13 @@ button.on{
 .navigator-hover{
   color: #fff;
 }
+.navbtn{
+display:initial;
+line-height:initial;
+font-size: inherit;
+padding: 0px;
+color: inherit;
+}
 
 
 

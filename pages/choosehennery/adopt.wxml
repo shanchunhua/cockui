@@ -62,10 +62,10 @@
 			</view>
 			<view class="indl">
 				<view class="dd d1">
-					<text class="te">领养周期：</text>
+					<text class="te">饲养周期：</text>
 				</view>
 				<view class="dd d2">
-					<text class="te">{{batch.duration}}天</text>
+					<text class="te">180天以上（当前剩余 {{batch.daysLeft}}天）</text>
 				</view>
 				<view class="clear"></view>
 			</view>

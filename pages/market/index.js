@@ -3,6 +3,7 @@ var app = getApp()
 var cockTransferService = require('../../service/cockTransfer.js');
 var collectionGoodsService = require('../../service/collectionGoods.js');
 var moment = require('../../utils/we-moment-with-locales');
+var templateMessageFormIdService = require('../../service/templateMessageFormId.js');
 Page({
 
   /**
@@ -46,7 +47,14 @@ Page({
       });
     });
   },
-
+  createFormId:function(e){
+    console.log(e.detail);
+    templateMessageFormIdService.save({
+      customer:app.globalData.userInfo,
+      formId: e.detail.formId,
+      type: 'FORM_ID'
+    });
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
