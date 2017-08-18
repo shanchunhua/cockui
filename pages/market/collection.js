@@ -16,7 +16,7 @@ Page({
       price: 0,
       total: 0,
       goodsType: 'SELECTION',
-      items:[]
+      items: []
     },
     disabled: false
   },
@@ -96,23 +96,24 @@ Page({
     self.setData({
       disabled: true
     });
-    this.data.goods.forEach(function (item) {
-      if (self.checked&&self.checked.includes(item.id+"")) {
-        self.data.order.items.push({
-          goods: item.goods,
-          quantity: item.quantity,
-          name: item.goods.name
-        });
-      }
-    });
-    //订单已创建，直接支付
+
+    //创建订单
     if (!this.data.order.id) {
+      this.data.goods.forEach(function (item) {
+        if (self.checked && self.checked.includes(item.id + "")) {
+          self.data.order.items.push({
+            goods: item.goods,
+            quantity: item.quantity,
+            name: item.goods.name
+          });
+        }
+      });
       shippingOrderService.create(this.data.order).then(function (res) {
         var order = res.data;
         self.setData({ order: order });
         self.invokePay();
       });
-    } else {
+    } else {//订单已创建，直接支付
       self.invokePay();
     }
 

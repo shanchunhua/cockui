@@ -43,7 +43,7 @@ Page({
       var list = res.data;
       self.setData({ goods: list.filter(function (item) { return item.quantity > 0; }) });
     });
-     shippingOrderService.getLastOrder().then(function (res) {
+    shippingOrderService.getLastOrder().then(function (res) {
       if (res.data) {
         self.data.order.contact = res.data.contact;
         self.data.order.tel = res.data.tel;
@@ -82,7 +82,7 @@ Page({
     }).then(function (res) {
       console.log('success');
       wx.redirectTo({
-         url: '/pages/common/shippingOrderSuccess?id=' + self.data.order.id
+        url: '/pages/common/shippingOrderSuccess?id=' + self.data.order.id
       });
     }).catch(function () {
       self.setData({
@@ -105,7 +105,7 @@ Page({
       }
     });
   },
-    checkboxChange: function (e) {
+  checkboxChange: function (e) {
     this.checked = e.detail.value;
   },
   create: function () {
@@ -116,17 +116,18 @@ Page({
     self.setData({
       disabled: true
     });
-    this.data.goods.forEach(function (item) {
-      if (self.checked&&self.checked.includes(item.id+"")) {
-        self.data.order.items.push({
-          goods: item.goods,
-          quantity: item.quantity,
-          name: item.goods.name
-        });
-      }
-    });
+
     //订单已创建，直接支付
     if (!this.data.order.id) {
+      this.data.goods.forEach(function (item) {
+        if (self.checked && self.checked.includes(item.id + "")) {
+          self.data.order.items.push({
+            goods: item.goods,
+            quantity: item.quantity,
+            name: item.goods.name
+          });
+        }
+      });
       shippingOrderService.create(this.data.order).then(function (res) {
         var order = res.data;
         self.setData({ order: order });
@@ -148,7 +149,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
- app.globalData.stopReLaunch = false;
+    app.globalData.stopReLaunch = false;
   },
 
   /**
