@@ -14,7 +14,7 @@
 		</view>
 		<view class="lib">
 			<view class="in40 ">
-				<image src="/img/s64.jpg" class="lef_img"></image>
+				<image src="{{item.goods.image}}" class="lef_img"></image>
 				<view class="tex">
 					<text class="titl">{{item.goods.name}}</text>
 					<text class="cent">{{item.goods.description}}</text>
