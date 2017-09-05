@@ -15,6 +15,13 @@
 .wal_list .rig .pic{line-height: 60rpx; font-size: 32rpx; color: #4c4c4c;}
 .wal_list .lef .tit{color: #4c4c4c;display: block;}
 .wal_list .lef .data{/* font-size: 22rpx;*/display: block;padding-top: 5rpx;}
+.money{
+    margin: 0 auto;
+    border:1px solid #e5e5e5;
+    height: 80rpx;
+    width: 200rpx;
+    text-align: center;
+}
 
 
 

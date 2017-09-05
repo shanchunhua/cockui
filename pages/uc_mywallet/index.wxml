@@ -24,7 +24,7 @@
 					<text class="data">{{item.createdTime}}</text>
 				</view>
 				<view class="rig">
-					<text class="pic">{{item.amount}}</text>
+					<text class="pic">{{item.amount}}元</text>
 				</view>
 				<view class="clear"></view>
 			</view>
@@ -50,6 +50,8 @@
 
 
 <modal hidden="{{hidden}}" title="请输入提现金额"  bindconfirm="confirm" bindcancel="cancel">
-   <input class=""/>
+	<view style="margin:auto;">
+   <input class="money" type="digit" focus="{{focus}}" bindinput="bindinput"/>
+	</view>
 </modal>
 

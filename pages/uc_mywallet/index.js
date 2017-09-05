@@ -11,7 +11,7 @@ Page({
    */
   data: {
     currentTab: 0,
-    hidden:true
+    hidden: true
   },
 
   /**
@@ -19,6 +19,9 @@ Page({
    */
   onLoad: function (options) {
     this.loadWithdrawRecords();
+    this.loadCustomerProperty();
+  },
+  loadCustomerProperty: function () {
     var self = this;
     customerService.loadCustomerProperty(app.globalData.userInfo.id).then(function (res) {
       self.setData({ customerProperty: res.data });
@@ -28,7 +31,7 @@ Page({
     var self = this;
     withdrawRecordService.loadMyWithdrawRecord(app.globalData.userInfo).then(function (res) {
       res.data.forEach(function (item) {
-         item.createdTime = moment(item.createdTime).format('YYYY-MM-DD hh:ss:mm');
+        item.createdTime = moment(item.createdTime).format('YYYY-MM-DD hh:ss:mm');
       });
       self.setData({
         withdrawRecords: res.data
@@ -37,7 +40,7 @@ Page({
   },
   inputAmount: function () {
     this.setData({
-      hidden:false
+      hidden: false
     });
   },
   loadCustomerIncomes: function () {
@@ -61,6 +64,26 @@ Page({
       self.setData({
         incomes: res.data
       });
+    });
+  },
+  confirm: function () {
+    var self = this;
+    console.log(this.data.amount);
+    var r = {
+      amount: this.data.amount,
+      customer: app.globalData.userInfo
+    };
+    withdrawRecordService.create(r).then(function (res) {
+      self.loadWithdrawRecords();
+      self.loadCustomerProperty();
+      self.setData({
+        hidden: true
+      });
+    });
+  },
+  bindinput: function (e) {
+    this.setData({
+      amount: e.detail.value
     });
   },
   changeTab: function (event) {
@@ -110,8 +133,8 @@ Page({
   onPullDownRefresh: function () {
 
   },
-  cancel:function(){
-    this.setData({hidden:true});
+  cancel: function () {
+    this.setData({ hidden: true });
   },
   /**
    * 页面上拉触底事件的处理函数
