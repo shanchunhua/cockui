@@ -13,52 +13,55 @@
 		</navigator>
 	</view>
 	<view class="h15"></view>
-	<view class="goo_h2">
-		<view class="in40">
-			<text class="h2">牧家早市</text>
-			<text class="p">统一转让价为258元/只，每只5斤以上</text>
-			<view class="clear"></view>
-		</view>
-	</view>
-	<view class="goo_lis1">
-		<view class="in40">
-			<view class="li" wx:for="{{transferCocks}}">
-				<image src="{{item.customer.avatarUrl}}" class="img"></image>
-				<view class="tex">
-					<text class="nam">{{item.customer.nickName}}</text>
-					<text class="p">1只 {{item.dateStr}} 转让</text>
-				</view>
+	<image class='img_trab' src="/img/s94.jpg"></image>
+			 <scroll-view class="scroll-view_H trab_lis" scroll-x style="width: 100%">
+		<view class="bod">
+			<block  wx:for="{{transferCocks}}" wx:for-index="idx">
+			<view class="li" wx:if="{{idx+1!=transferCocks.length}}">
 				<navigator url="/pages/market/transfer?id={{item.id}}">
-					<view class="btn">抢购</view>
+				<view class='img'>
+					<image src="{{item.customer.avatarUrl}}"></image>
+					<text>老{{}}出摊</text>
+				</view>
+				<view class="btn">别走啊</view>
 				</navigator>
-				<view class="clear"></view>
 			</view>
-		</view>
-	</view>
-	<view class="h15"></view>
-	<view class="goo_h2">
-		<view class="in40">
-			<text class="h2">牧家精选</text>
+			<view class="li end" wx:if="{{idx+1==transferCocks.length}}">
+				<navigator url="/pages/market/transfer?id={{item.id}}">
+				<view class='img'>
+					<image src="{{item.customer.avatarUrl}}"></image>
+					<text>老李出摊</text>
+				</view>
+				<view class="btn">别走啊</view>
+				</navigator>
+			</view>
+			</block>
 			<view class="clear"></view>
 		</view>
-	</view>
-	<view class="goo_lis1 goo_lis2">
-		<view class="in40">
-			<view class="li" wx:for="{{collectionGoods}}">
-					<navigator url="/pages/market/collectiondetail?id={{item.id}}">
-				<image src="{{item.image}}" class="img"></image>
-				<view class="tex">
-					<text class="nam">{{item.name}}</text>
-					<text class="p">{{item.name}}</text>
-					<text class="pic">
-						<text class="num">{{item.price}}</text>元<text class="del">原价{{item.marketPrice}}元</text>
-					</text>
-				</view>			
-				<view class="btn">抢购</view>				
-				<view class="clear"></view>
-				</navigator>
+			 </scroll-view>
+
+	<view class="h15"></view>
+	<view class="goo_lis">
+		<view class="goo_h3"><text>牧家精选</text><view class="x"></view></view>
+		<block wx:for="{{collectionGoods}}" wx:for-index="idx">
+		<navigator url="/pages/market/collectiondetail?id={{item.id}}">
+		<view class="li" wx:if="{{idx%2==0}}">
+			<image src="{{item.image}}"></image>
+			<view class="text">
+				<text class="tit">{{item.name}}</text>
+				<text class="pie">￥{{item.price}}</text>
 			</view>
 		</view>
+		<view class="li lir" wx:if="{{idx%2==1}}">
+			<image src="{{item.image}}"></image>
+			<view class="text">
+				<text class="tit">{{item.name}}</text>
+				<text class="pie">￥{{item.price}}</text>
+			</view>
+		</view>
+		</navigator>
+		</block>
+		<view class="clear"></view>
 	</view>
 	<view class="h15"></view>
 </view>

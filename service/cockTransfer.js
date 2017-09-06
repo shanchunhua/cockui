@@ -25,7 +25,7 @@ module.exports = {
                 },
                 pageRequest: {
                     page: 0,
-                    size: 3,
+                    size: 10,
                     sorts: [{
                         direction: 'DESC',
                         property: 'createdTime'
