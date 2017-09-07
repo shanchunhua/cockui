@@ -67,6 +67,9 @@ Page({
     });
   },
   confirm: function () {
+    if(this.data.amount<49||this.data.amount>this.data.customerProperty.balance){
+      return false;
+    }
     var self = this;
     console.log(this.data.amount);
     var r = {
