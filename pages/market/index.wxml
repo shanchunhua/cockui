@@ -1,4 +1,4 @@
-<view class="pb100">
+<view class="pb100" style="overflow-x:hidden;">
 	<view class="goo_he">
 		<navigator url="/pages/henrental/index">
 			<view class="in40">
@@ -7,15 +7,14 @@
 					<text class="tit">借鸡生蛋</text>
 					<text class="p">借一只母鸡为你生蛋 好玩更好吃</text>
 				</view>
-		<image src="http://static.huanlemujia.com/static/s93.png" class="img2"></image>
 				<view class="clear"></view>				
 			</view>
 		</navigator>
 	</view>
 	<view class="h15"></view>
 	<image class='img_trab' src="/img/s94.jpg"></image>
-			 <scroll-view class="scroll-view_H trab_lis" scroll-x style="width: 100%">
-		<view class="bod">
+			 <scroll-view class="scroll-view_H trab_lis" scroll-x>
+		<view class="bod" wx:if="{{transferCocks.length>0}}">
 			<block  wx:for="{{transferCocks}}" wx:for-index="idx">
 			<view class="li" wx:if="{{idx+1!=transferCocks.length}}">
 				<navigator url="/pages/market/transfer?id={{item.id}}">
