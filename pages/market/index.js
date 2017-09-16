@@ -4,6 +4,7 @@ var cockTransferService = require('../../service/cockTransfer.js');
 var collectionGoodsService = require('../../service/collectionGoods.js');
 var moment = require('../../utils/we-moment-with-locales');
 var templateMessageFormIdService = require('../../service/templateMessageFormId.js');
+var slogan=['来看看', '老板好', '优惠啦','超好吃','来来来','见过吗','快点买','就一只','别走啊'];
 Page({
 
   /**
@@ -37,6 +38,9 @@ Page({
       data.forEach(function (item) {
         item.dateStr = moment(item.createdTime).format('YYYY-MM-DD');
         item.firstCharOfName=item.customer.nickName.charAt(0);
+        var idx=Math.floor(Math.random()*slogan.length);
+        if(idx==slogan.length){idx--;}
+        item.slogan=slogan[idx];
       });
       self.setData({
         transferCocks: data
