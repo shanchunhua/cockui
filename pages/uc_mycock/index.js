@@ -7,7 +7,7 @@ var expiredRecordService = require('../../service/expiredRecord.js');
 var moment = require('../../utils/we-moment-with-locales');
 var statusMap = {
   'PROCESSING': '转让中',
-  'COMPLETE': '已完成',
+  'COMPLETED': '已完成',
   'EXPIRED': '已逾期',
   'WAITFORPAY': '支付中'
 };

@@ -20,7 +20,7 @@
 				<navigator url="/pages/market/transfer?id={{item.id}}">
 				<view class='img'>
 					<image src="{{item.customer.avatarUrl}}"></image>
-					<text>老{{}}出摊</text>
+					<text>老{{item.firstCharOfName}}出摊</text>
 				</view>
 				<view class="btn">别走啊</view>
 				</navigator>
@@ -29,7 +29,7 @@
 				<navigator url="/pages/market/transfer?id={{item.id}}">
 				<view class='img'>
 					<image src="{{item.customer.avatarUrl}}"></image>
-					<text>老李出摊</text>
+					<text>老{{item.firstCharOfName}}出摊</text>
 				</view>
 				<view class="btn">别走啊</view>
 				</navigator>

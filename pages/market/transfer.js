@@ -67,6 +67,9 @@ Page({
     },function(res){
       console.error('pay error');
       cockTransferService.releaseCockTransfer(self.data.cockTransfer.id);
+      self.setData({
+        disabled: false
+      });
     }).catch(function () {
       self.setData({
         disabled: false

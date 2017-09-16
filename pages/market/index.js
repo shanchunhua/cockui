@@ -36,6 +36,7 @@ Page({
       var data = res.data.content;
       data.forEach(function (item) {
         item.dateStr = moment(item.createdTime).format('YYYY-MM-DD');
+        item.firstCharOfName=item.customer.nickName.charAt(0);
       });
       self.setData({
         transferCocks: data
