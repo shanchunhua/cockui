@@ -41,8 +41,10 @@
 	<navigator url="{{mycockUrl}}" hover-class="none">
 		<view class="lef">		
 				<text class="t1">我的红公鸡</text>
+        		<text class="t1x"wx:if="{{customerProperty.hasCompletedAdoption}}">有饲养结束</text>
 				<text class="t2">
 					<text class="usm">{{customerProperty.adoptedCockCount}}</text>只</text>
+          
 				<image src="/img/s28.jpg" class="img"></image>		
 		</view>
 	</navigator>
