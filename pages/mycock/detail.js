@@ -53,6 +53,7 @@ Page({
     },
     changeOrder: function (e) {
         var current = e.detail.current;
+        var self=this;
         console.log(current);
         var order = this.data.orders[current];
         var markers = self.data.markers[0];

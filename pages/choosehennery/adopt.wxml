@@ -32,7 +32,7 @@
 				<view class="dd d2">
 					<view class="vfo">
 						<view class="v_lef vbtn" bindtap="minus">-</view>
-						<view class="inp vinp"><input  value="{{order.quantity}}" /></view>
+						<view class="inp vinp"><input value="{{order.quantity}}" disabled="true"/></view>
 						<view class="v_rig vbtn" bindtap="plus">+</view>
 						<view class="v_rig" style="float:left;margin-left: 25rpx; ">(剩余数量:{{batch.leftQuantity}})</view>
 						<view class="clear"></view>
@@ -69,21 +69,25 @@
 				</view>
 				<view class="clear"></view>
 			</view>
+			<view class="indl">
+				<view class="dd d1">
+					<text class="te">联系电话：</text>
+				</view>
+				<view class="dd d2">
+					<input class="vinp" style="width:300rpx;" value="{{order.tel}}" bindinput="bindinput"/>
+				</view>
+				<view class="clear"></view>
+			</view>
 		</view>
 	</view>
 		<view class="h15"></view>
 	<view class="mak_p">
-		<text>你所购买的是一只75天的小鸡，由牧民为您饲养。
-◇ 收回>饲养结束后,您必须支付饲养费209元。
-即可获得净重5-6斤多的大公鸡，冷运包邮到家。
-◇ 转让>成功转让你可获得49元返佣，你可提现到微
-信零钱。</text>
+		<text>您所购买的是草原红公鸡，由牧民为您饲养，			
+◇ 收回>饲养结束后，您需支付29元快递费（根据地区不同，快递费60-80元，其余由平台补贴）即可获得净重5-6斤的大公鸡，冷运到家。
+◇ 转让>分享好友转让成功您会收到179元(等于获得20元收益，可提现到微信零钱)。</text>
 	</view>
 	<view class="mak_p">
-		<text>注：因牧民的饲养成本，你所领养的红公鸡，在饲养结
-束后超过15天不收回或者挂单后您没有转让成功，系统
-算为违约订单，系统自动取消合作，不再享受低价回购
-或转让返佣，且所支付的29元不予退还。</text>
+		<text>为了提供更好的服务，请填写您的手机号码！</text>
 	</view>
 </view>
 <view class="foo_btn2">

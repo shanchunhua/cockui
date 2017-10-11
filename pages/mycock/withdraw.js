@@ -13,8 +13,8 @@ Page({
   data: {
     order: {
       quantity: 1,
-      price: 209,
-      total: 209,
+      price: 159,
+      total: 159,
       items: [],
       goodsType: 'COCK'
     },
@@ -33,6 +33,11 @@ Page({
       self.data.order.quantity = res.data.availableQuantity;
       self.data.order.total = self.data.order.quantity * self.data.order.price;
       self.data.order.adoptionOrder = res.data;
+      //res.data.price+=100;
+      if (res.data.price > 50) {
+        self.data.order.price = 29;
+        self.data.order.total = 29;
+      }
 
       self.setData({
         adoptionOrder: res.data,

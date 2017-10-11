@@ -17,7 +17,7 @@
 				</view>
 				<view class="dd d2">
 					<text class="te">
-						<text class="b">209</text>元/只</text>
+						<text class="b">{{order.price}}</text>元/只</text>
 				</view>
 				<view class="clear"></view>
 			</view>

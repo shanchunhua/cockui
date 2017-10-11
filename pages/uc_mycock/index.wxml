@@ -1,4 +1,4 @@
-<view class="ind_tab2 ind_tab3 ind_tab4">
+<view class="ind_tab2 ind_tab3">
 	<view class="li {{currentTab==0?'on':''}}" bindtap="changeTab" data-tabid="0">
 		<text>领养</text>
 		<view class="sp"></view>
@@ -11,7 +11,7 @@
 		<text>收回</text>
 		<view class="sp"></view>
 	</view>
-	<view class="li {{currentTab==3?'on':''}}" bindtap="changeTab" data-tabid="3">
+	<view class="li {{currentTab==3?'on':''}}" bindtap="changeTab" data-tabid="3" style="display:none;">
 		<text>逾期</text>
 		<view class="sp"></view>
 	</view>

@@ -71,7 +71,14 @@ Page({
 
   },
   create: function () {
-
+    if(!this.data.order.tel){
+      wx.showModal({
+        title:'提示',
+        content:'请输入手机号码',
+        showCancel:false
+      });
+    return false;
+    }
     var self = this;
     //订单已创建，直接支付
     self.setData({
@@ -129,7 +136,11 @@ Page({
   onReady: function () {
 
   },
-
+  bindinput: function (e) {
+    this.setData({
+      'order.tel': e.detail.value
+    });
+  },
   /**
    * 生命周期函数--监听页面显示
    */

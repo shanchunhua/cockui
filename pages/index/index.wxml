@@ -10,7 +10,7 @@
 	<view class="h15"></view>
 	<navigator url="/pages/understand/index">
 		<view class="index">
-			<image src="/img/s22.jpg" class="bann_img h257"></image>
+			<image src="http://static.huanlemujia.com/static/s22.jpg" class="bann_img h257"></image>
 		</view>
 	</navigator>
 	<view class="ind_nav">
