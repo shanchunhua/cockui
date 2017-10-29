@@ -18,7 +18,7 @@
 				<text class="at">公鸡数量：<text class="b">{{item.quantity}}只</text></text>
 			</view>
 			<view class="li">
-				<text class="at">转让金额：<text class="b">208元</text></text>
+				<text class="at">转让金额：<text class="b">238元</text></text>
 			</view>
 			<view class="clear"></view>
 		</view>

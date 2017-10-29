@@ -7,7 +7,7 @@
 			<text class="h2">{{cockTransfer.customer.nickName}}</text>
 			<text class="sp">转让时间：{{cockTransfer.dateStr}}</text>
 			<text class="sp">转让数量：1 只</text>
-			<text class="sp">转让单价：208 元/只</text>
+			<text class="sp">转让单价：238 元/只</text>
 		</view>
 		<view class="clear"></view>
 	</view>
@@ -94,7 +94,7 @@
 </view>
 <view class="foo_btn2">
 	<view>
-		<text class="tax">转让价：<text class="or">208</text>元</text>
+		<text class="tax">转让价：<text class="or">238</text>元</text>
 	</view>
 	<button class="btn on"  wx:if="{{cockTransfer.status!='PROCESSING'}}">已被抢购</button>
 	<navigator  url="/pages/market/transfer?id={{cockTransfer.id}}"  wx:if="{{cockTransfer.status=='PROCESSING'}}">

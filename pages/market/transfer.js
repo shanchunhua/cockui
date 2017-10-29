@@ -13,8 +13,8 @@ Page({
   data: {
     order: {
       quantity: 1,
-      price: 208,
-      total: 208,
+      price: 238,
+      total: 238,
       items: [],
       goodsType: 'MORNING_MARKET'
     },

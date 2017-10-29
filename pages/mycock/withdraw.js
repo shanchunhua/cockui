@@ -13,8 +13,8 @@ Page({
   data: {
     order: {
       quantity: 1,
-      price: 159,
-      total: 159,
+      price: 189,
+      total: 189,
       items: [],
       goodsType: 'COCK'
     },
