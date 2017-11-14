@@ -9,5 +9,14 @@ module.exports = {
         return wxe.requestP({
             url:'cockAdoptionOrder/index'
         });
+    },
+    connect:function(id,pid){
+        return wxe.requestP({
+            url:'customer/connect',
+            data:{
+                id:id,
+                pid:pid
+            }
+        });
     }
 };

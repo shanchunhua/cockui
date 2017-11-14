@@ -1,6 +1,7 @@
 // pages/suborder2/index.js
 var app = getApp();
 var collectionGoodsService = require('../../service/collectionGoods.js');
+var customerService=require('../../service/customer.js');
 Page({
 
   /**
@@ -8,13 +9,21 @@ Page({
    */
   data: {
     collectionGoods: null,
+    id:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options);
     var id = options.id;
+    if(options.cid){
+      customerService.connect(app.globalData.userInfo.id,options.cid).then(function(){
+        console.log('connected');
+      });
+    }
+    this.data.id=id;
     var self = this;
 
     collectionGoodsService.getById(id).then(function (res) {
@@ -27,7 +36,9 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    wx.updateShareMenu({
+      withShareTicket: true
+    });
   },
 
   /**
@@ -69,6 +80,8 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      path:"/pages/market/collectiondetail?id="+this.data.id+"&cid="+app.globalData.userInfo.id
+    };
   }
 });

@@ -6,6 +6,7 @@ App({
     this.globalData.loadUserPromise = this.getUserInfo();
   },
   onShow: function (options) {
+    console.log(options);
     /*
     console.log(options);
     var path = options.path;
