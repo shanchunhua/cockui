@@ -57,7 +57,7 @@ Page({
         return false;
       }
       res.data.forEach(function (item) {
-        item.dateStr = moment(item.createdDate).format('YYYY-MM-DD');
+        item.dateStr = moment(item.createdTime).format('YYYY-MM-DD');
         if (item.status) {
           item.statusStr = statusMap[item.status];
         }

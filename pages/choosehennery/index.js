@@ -1,7 +1,8 @@
 // index.js
-var app = getApp()
+var app = getApp();
 var henneryService = require('../../service/hennery.js');
 var henneryImageService = require('../../service/henneryImage.js');
+var customerService=require('../../service/customer.js');
 Page({
 
   /**
@@ -16,6 +17,11 @@ Page({
    */
   onLoad: function (options) {
     console.log('onLoad');
+    if(options.cid){
+      customerService.connect(app.globalData.userInfo.id,options.cid).then(function(){
+        console.log('connected');
+      });
+    }
     var self = this;
     henneryService.findAll().then(function (res) {
       res.data.forEach(function (item) {
@@ -90,4 +96,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+});
