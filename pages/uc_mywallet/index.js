@@ -59,6 +59,12 @@ Page({
           case 'REWARD':
             item.type = '用户打赏';
             break;
+          case 'SALES':
+            item.type = '品鉴师佣金';
+            break;
+          case 'PARTNER':
+            item.type = '合伙人佣金';
+            break;
         }
       });
       self.setData({
@@ -67,7 +73,7 @@ Page({
     });
   },
   confirm: function () {
-    if(this.data.amount<49||this.data.amount>this.data.customerProperty.balance){
+    if (this.data.amount < 49 || this.data.amount > this.data.customerProperty.balance) {
       return false;
     }
     var self = this;
