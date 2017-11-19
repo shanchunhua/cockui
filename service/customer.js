@@ -18,5 +18,10 @@ module.exports = {
                 pid:pid
             }
         });
+    },
+    isSales:function(id){
+        return wxe.requestP({
+            url:'sales/eligible/'+id
+        });
     }
 };

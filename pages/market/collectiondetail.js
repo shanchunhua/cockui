@@ -1,7 +1,7 @@
 // pages/suborder2/index.js
 var app = getApp();
 var collectionGoodsService = require('../../service/collectionGoods.js');
-var customerService=require('../../service/customer.js');
+var customerService = require('../../service/customer.js');
 Page({
 
   /**
@@ -9,7 +9,8 @@ Page({
    */
   data: {
     collectionGoods: null,
-    id:null
+    id: null,
+    isSales: false
   },
 
   /**
@@ -18,18 +19,23 @@ Page({
   onLoad: function (options) {
     console.log(options);
     var id = options.id;
-    if(options.cid){
-      customerService.connect(app.globalData.userInfo.id,options.cid).then(function(){
+    if (options.cid) {
+      customerService.connect(app.globalData.userInfo.id, options.cid).then(function () {
         console.log('connected');
       });
     }
-    this.data.id=id;
+    this.data.id = id;
     var self = this;
 
     collectionGoodsService.getById(id).then(function (res) {
       self.setData({
         collectionGoods: res.data
       });
+    });
+    customerService.isSales(app.globalData.userInfo.id).then(function (res) {
+      if (res.data) {
+        self.setData({ 'isSales': true });
+      }
     });
   },
   /**
@@ -40,7 +46,9 @@ Page({
       withShareTicket: true
     });
   },
-
+  hide: function () {
+    this.setData({ 'isSales': false });
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -81,7 +89,7 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      path:"/pages/market/collectiondetail?id="+this.data.id+"&cid="+app.globalData.userInfo.id
+      path: "/pages/market/collectiondetail?id=" + this.data.id + "&cid=" + app.globalData.userInfo.id
     };
   }
 });
