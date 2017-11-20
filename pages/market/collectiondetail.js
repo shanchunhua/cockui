@@ -88,7 +88,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    
     return {
+      imageUrl:this.data.collectionGoods.description,
       path: "/pages/market/collectiondetail?id=" + this.data.id + "&cid=" + app.globalData.userInfo.id
     };
   }

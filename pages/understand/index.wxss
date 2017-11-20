@@ -4,3 +4,14 @@
 .foo_btn{height: 98rpx; width: 100%; background: #3292ff; position: fixed; bottom: 0; text-align: center;}
 .foo_btn .btn_con{display: inline-block; padding-top: 27rpx;}
 .foo_btn .btn_con text{color: #fff; float: left;margin-top: 27rxp; line-height: 42rpx; padding-left: 10rpx; font-size: 36rpx;}
+
+.mack{position: fixed; top: 0; bottom: 0; right: 0; left: 0; background: rgba(0,0,0,0.5); z-index: 999; }
+.mack_share{width: 610rpx; margin: 60rpx auto 0; padding-top: 80rpx; position: relative;}
+.mack_share .img1{position: absolute; right: 0; top: 0; width: 81rpx; height: 121rpx;}
+.mack_share .he{display: flex;}
+.mack_share .he image{width: 106rpx; height: 85rpx; }
+.mack_share .he text{color: #fff; font-size: 31rpx; margin-left: 30rpx; line-height: 52rpx;}
+.mack_share .li {color: #fff; font-size: 31rpx; padding: 27rpx 0;}
+.mack_share .li .t{color: #f5ab1b;}
+
+.mack_share .li .btn{color: #fff; width: 342rpx; height: 68rpx; font-size:31rpx;text-align: center; line-height: 68rpx; background: #f5ab1b; border-radius: 5rpx; margin: 0 auto;}

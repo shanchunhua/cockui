@@ -60,7 +60,7 @@ Page({
             item.type = '用户打赏';
             break;
           case 'SALES':
-            item.type = '品鉴师佣金';
+            item.type = item.orderCustomer.nickName+'消费了'+item.amount*10+'元';
             break;
           case 'PARTNER':
             item.type = '合伙人佣金';

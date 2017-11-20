@@ -101,6 +101,22 @@
 	<button class="btn on">立即购买</button>
 	</navigator>
 </view>
+<view class="mack" wx:if="{{isSales}}" bindtap="hide">
+	<view class="mack_share">
+		<image class="img1" src="/img/s105.png"></image>
+		<view class="he">
+			<image class="" src="/img/s106.png"></image>
+			<text>您是欢乐牧家<br />
+	美食品荐师!</text>
+		</view>
+		<view class="li">1、按箭头示意分享，好友购买后 <text class="t">跟你绑定</text></view>
+		<view class="li">
+			<button class="btn" open-type="share">分享这款草原产品</button>
+		</view>
+		<view class="li">2、绑定的好友在线消费你会获得 <text class="t">10%收益</text></view>
+		<view class="li">3、在 <text class="t">我的钱包</text> 中您可提现该收益</view>
+	</view>
+</view>
 
 
 

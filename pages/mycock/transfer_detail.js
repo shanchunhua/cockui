@@ -4,6 +4,8 @@ var cockTransferService = require('../../service/cockTransfer.js');
 var moment = require('../../utils/we-moment-with-locales');
 var raisingRecordService = require('../../service/raisingRecord.js');
 var weatherService = require('../../service/weather.js');
+var customerService = require('../../service/customer.js');
+
 Page({
 
   /**
@@ -19,7 +21,8 @@ Page({
       iconPath: '/img/s14.png'
     }],
     isOwner: false,
-    currentTab: 0
+    currentTab: 0,
+    isSales: false
   },
 
   /**
@@ -27,17 +30,19 @@ Page({
    */
   onLoad: function (options) {
     var id = options.id;
-    console.log("*****" + id);
     var self = this;
+    if (options.cid) {
+      customerService.connect(app.globalData.userInfo.id, options.cid).then(function () {
+        console.log('connected');
+      });
+    }
     cockTransferService.getById(id).then(function (res) {
       var cockTransfer = res.data;
-      console.log("********" + res.data.createdTime);
       if (app.globalData.userInfo && app.globalData.userInfo.id == cockTransfer.customer.id) {
         self.setData({
           isOwner: true
         });
       }
-      console.log("********here");
       var markers = self.data.markers[0];
       markers.longitude = cockTransfer.cockAdoptionOrder.hennery.longitude;
       markers.latitude = cockTransfer.cockAdoptionOrder.hennery.latitude;
@@ -72,6 +77,12 @@ Page({
         weather: data
       });
     });
+    customerService.isSales(app.globalData.userInfo.id).then(function (res) {
+      if (res.data) {
+        self.setData({ 'isSales': true });
+        setTimeout(function(){self.hide();},2000);
+      }
+    });
   },
   previewRaisingImage: function (e) {
     var id = e.currentTarget.dataset.id;
@@ -96,9 +107,13 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    wx.updateShareMenu({
+      withShareTicket: true
+    });
   },
-
+  hide: function () {
+    this.setData({ 'isSales': false });
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -111,27 +126,16 @@ Page({
   },
 
   onShareAppMessage: function (res) {
-    if (res.from === 'button') {
-      // 来自页面内转发按钮
-      console.log(res.target);
-    }
-    console.log("*****" + this.data.cockTransfer.id);
     return {
       title: '我的红公鸡',
-      path: '/pages/mycock/transfer_detail?id=' + this.data.cockTransfer.id,
-      success: function (res) {
-        // 转发成功
-      },
-      fail: function (res) {
-        // 转发失败
-      }
-    }
+      path: '/pages/mycock/transfer_detail?id=' + this.data.cockTransfer.id+ "&cid=" + app.globalData.userInfo.id
+    };
   },
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    console.log('xxxxx');
   },
 
   /**
@@ -152,13 +156,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
   }
 });
