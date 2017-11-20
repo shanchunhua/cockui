@@ -80,7 +80,7 @@ Page({
     customerService.isSales(app.globalData.userInfo.id).then(function (res) {
       if (res.data) {
         self.setData({ 'isSales': true });
-        setTimeout(function(){self.hide();},2000);
+        setTimeout(function(){self.hide();},6000);
       }
     });
   },

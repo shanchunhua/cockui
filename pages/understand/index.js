@@ -25,7 +25,7 @@ Page({
         self.setData({ 'isSales': true });
         setTimeout(function(){
           self.hide();
-        },2000);
+        },6000);
       }
     });
   },
