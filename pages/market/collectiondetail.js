@@ -17,26 +17,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options);
-    var id = options.id;
-    if (options.cid) {
-      customerService.connect(app.globalData.userInfo.id, options.cid).then(function () {
-        console.log('connected');
-      });
-    }
-    this.data.id = id;
     var self = this;
-
-    collectionGoodsService.getById(id).then(function (res) {
-      self.setData({
-        collectionGoods: res.data
+    app.globalData.loadUserPromise.then(function(){
+      console.log(options);
+      var id = options.id;
+      if (options.cid) {
+        customerService.connect(app.globalData.userInfo.id, options.cid).then(function () {
+          console.log('connected');
+        });
+      }
+      self.data.id = id;
+      collectionGoodsService.getById(id).then(function (res) {
+        self.setData({
+          collectionGoods: res.data
+        });
+      });
+      customerService.isSales(app.globalData.userInfo.id).then(function (res) {
+        if (res.data) {
+          self.setData({ 'isSales': true });
+        }
       });
     });
-    customerService.isSales(app.globalData.userInfo.id).then(function (res) {
-      if (res.data) {
-        self.setData({ 'isSales': true });
-      }
-    });
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

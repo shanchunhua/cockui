@@ -29,60 +29,63 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var id = options.id;
     var self = this;
-    if (options.cid) {
-      customerService.connect(app.globalData.userInfo.id, options.cid).then(function () {
-        console.log('connected');
-      });
-    }
-    cockTransferService.getById(id).then(function (res) {
-      var cockTransfer = res.data;
-      if (app.globalData.userInfo && app.globalData.userInfo.id == cockTransfer.customer.id) {
-        self.setData({
-          isOwner: true
+    app.globalData.loadUserPromise.then(function () {
+      var id = options.id;
+      if (options.cid) {
+        customerService.connect(app.globalData.userInfo.id, options.cid).then(function () {
+          console.log('connected');
         });
       }
-      var markers = self.data.markers[0];
-      markers.longitude = cockTransfer.cockAdoptionOrder.hennery.longitude;
-      markers.latitude = cockTransfer.cockAdoptionOrder.hennery.latitude;
-      var hennery = cockTransfer.cockAdoptionOrder.hennery;
+      cockTransferService.getById(id).then(function (res) {
+        var cockTransfer = res.data;
+        if (app.globalData.userInfo && app.globalData.userInfo.id == cockTransfer.customer.id) {
+          self.setData({
+            isOwner: true
+          });
+        }
+        var markers = self.data.markers[0];
+        markers.longitude = cockTransfer.cockAdoptionOrder.hennery.longitude;
+        markers.latitude = cockTransfer.cockAdoptionOrder.hennery.latitude;
+        var hennery = cockTransfer.cockAdoptionOrder.hennery;
 
-      cockTransfer.dateStr = moment(cockTransfer.createdDate).format('YYYY-MM-DD hh:mm:ss');
-      if (!hennery.LIFE) {
-        hennery.LIFE = [];
-        hennery.ENVIRONMENT = [];
-        hennery.AMINAL = [];
-        hennery.images.forEach(function (image) {
-          hennery[image.type].push(image.url);
+        cockTransfer.dateStr = moment(cockTransfer.createdDate).format('YYYY-MM-DD hh:mm:ss');
+        if (!hennery.LIFE) {
+          hennery.LIFE = [];
+          hennery.ENVIRONMENT = [];
+          hennery.AMINAL = [];
+          hennery.images.forEach(function (image) {
+            hennery[image.type].push(image.url);
+          });
+        }
+        raisingRecordService.loadAdoptionRaisingRecords(cockTransfer.cockAdoptionOrder.id).then(function (res) {
+          res.data.forEach(function (item) {
+            item.dateStr = moment(item.paidDate).format('YYYY-MM-DD');
+          });
+          self.setData({
+            raisingRecords: res.data
+          });
         });
-      }
-      raisingRecordService.loadAdoptionRaisingRecords(cockTransfer.cockAdoptionOrder.id).then(function (res) {
-        res.data.forEach(function (item) {
-          item.dateStr = moment(item.paidDate).format('YYYY-MM-DD');
-        });
-        self.setData({
-          raisingRecords: res.data
-        });
-      });
 
-      self.setData({
-        cockTransfer: cockTransfer,
-        markers: [markers],
-        hennery: hennery
+        self.setData({
+          cockTransfer: cockTransfer,
+          markers: [markers],
+          hennery: hennery
+        });
+      });
+      weatherService.get().then(function (data) {
+        self.setData({
+          weather: data
+        });
+      });
+      customerService.isSales(app.globalData.userInfo.id).then(function (res) {
+        if (res.data) {
+          self.setData({ 'isSales': true });
+          setTimeout(function () { self.hide(); }, 6000);
+        }
       });
     });
-    weatherService.get().then(function (data) {
-      self.setData({
-        weather: data
-      });
-    });
-    customerService.isSales(app.globalData.userInfo.id).then(function (res) {
-      if (res.data) {
-        self.setData({ 'isSales': true });
-        setTimeout(function(){self.hide();},6000);
-      }
-    });
+
   },
   previewRaisingImage: function (e) {
     var id = e.currentTarget.dataset.id;
@@ -128,7 +131,7 @@ Page({
   onShareAppMessage: function (res) {
     return {
       title: '我的红公鸡',
-      path: '/pages/mycock/transfer_detail?id=' + this.data.cockTransfer.id+ "&cid=" + app.globalData.userInfo.id
+      path: '/pages/mycock/transfer_detail?id=' + this.data.cockTransfer.id + "&cid=" + app.globalData.userInfo.id
     };
   },
   /**

@@ -10,9 +10,9 @@ var request = function (config) {
     var cid = wx.getStorageSync('cid');
     if (cid) {
         if (config.url.indexOf('?') < 0) {
-            config.url += '?cid=' + cid;
+            config.url += '?customer_id=' + cid;
         } else {
-            config.url += '&cid=' + cid;
+            config.url += '&customer_id=' + cid;
         }
     }
     var session_id = wx.getStorageSync('JSESSIONID');//本地取存储的sessionID  

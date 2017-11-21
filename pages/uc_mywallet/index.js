@@ -31,7 +31,8 @@ Page({
     var self = this;
     withdrawRecordService.loadMyWithdrawRecord(app.globalData.userInfo).then(function (res) {
       res.data.forEach(function (item) {
-        item.createdTime = moment(item.createdTime).format('YYYY-MM-DD hh:ss:mm');
+        console.log(item.createdTime)
+        item.createdTime = moment(item.createdTime).format('YYYY-MM-DD HH:mm:ss');
       });
       self.setData({
         withdrawRecords: res.data
@@ -47,7 +48,8 @@ Page({
     var self = this;
     customerIncomeService.loadMyIncome(app.globalData.userInfo).then(function (res) {
       res.data.forEach(function (item) {
-        item.createdTime = moment(item.createdTime).format('YYYY-MM-DD hh:ss:mm');
+        console.log(item.createdTime);
+        item.createdTime = moment(item.createdTime).format('YYYY-MM-DD HH:mm:ss');
         var type = item.type;
         switch (type) {
           case 'RETURN':
