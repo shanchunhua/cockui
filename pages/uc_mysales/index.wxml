@@ -1,0 +1,21 @@
+<!--pages/my_friend/index.wxml-->
+
+<view class="friend_list">
+	<view class="in">
+		<text class="info">当前有{{totalCount}}名品鉴师，共分润{{totalAmount}}元</text>
+		<view class="list">
+			<view class="li"  wx:for="{{result}}">
+				<view class="img">
+					<image src="{{item.customer.avatarUrl}}"></image>
+				</view>
+				<view class="cent">
+					<view class="tit">
+						<text class="name">{{item.customer.nickName}}</text>
+						<text class="ress">{{item.customer.city}}</text>
+					</view>
+					<text class="t1">累计销售{{item.orderTotal}}元 累计分润{{item.partnerTotal}}元</text>
+				</view>
+			</view>		
+		</view>
+	</view>
+</view>

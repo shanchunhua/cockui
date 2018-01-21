@@ -1,0 +1,14 @@
+/* pages/my_friend/index.wxss */
+
+.friend_list{padding: 0 20rpx; background: #fefefe; padding-bottom: 100rpx;}
+.friend_list .info{font-size: 26rpx;  padding-top: 30rpx; color: #595757; display: block;}
+
+.list .li{display: flex; padding: 20rpx 0; border-bottom: 1px solid #eeeeee;}
+.list .li .img image{width: 78rpx; height: 78rpx; display: block; border-radius: 50%; overflow: hidden;}
+.list .li .cent{flex:1; margin-left: 30rpx; line-height: 1; font-size: 24rpx; color: #8b8b8b;}
+.list .li .cent .tit{display: flex; padding-top: 10rpx; }
+.list .li .cent .tit .name{flex:1;}
+.list .li .cent .t1{display: block; padding-top: 20rpx;}
+
+
+

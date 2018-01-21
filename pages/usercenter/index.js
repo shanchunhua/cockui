@@ -8,7 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: null
+    userInfo: null,
+    isSales:false,
+    isPartner:false
   },
 
   /**
@@ -37,6 +39,16 @@ Page({
     var self = this;
     customerService.loadCustomerProperty(this.data.userInfo.id).then(function (res) {
       self.setData({ customerProperty: res.data });
+    });
+    customerService.isSales(app.globalData.userInfo.id).then(function (res) {
+      if (res.data) {
+        self.setData({ 'isSales': true });
+      }
+    });
+    customerService.isPartner(app.globalData.userInfo.id).then(function (res) {
+      if (res.data) {
+        self.setData({ 'isPartner': true });
+      }
     });
   },
   createFormId:function(e){

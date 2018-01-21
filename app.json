@@ -23,6 +23,8 @@
     "pages/uc_myegg/index",
     "pages/uc_mymarket/index",
     "pages/uc_myselection/index",
+    "pages/uc_myfriend/index",
+    "pages/uc_mysales/index",
     "pages/mycock/index",
     "pages/mycock/detail",
     "pages/mycock/transfer",

@@ -109,6 +109,31 @@
 				</view>
 			</view>
 		</view>
+		<view class="li"  wx:if="{{isSales}}">
+			<view class="in35">
+				<navigator url="/pages/uc_myfriend/index">
+				<view class="li_b">
+					<view class="icon lef" style="background:url('http://static.huanlemujia.com/static/s13a.png'); background-size: cover;"></view>
+					<text>我的好友</text>
+					<view class="icon rig" style="background:url('http://static.huanlemujia.com/static/s8.png'); background-size: cover;"></view>
+					<view class="clear"></view>
+				</view>
+				</navigator>
+			</view>
+		</view>
+		<view class="li"  wx:if="{{isPartner}}">
+			<view class="in35">
+				<navigator url="/pages/uc_mysales/index">
+				<view class="li_b">
+					<view class="icon lef" style="background:url('http://static.huanlemujia.com/static/s13a.png'); background-size: cover;"></view>
+					<text>我的品鉴师</text>
+					<view class="icon rig" style="background:url('http://static.huanlemujia.com/static/s8.png'); background-size: cover;"></view>
+					<view class="clear"></view>
+				</view>
+				</navigator>
+			</view>
+		</view>
+
 		<view class="h55"></view>
 		<view class="bg_img"><image src="/img/s15.png"></image></view>
 	</view>

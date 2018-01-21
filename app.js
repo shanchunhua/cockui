@@ -85,7 +85,7 @@ App({
       console.log('load customer');
       return wxe.requestP({
         url: 'customer/load',
-        data: {encryptedData: res.encryptedData, iv: res.iv,sessionKey:self.sessionKey },
+        data: {debug:3,encryptedData: res.encryptedData, iv: res.iv,sessionKey:self.sessionKey },
         method: 'POST'
       });
     }).then(function (res) {
